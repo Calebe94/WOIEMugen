@@ -1,0 +1,76 @@
+;J'onn J'onnz ending
+
+[SceneDef]
+spr = ending.sff
+startscene = 0         ;Starting scene number (for debugging)
+;------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time = 15
+fadeout.col = 255,255,255
+; Screen color
+clearcolor = 255,255,255
+; Overlay Anims (from 0 to 17)
+layerall.pos = 160,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,32   ;Position offset
+layer0.starttime = 0   ;Time to start display
+;layer1.anim =  5
+layer1.offset = 0,176
+; Music
+bgm = sound/Tower.mp3       ;Name of music file to play
+bgm.loop = 3
+; Total time
+end.time = 750
+;------------------------------------
+[Scene 1]
+; Fade
+fadein.time = 15
+fadein.col = 255,255,255
+fadeout.time = 15
+fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+; The previous layerall.pos value is carried over by default
+layer0.anim =  1
+layer0.offset = 0,32
+layer0.starttime = 0
+;layer1.anim =  11
+;layer1.offset = 0,176
+; Total time
+end.time = 750
+;------------------------------------
+[Scene 2]
+; Fade
+fadein.time = 15
+fadein.col = 255,255,255
+fadeout.time = 15
+fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layer0.anim =  2
+layer0.offset = 0,32
+layer0.starttime = 0
+layer1.anim =  21
+layer1.offset = 0,176
+; Total time
+end.time = 600
+;--------------------------------------
+;Background image
+[Begin Action 0]
+100,0,0,0,250
+100,1,0,0,250
+100,12,0,0,250
+;Background image
+[Begin Action 1]
+100,2,0,0,250
+100,3,0,0,250
+100,4,0,0,250
+;Background image
+[Begin Action 2]
+100,5,0,0,300
+100,6,0,0,300

@@ -1,0 +1,222 @@
+
+; Introduction cutscene for KFM's story.
+
+; This storyboard has multiple scenes.
+; Each scene uses two overlay anims, one for the picture, and
+; another for the text.
+; The fadein and fadeout parameters are used to fade one screen
+; to the next.
+
+[SceneDef]
+spr = intro.sff
+startscene = 0         ;Starting scene number (for debugging)
+
+;------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+;fadeout.time = 15
+fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layerall.pos = 160,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,32   ;Position offset
+layer0.starttime = 0   ;Time to start display
+; Music
+bgm = intro.mp3        ;Name of music file to play
+bgm.loop = 1        ; 1
+; Total time
+end.time = 50
+
+;------------------------------------
+[Scene 1]
+; Fade
+;fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time = 30
+fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layerall.pos = 160,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,32   ;Position offset
+layer0.starttime = 0   ;Time to start display
+layer1.anim =  1
+layer1.offset = 0,176
+; Music
+bgm = intro.mp3        ;Name of music file to play
+bgm.loop = 1        ; 1
+; Total time
+end.time = 500
+
+;------------------------------------
+[Scene 2]
+; Fade
+fadein.time = 25
+fadein.col = 255,255,255
+fadeout.time = 30
+fadeout.col = 255,255,255
+; Screen color
+; The previous clearcolor value is carried over by default
+; Overlay Anims (from 0 to 9)
+; The previous layerall.pos value is carried over by default
+layer0.anim =  10
+layer0.offset = 0,0
+layer0.starttime = 0
+; Total time
+end.time = 300
+
+;------------------------------------
+[Scene 3]
+; Fade
+fadein.time = 20
+fadein.col = 255,255,255
+fadeout.time = 30
+fadeout.col = 255,255,255
+clearcolor = 0,0,0
+bg.name = sheet
+; Overlay Anims (from 0 to 9)
+;layer0.anim =  31
+;layer0.offset = 0,0
+;layer0.starttime = 0
+; Total time
+end.time = 600
+
+
+[sheetdef]
+
+[sheet]; sheet back
+type = normal
+spriteno = 15,0
+start = -160,0
+layer = 4
+;mask = 0
+velocity = 0, -5
+iD =1
+tile = 0,1
+tilespacing = 0, 0
+
+[sheet]; sheet hand
+type = normal
+spriteno = 30,0
+start = 0,270
+layer = 1
+mask = 1
+iD =2
+velocity = 0,0 ; -0.7
+;tile = 0,1
+;tilespacing = 0, 0
+
+
+[sheetCtrlDef]
+CtrlID = 2
+layer = 1
+
+[sheetCtrl]
+type = VelSet
+time = 0
+y = -0.9
+
+[sheetCtrl]
+type = VelSet
+time = 170
+y = -0.8
+
+[sheetCtrl]
+type = VelSet
+time = 200
+y = -0.6
+
+[sheetCtrl]
+type = VelSet
+time = 340
+y = 0
+
+
+
+[Scene 4]
+; Fade
+fadein.time = 25
+fadein.col = 255,255,255
+;fadeout.time = 15
+;fadeout.col = 255,255,255
+clearcolor = 0,0,0
+bg.name = sheet2
+; Overlay Anims (from 0 to 9)
+;layer1.anim =  31
+;layer1.offset = 0,0
+;layer1.starttime = 0
+; Total time
+end.time = 3950
+
+[sheet2def]
+
+[sheet2]; sheet back
+type = normal
+spriteno = 31,0
+start = 0,0
+layer = 4
+;mask = 0
+velocity = 0, 0
+iD =8
+tile = 0,1
+tilespacing = 0, 0
+
+[sheet2]; sheet 1 up
+type = normal
+spriteno = 20,0
+iD =9
+start = -160,0
+layer = 1
+velocity = 0,0 ; -0.4
+
+[sheet2CtrlDef]
+CtrlID = 9
+layer = 1
+
+[sheet2Ctrl]
+type = VelSet
+time = 200
+y = -0.4
+
+[Scene 5]
+; Fade
+;fadein.time = 30
+;fadein.col = 255,255,255
+fadeout.time = 90
+fadeout.col = 0,0,0
+; Overlay Anims (from 0 to 9)
+layer0.anim =  31
+layer0.offset = 0,0
+layer0.starttime = 0
+; Total time
+end.time = 290
+
+;Background image
+[Begin Action 0]
+0,0, 0,0, -1
+
+;Text
+[Begin Action 1]
+1,0, 0,0, -1
+
+;Background image
+[Begin Action 10]
+10,0, 0,0, -1
+
+;Background image
+[Begin Action 20]
+20,0, 0,0, -1
+
+
+;Background image
+[Begin Action 30]
+30,0, 0,0, -1
+
+;Text
+[Begin Action 31]
+31,0, 0,0, -1

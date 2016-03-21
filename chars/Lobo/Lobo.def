@@ -1,0 +1,48 @@
+;=======================================;
+;      Character Def File for Lobo      ;
+;       by the DC vs Marvel Team        ;
+;      for WinMUGEN v. 06,14,2003       ;
+;      http://www.buyog.com/MUGEN       ;
+;                                       ;
+;   Made with MUGEN Editing Ensemble    ;
+;=======================================;
+
+[Info]
+name ="Lobo"
+displayname ="Lobo"
+versiondate =11,11,2006
+mugenversion =04,06,2004
+author ="Buyog 2099"
+;pal.defaults=1,2,3,4,5
+
+[Files]
+
+;=== A.I.: if you prefer him without, just add a ";" on the first line below and remove the one on the next line
+cmd = Lobo.cmd
+;cmd = LoboNoAI.cmd
+
+stcommon = DCvsMarvelcommon1.cns
+sprite   = Lobo.sff
+anim     = Lobo.air
+cns      = Lobo.cns
+st       = basics.st
+st1      = specials.st
+st2      = hypers.st
+st3      = throws.st
+st4      = overrides.st
+sound    = Lobo.snd
+
+;=== Palettes ===
+pal1 = darkblue.act
+pal2 = black.act
+pal3 = bloodred.act
+pal4 = blue.act
+pal5 = grey.act
+pal6 = darkgreen.act
+pal7 = green.act
+pal8 = kryptonite.act
+pal9 = red.act
+
+[Arcade]
+intro.storyboard = intro.def
+;ending.storyboard=

@@ -1,0 +1,42 @@
+; Definition file for Kung Fu Man
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="MvC_Deathctroke"
+displayname ="Deathstroke"
+versiondate =20,11,2013
+mugenversion =09,05,2013
+author ="chuchoryu"
+pal.defaults =6,3,4,2
+
+; Files for the player
+[Files]
+cmd     =DeathstrokeIGAU.cmd
+cns     =Coding/System.cns
+st      =Coding/System.cns
+stcommon =common1.cns
+sprite  =DeathstrokeIGAUNOMASK.sff
+anim    =DeathstrokeIGAUEO.air
+sound   =DeathstrokeIGAU.snd
+pal1= DeathStroke01NOMASK.act
+pal2= DeathStroke02NOMASK.act
+pal3= DeathStroke03NOMASK.act
+pal4= DeathStroke04NOMASK.act
+pal5= DeathStroke05NOMASK.act
+pal6= DeathStroke06NOMASK.act
+pal7= DeathStroke07NOMASK.act
+pal8= 
+pal9= 
+pal10= 
+pal11= 
+pal12= 
+st1=Coding/Normal.cns
+st2=Coding/Specials.cns
+st3=Coding/Helpers.cns
+st4=Coding/Supers.cns
+
+; Arcade mode
+[Arcade]
+intro.storyboard =
+ending.storyboard = MKvsDCUEnd.def

@@ -1,0 +1,21 @@
+; Definition file for Kung Fu Man
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name = "Ares"        ;Name of character
+displayname = "Ares" ;Name of character to display
+versiondate = 04,19,2010    ;Version date of character (MM-DD-YYYY)
+mugenversion = 04,14,2002   ;Version of M.U.G.E.N character works on
+author = "Cravd y Animaraz"         ;Character author name
+; Y proximamente se nos unirá un autor más
+
+; Files for the player
+[Files]
+cmd     = ares.cmd   ;Command set
+cns     = ares.cns   ;Constants
+st      = ares.cns   ;States
+stcommon = common1.cns ;Common states
+sprite  = ares.sff   ;Sprite
+anim    = ares.air   ;Animation
+sound   = kfm.snd   ;Sound

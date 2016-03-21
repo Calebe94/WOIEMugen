@@ -1,0 +1,64 @@
+;WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+;WONDER WOMAN RELOADED  -  Version 2.0   02/17/2007
+;Edits & Codes by Loganir 
+;-----------     Loganir@gmail.com ------------
+;WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+; Player information
+[Info]
+name="Wonder Woman Reloaded"
+displayname="Wonder Woman"
+versiondate= 02,17,2007
+mugenversion= 06,14,2003
+author="Loganir"
+pal.defaults= 1,2,3,4,5,6,7,8,9,10,11,12
+
+; Files for the player
+[Files]
+
+sprite	= wonder_reloaded.sff
+anim	= wonder_reloaded.air
+sound	= wonder_reloaded.snd
+cns	= states/wonder.cns
+st	= states/wonder.cns
+stcommon= states/wondercommon.cns
+
+
+;=== A.I. more easy: remove the   " ; "    in the first line below and put another  " ; "   in the last line ========================
+
+;cmd	= states/wonder-no-ai.cmd
+cmd	= states/wonder.cmd
+
+;======================================================================================================
+;
+;==== To use your screenpack sparks: remove the   " ; "    in the first 2 lines below and put another  " ; "   in the last 2 lines  ===
+
+st1	= states/wonder-2.st
+st2	= states/wonder-3.st
+
+;st1	= states/wonder-2nosparks.st
+;st2	= states/wonder-3nosparks.st
+
+;=======================================================================================================
+
+
+;==========   palettes      ==================================================================================
+;
+pal1	 = palettes/pal1.act
+pal2	 = palettes/pal2.act
+pal3	 = palettes/pal3.act
+pal4	 = palettes/pal5.act
+pal5	 = palettes/pal4.act
+pal6	 = palettes/pal8.act
+pal7	 = palettes/pal7.act
+pal8	 = palettes/pal6.act
+pal9	 = palettes/pal9.act
+pal10	 = palettes/pal10.act
+pal11	 = palettes/pal11.act
+pal12	 = palettes/pal12.act
+
+
+;========== Intro - Ending arcade ======================================================================
+[Arcade]
+intro.storyboard = intro-ending/intro.def
+ending.storyboard = intro-ending/ending.def

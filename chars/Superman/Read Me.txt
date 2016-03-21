@@ -1,0 +1,101 @@
+Char: Superman (remixed edition)
+Autor: Hannibal and Kal-Elvis
+Version: 0.5
+Sprites, palettes and sounds: Hannibal and Kal-Elvis, with help from 
+           McCready, Buyog, Magus, GreatTeacherTroy, Enzo, Bobstarsky, JOR-EL, LGNB
+Code: Hannibal and Kal-Elvis (aprendiendo sobre la marcha)
+
+What is new:
+Palettes - before there were more basic palettes that, while good, didn't cover the
+   more subtle costume differences and in some cases couldn't reproduce them at all.
+      Therefore, ALL sprites of Superman were recolored *extensively* to allow for the
+        other costumes to be palettes, for fellow fans of the character.  Now EVERY 
+          palette included has a story or purpose to the Superman mythos
+      Also, you'll find that most of the palettes have different Clark Kent clothes as
+         well, which you can find by playing Superman vs Superman.
+
+Sprites - before, he was mostly Magneto, Cyclops, and Guile (the head of Guile).  Now,
+     all heads are custom-done, and he has been lengthened so as to appear more heroic
+       as is fitting to Superman.  Also, sprites with a Cyclops base were thickened to
+         match the others  (still may be some of those to do, but most were fixed)
+           Also, *most* of his hypers have an updated look to them, but it makes some
+            of Bizarro's hypers look odd since it uses Superman's picture (FOR NOW)
+
+Attacks - his fierce punch and kick are different now, he has a new move (identified
+      below), and his hypers, which were more Street Fighter Alpha style before, are
+        now executed in the more Marvel Vs Capcom fashion of quarter circles and 
+           multiple punches and kicks.
+
+Specials:
+Heat vision - d,df,f,p
+Super breath - d,db,b,p (lp is freeze breath)
+Flight kick - d,df,f,k
+Drill Punch - d,db,b,k
+Flight Attack - d(hold for 2 sec), f, fp (fierce punch only) NEW!!!
+
+Hypers:
+Super Shake Up - d,df,f,mp+fp
+Solar Shield - d,db,b,mp+fp
+Speed Fury - d,df,f,mk+fk
+Super Tsunami - d,db,b,mk+fk
+Super Scream - d,db,b,fp+fk
+Hyper Heat Vision (in air only for now) - d,df,f,mp+fp
+Hyper Dive Attack (in air) - d,df,f, mk+fk
+Amalgam Ultimate - d,df,f,fp+fk
+
+Bizarro Hypers:
+Bizarre Shake Up - d,df,f, mp+fp
+Solar Shield - d,db,b,mp+fp
+Bizarre Fury - d,df,f,mk+fk
+Hyper Heat Vision (in air only for now) - d,df,f,mp+fp
+Hyper Dive Attack (in air) - d,df,f, mk+fk
+Bizarre Blizzard - d,db,b,mk+fk
+Hyper Driller - d,db,b,fp+fk (you can push lighter punches
+    while underground to attack the opponent above you for a time before
+       the main strike where he blasts back out of the groud)
+
+
+
+*** Below are excerpts from Hannibal's original notes - not all info below 
+          may be accurate now. ***
+
+_________________________________________________________________
+
+ENGLISH
+
+Char: Superman Author: Hannibal Version: 2.5 Sprites: Hannibal 
+Code: Hannibal (learning on the march)
+
+- That there is of NEW Doc?  -
+
+Movements al 100% (I did Not add neither one but).  New several corrections
+ sounds Standing Exclusive Pose for
+Brave Mode Supers exclusive in the Brave one Mode Quizas new errors..  JE!
+
+For those that spy inside the sff and find to Steel 
+   and to Lex Lutor I tell that Steel alone appears in an intro special
+       that functions with some chars cyber... be read, 
+         Cyberakuma, CyberDan, Ironman (Erradicator), MB02 
+
+Luthor appears at times when Superman loses for time.  
+
+
+End for now..  
+
+No longer I accept suggestions but if you find some error, write here
+
+Anibal432@hotmail.com
+
+Gratitude..  To Ariel.Co., Magus, Venom_Pyron, Yutomi, The Thin one, 
+        Lion... and to all the ones that give me constant support to 
+            continue with this project especially to the Staff of 
+                Planet Mugen and Mugen Hispania by lodging my char.  
+                   THANKS!!  
+
+It notes Final: For those that spy inside the sff and find to Steel 
+       and to Lex Lutor I tell that Steel alone appears in an intro special
+          that functions with some chars cyber... be read, 
+             Cyberakuma, CyberDan, Ironman (Erradicator), MB02 
+
+Luthor appears at times when Superman loses for time.  
+

@@ -1,0 +1,37 @@
+;========================================;
+;    Character Def File for Darkseid     ;
+;             by Kal Elvis               ;
+;              for WinMUGEN              ;
+;                                        ;
+;   Part of the DC vs Marvel project     ;
+;   (http://dcvsmarvel.asteroidm.com)    ;
+;                                        ;
+;   Made with MUGEN Editing Ensemble     ;
+;     (http://ragnaroknemo.cjb.net)      ;
+;========================================;
+
+[Info]
+name ="Darkseid"
+displayname ="Darkseid"
+versiondate = 
+mugenversion =04,14,2001
+author ="Kal Elvis & Buyog"
+pal.defaults=1,2,3,4,5
+
+[Files]
+cmd =Darkseid.cmd
+cns =Darkseid.cns
+stcommon =common1.cns
+sound =Darkseid.snd
+sprite =Darkseid.sff
+anim =Darkseid.air
+
+st =basics.st
+st1=specials.st
+st2=overrides.st
+
+pal1=default.act
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

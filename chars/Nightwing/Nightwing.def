@@ -1,0 +1,36 @@
+;========================================;
+;   Character Def File for Nightwing     ;
+;             by Mû                      ;
+;========================================;
+
+[Info]
+name ="nightwing"
+displayname ="Nightwing"
+versiondate =06,01,2004
+author ="Mû & McCready"
+pal.defaults =1
+mugenversion=
+
+[Files]
+cns =nightwing.cns
+cmd =nightwing.cmd
+st =basics.st
+stcommon =common1.cns
+sprite =nightwing.sff
+anim =nightwing.air
+sound =nightwing.snd
+pal1=nightwing_00.act
+pal2=nightwing_04.act
+pal3=nightwing_02.act
+pal4=nightwing_01.act
+pal5=nightwing_03.act
+pal6=nightwing_05.act
+st1=specials.st
+st2=hypers.st
+st3=overrides.st
+
+
+; Arcade mode
+[Arcade]
+intro.storyboard =intro.def
+ending.storyboard =ending.def

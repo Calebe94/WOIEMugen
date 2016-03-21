@@ -1,0 +1,376 @@
+;WWWWWWWWWWWWWWWWWWWWWWWWWWW
+;Wonder Woman Reloaded 2.0 - INTRO
+;Edits & Coding: Loganir
+;WWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+
+
+[SceneDef]
+spr = int-end.sff
+startscene = 0         ;Starting scene number (for debugging)
+
+
+[Scene 0] ;--------- background
+clearcolor = 0,0,0
+; Music
+; Total time
+end.time =100
+bgm = ini.wav        ;Name of music file to play
+
+[Scene 1] ;--------- music fix?
+fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0
+;fadeout.time = 30
+;fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layerall.pos = 0,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer0.starttime = 0   ;Time to start display
+layer1.anim =  1;-------------------------------------------------disclaimer
+layer1.offset = 0,0
+layer1.starttime = 0  
+; Total time
+end.time =300
+
+
+[Scene 2]; --------------------------------disclaimer
+;fadein.time = 60       ;Time to take for fading in
+;fadein.col = 0,0,0
+;fadeout.time = 30
+;fadeout.col = 255,255,255
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layerall.pos = 0,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer0.starttime = 0   ;Time to start display
+layer1.anim =  1;-------------------------------------------------disclaimer
+layer1.offset = 0,0
+layer1.starttime = 0  
+; Total time
+end.time =100
+
+
+
+[Scene 3]; --------------------------------logo
+; Fade
+;fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time = 10
+fadein.col = 150,150,20
+; Screen color
+clearcolor = 0,0,0
+; Overlay Anims (from 0 to 9)
+layerall.pos = 0,0   ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer0.starttime = 0   ;Time to start display
+layer1.anim =  10
+layer1.offset = 0,0
+layer1.starttime = 10  
+bgm = in.mp3        ;Name of music file to play
+bgm.loop = 1 
+end.time =330
+
+
+
+;------------------------------ Hughes
+[Scene 4]
+fadein.time = 20
+fadein.col = 150,150,20
+fadeout.time =100
+fadeout.col = 0,0,0
+clearcolor = 0,0,0
+bg.name = sheet
+end.time =700;800
+
+[sheetdef]
+
+
+
+[sheet]
+type = normal
+spriteno = 15,0
+start =-160,-500
+layer = 1
+iD =1
+velocity = 0,0 
+
+[sheet]; sheetf
+type = normal
+spriteno = 5,0
+start = -160,0
+layer = 4
+mask = 1
+velocity = 0, -1
+iD =7
+tile = 0,1
+tilespacing = 0, 0
+[sheet]; sheetf
+type = normal
+spriteno = 5,0
+start = -160,0
+layer = 5
+mask = 1
+velocity = 0, -3
+iD =8
+tile = 0,1
+tilespacing = 0, 0
+
+
+
+
+[sheetCtrlDef]
+CtrlID = 1
+layer = 1
+[sheetCtrl]
+type = VelSet
+time = 0
+y = 0.99
+[sheetCtrl]
+type = VelSet
+time = 370
+y = 0.94
+[sheetCtrl]
+type = VelSet
+time = 500
+y = 0.82
+[sheetCtrl]
+type = VelSet
+time =510
+y = 0
+
+
+[Scene 5]; -------------------------------- saga
+fadein.time =60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time =60
+fadeout.col = 0,0,0
+clearcolor = 0,0,0
+layerall.pos = 0,0   ;Default position for all layers
+layer0.anim =  25
+layer0.offset = 0,0
+layer0.starttime = 0  
+layer1.anim =30       ;Anim action number
+layer1.offset = 0,0   ;Position offset
+layer1.starttime = 0   ;Time to start display
+end.time = 4700
+
+
+
+[Scene 6];--------------------command
+fadein.time = 20
+fadein.col = 0,0,0
+clearcolor = 0,0,0
+bg.name = sheet2
+end.time = 2900
+
+[sheet2def]
+
+[sheet2]; sheet 1 up
+type = normal
+spriteno = 20,0
+iD =2
+start = -160,0
+layer = 1
+velocity = 0,0 
+
+[sheet2]; sheetf
+type = normal
+spriteno = 5,0
+start = -160,0
+layer = 4
+mask = 1
+velocity = 0, 1
+iD =5
+tile = 0,1
+tilespacing = 0, 0
+[sheet2]; sheetf
+type = normal
+spriteno = 5,0
+start = -160,0
+layer = 5
+mask = 1
+velocity = 0, 3
+iD =6
+tile = 0,1
+tilespacing = 0, 0
+
+
+[sheet2CtrlDef]
+CtrlID = 2
+layer = 1
+
+[sheet2Ctrl]
+type = VelSet
+time = 200
+y = -0.4
+
+[sheet2Ctrl]
+type = VelSet
+time = 2720
+y = 0
+
+[Scene 7]; -------------------------------- ww
+fadeout.time =350
+fadeout.col = 0,0,0
+clearcolor = 0,0,0
+layerall.pos = 0,0   ;Default position for all layers
+layer0.anim = 40       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer0.starttime = 0   ;Time to start display
+layer1.anim = 35
+layer1.offset = 0,0
+layer1.starttime = 0  
+end.time =650
+
+
+;--------------------------------------ANIM
+;Background image
+[Begin Action 0]
+0,0, 0,0,-1
+
+;Text dc
+[Begin Action 1]
+1,0, 0,0,-1
+
+;Text wondy
+[Begin Action 10]
+10,0, 0,0, -1
+
+;Hughes up
+;[Begin Action 15]
+;15,0, 0,0, -1
+
+;back
+[Begin Action 20]
+0,0, 0,0,-1
+
+;back
+[Begin Action 25]
+50,10, 0,0,-1
+;25,0, 0,0,800
+;0,0,0,0,20
+;25,0, 0,0,800
+;0,0,0,0,20
+;25,0, 0,0, 800
+;0,0,0,0,20
+;25,0, 0,0,800
+;0,0,0,0,20
+;25,0, 0,0,800
+;0,0,0,0,20
+;25,0, 0,0,800
+;0,0,0,0,20
+;25,0, 0,0,-1
+
+
+;Wonder saga
+[Begin Action 30]
+30,0, 0,0,670
+30,0, 0,0,2, , AS196D256
+30,0, 0,0,2, , AS186D256
+30,0, 0,0,2, , AS176D256
+30,0, 0,0,2, , AS166D256
+30,0, 0,0,2, , AS156D256
+30,0, 0,0,2, , AS146D256
+30,0, 0,0,2, , AS136D256
+30,0, 0,0,2, , AS126D256
+30,0, 0,0,2, , AS116D256
+30,0, 0,0,2, , AS106D256
+30,1, 0,0,670
+30,1, 0,0,2, , AS196D256
+30,1, 0,0,2, , AS186D256
+30,1, 0,0,2, , AS176D256
+30,1, 0,0,2, , AS166D256
+30,1, 0,0,2, , AS156D256
+30,1, 0,0,2, , AS146D256
+30,1, 0,0,2, , AS136D256
+30,1, 0,0,2, , AS126D256
+30,1, 0,0,2, , AS116D256
+30,1, 0,0,2, , AS106D256
+30,2, 0,0, 670
+30,2, 0,0,2, , AS196D256
+30,2, 0,0,2, , AS186D256
+30,2, 0,0,2, , AS176D256
+30,2, 0,0,2, , AS166D256
+30,2, 0,0,2, , AS156D256
+30,2, 0,0,2, , AS146D256
+30,2, 0,0,2, , AS136D256
+30,2, 0,0,2, , AS126D256
+30,2, 0,0,2, , AS116D256
+30,2, 0,0,2, , AS106D256
+30,3, 0,0,670
+30,3, 0,0,2, , AS196D256
+30,3, 0,0,2, , AS186D256
+30,3, 0,0,2, , AS176D256
+30,3, 0,0,2, , AS166D256
+30,3, 0,0,2, , AS156D256
+30,3, 0,0,2, , AS146D256
+30,3, 0,0,2, , AS136D256
+30,3, 0,0,2, , AS126D256
+30,3, 0,0,2, , AS116D256
+30,3, 0,0,2, , AS106D256
+30,4, 0,0,670
+30,4, 0,0,2, , AS196D256
+30,4, 0,0,2, , AS186D256
+30,4, 0,0,2, , AS176D256
+30,4, 0,0,2, , AS166D256
+30,4, 0,0,2, , AS156D256
+30,4, 0,0,2, , AS146D256
+30,4, 0,0,2, , AS136D256
+30,4, 0,0,2, , AS126D256
+30,4, 0,0,2, , AS116D256
+30,4, 0,0,2, , AS106D256
+30,5, 0,0,670
+30,5, 0,0,2, , AS196D256
+30,5, 0,0,2, , AS186D256
+30,5, 0,0,2, , AS176D256
+30,5, 0,0,2, , AS166D256
+30,5, 0,0,2, , AS156D256
+30,5, 0,0,2, , AS146D256
+30,5, 0,0,2, , AS136D256
+30,5, 0,0,2, , AS126D256
+30,5, 0,0,2, , AS116D256
+30,5, 0,0,2, , AS106D256
+30,6, 0,0,-1
+
+;Wonder saga
+;[Begin Action 30]
+;30,0, 0,0,800;
+;-1,-1,0,0,20
+;30,1, 0,0,800
+;-1,-1,0,0,20
+;30,2, 0,0, 800
+;-1,-1,0,0,20
+;30,3, 0,0,800
+;-1,-1,0,0,20
+;30,4, 0,0,800
+;-1,-1,0,0,20
+;30,5, 0,0,800
+;-1,-1,0,0,20
+;30,6, 0,0,-1
+
+
+;Wonder change
+[Begin Action 35]
+20,1, 0,-1,10
+20,2, 0,-1,10
+20,3, 0,-1,10
+20,4, 0,-1,10
+20,5, 0,-1,10
+20,6, 0,-1,10
+20,7, 0,-1,10
+-1,-1, 0,0,-1
+
+;Wonder face change
+[Begin Action 40]
+20,10, 0,0,-1
+
+
+
+
+

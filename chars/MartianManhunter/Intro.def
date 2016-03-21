@@ -1,0 +1,74 @@
+; Introduction cutscene for Justice League Mugen.
+
+[SceneDef]
+spr = Intro.sff
+startscene = 0         ;Starting scene number (for debugging
+;----------------------------------------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 50
+fadein.col = 0,0,0
+; Background
+bg.name = BG0
+; Screen color
+clearcolor = 16,16,16
+; Overlay Anims (from 0 to 9)
+layerall.pos = -40,8
+
+;-----[Music]-----
+bgm = sound/Tower.mp3
+;bgm.loop = 0
+
+;-----[Total Time]-----
+end.time = 300
+
+;--------------------------
+[BG0Def]
+
+[BG0 Atalaya]
+type  = normal
+spriteno = 0,0
+start = 0, 80
+mask = 1
+
+[BG0 Name]
+type  = normal
+spriteno = 0,1
+start = 0, 80
+mask = 1
+
+;----------------------------------------------------------------------
+[Scene 1]
+; Fade
+fadein.time = 50
+fadein.col = 0,0,0
+; Background
+bg.name = BG1
+; Screen color
+clearcolor = 16,16,16
+; Overlay Anims (from 0 to 9)
+layerall.pos = -40,8
+
+;-----[Music]-----
+bgm = sound/Tower.mp3
+;bgm.loop = 0
+
+;-----[Total Time]-----
+end.time = 800
+
+;--------------------------
+[BG1Def]
+
+[BG1 Fondo]
+type  = normal
+spriteno = 10,0
+start = 0, 80
+mask = 1
+
+[BG1 Power's]
+type  = normal
+spriteno = 11,1
+start = 0, 80
+mask = 1
+
+;----------------------------------------------------------------------

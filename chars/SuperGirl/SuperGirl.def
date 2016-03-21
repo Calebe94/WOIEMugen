@@ -1,0 +1,42 @@
+; Definition file for Supergirl
+; Contains all the filenames needed for the character
+
+
+[Info]
+name="Supergirl"
+displayname="Supergirl"
+versiondate=04,14,2001
+mugenversion=04,14,2001
+author="Toni"
+pal.defaults=1,2,3,4,5,6
+
+
+[Files]
+cmd=supergirl.cmd
+cns=supergirl.cns
+st=supergirl.cns
+stcommon=common1.cns
+sprite=supergirl.sff
+anim=supergirl.air
+sound=supergirl.snd
+pal1=supergirl1.act	;normal palette
+pal2=supergirl3.act	;Superman inspired
+pal3=supergirl4.act	;shiny dark skirt
+pal4=Pal01.act		;blue shirt & skirt by Ghost
+pal5=white.act		;white and pink palette
+pal6=blue.act		;inverted red & blue palette
+pal7=pink.act		;anime-styled palette
+pal8=Kopie1.act		;black & white palette
+pal9=dark.act		;darl palette
+pal10=supergirl6.act	;evil Supergirl
+pal11=superior.act	;Superior Girl palette
+pal12=Pal02.act		;Bizarro-Supergirl by Ghost
+
+;pal12=supergirl.act	;WIP palette
+
+
+
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

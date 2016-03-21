@@ -1,0 +1,276 @@
+[Statedef 50000]
+type    = S
+movetype= A
+physics = S
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 50000
+poweradd = 30
+
+
+[State 50000, 6]
+type = PlaySnd
+trigger1 = Time = 0
+value = 0, 1
+
+[State 50000, 6]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = 0, 200
+
+[state 50000, aft]
+type = AfterImage
+trigger1 = AnimElem = 4
+time = 15
+color = 0
+PalBright   =   0,  0,  0
+PalContrast = 128,128,128
+PalAdd      =   0,  0,  0
+PalMul      =  1,1,1
+Trans = Add1
+
+[State 1040, 2]
+type = Explod
+trigger1 = Time = 14
+anim = 10035
+scale = .7,.7
+pos = -20,10
+sprpriority = 3
+
+
+[State 50000, 1st Boom]
+type = Explod
+trigger1 = Animelem = 6
+anim = 726
+pos = 0,-150
+postype = p1
+sprpriority = 5
+supermove = 1
+bindtime = 1
+scale = .7,.7
+
+[State 50000, 2st Boom]
+type = Explod
+trigger1 = Animelem = 8
+anim = 726
+pos = 20,-120
+postype = p1
+sprpriority = 5
+supermove = 1
+bindtime = 1
+scale = .4,.4
+
+[State 50000, 1]
+type = HitDef
+trigger1 = AnimElem = 4
+persistent = 0
+attr = S, HP
+animtype = heavy
+guardflag = HALM
+hitflag = MAFD
+ground.type = Low
+damage    = 100
+pausetime = 9,9
+sparkno = 0
+sparkxy = 10,-70
+hitsound   = S13,2
+guardsound = 6,0
+shadow = 1
+priority = 6
+heightbound = -240, 100
+edgebound = 100
+screenbound = 100
+id = 3000
+removetime = 90
+bindtime = -1
+velocity = 0.001,0.001
+offset = 2,-4
+sprpriority = -6
+ground.slidetime = 14
+ground.hittime  = 25
+ground.velocity = -10,-3
+fall = 1
+air.animtype = Back
+air.velocity = -10,-3
+air.juggle = 3
+air.fall = 1
+down.velocity = -10
+down.hittime = 30
+down.bounce = 0
+envshake.time = 12
+envshake.ampl = 12
+
+
+;[State 50000, 7]
+;type = ChangeState
+;trigger1 = AnimTime = 0
+;value = 0
+;ctrl = 1
+
+[State 6X0, Change to Fall]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50002
+
+;-----------------------------
+; Flight attack in Air
+;-----------------------------
+; STAND_B
+[Statedef 50001]
+type    = A
+movetype= A
+physics = N
+juggle  = 1
+velset = 0,0
+ctrl = 0
+anim = 50000
+poweradd = 30
+
+
+[State 50001, 6]
+type = PlaySnd
+trigger1 = Time = 0
+value = 0, 1
+
+[State 50001, 6]
+type = PlaySnd
+trigger1 = Animelem = 1
+value = 0, 200
+
+[state 50000, aft]
+type = AfterImage
+trigger1 = AnimElem = 4
+time = 15
+color = 0
+PalBright   =   0,  0,  0
+PalContrast = 128,128,128
+PalAdd      =   0,  0,  0
+PalMul      =  1,1,1
+Trans = Add1
+
+
+[State 50000, 1st Boom]
+type = Explod
+trigger1 = Animelem = 6
+anim = 726
+pos = 0,-150
+postype = p1
+sprpriority = 5
+supermove = 1
+bindtime = 1
+scale = .7,.7
+
+[State 50000, 2st Boom]
+type = Explod
+trigger1 = Animelem = 8
+anim = 726
+pos = 20,-120
+postype = p1
+sprpriority = 5
+supermove = 1
+bindtime = 1
+scale = .4,.4
+
+[State 50001, 1]
+type = HitDef
+trigger1 = AnimElem = 4
+persistent = 0
+attr = S, HP
+animtype = heavy
+guardflag = HALM
+hitflag = MAFD
+ground.type = Low
+damage    = 100
+pausetime = 9,9
+sparkno = 0
+sparkxy = 10,-70
+hitsound   = S13,2
+guardsound = 6,0
+shadow = 1
+priority = 6
+heightbound = -240, 100
+edgebound = 100
+screenbound = 100
+id = 3000
+removetime = 90
+bindtime = -1
+velocity = 0.001,0.001
+offset = 2,-4
+sprpriority = -6
+ground.slidetime = 14
+ground.hittime = 25
+ground.velocity = -10,-3
+fall = 1
+envshake.time = 12
+envshake.ampl = 12
+air.animtype = Back
+air.velocity = -10,-3
+air.juggle = 3
+air.fall = 1
+down.velocity = -10
+down.hittime = 30
+down.bounce = 0
+
+
+[State 50001, x]
+type = PosFreeze
+trigger1 = time = [0,15]
+
+[State 50001, y]
+type = VelMul
+trigger1 = Time > 15
+x = .02
+y = .05
+
+[State 50001, StateTypeSet]
+type = StateTypeSet
+trigger1 = var(10) = 1
+physics = N
+
+[State 6X0, Change to Fall]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50002
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Ai Goes into CMD
+
+[State -1, AI flight attack]
+Type = Changestate
+value = 50000
+triggerall = var(58)
+triggerall = var(3) = 0
+triggerall = statetype = S
+triggerall = Var(1) = 0
+triggerall = ctrl = 1
+triggerall = (p2movetype != H) || var(57) || (p2stateno = 5050)
+trigger1 = P2BodyDist Y = [-40, 30]
+trigger1 = P2BodyDist X > 70
+trigger1 = enemynear, vel y = [-1, 1]
+trigger1 = random < 120 + ifelse(var(57) || (p2stateno = 5050), 20, 0)
+
+[State -1, AI aerial flight attack]
+Type = Changestate
+value = 50001
+triggerall = var(58)
+triggerall = var(3) = 0
+triggerall = statetype = A
+triggerall = Var(1) = 0
+triggerall = ctrl = 1
+triggerall = (p2movetype != H) || var(57) || (p2stateno = 5050)
+trigger1 = P2BodyDist Y = [-40, 30]
+trigger1 = P2BodyDist X > 70
+trigger1 = enemynear, vel y = [-1, 1]
+trigger1 = random < 170  + ifelse(var(57), 20, 0)
+trigger2 = stateno = 400 && MoveContact
+trigger2 = random < 170
+trigger3 = stateno = 410 && MoveContact
+trigger3 = random < 170
+trigger4 = stateno = 420 && MoveContact
+trigger4 = random < 170
+trigger5 = stateno = 430 && MoveContact
+trigger5 = random < 170
+trigger6 = stateno = 440 && MoveContact
+trigger6 = random < 170

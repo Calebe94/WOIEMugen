@@ -1,0 +1,1053 @@
+
+;----------------------------------------------------------------------
+; Super Justice - Amalgam Special
+;----------------------------------------------------------------------
+[Statedef 7500]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+velset = 0,0
+anim = 7504
+ctrl = 0
+sprpriority = 2
+poweradd = -3000
+
+[State 1199,]
+type = PlaySnd
+trigger1 = time = 10
+value = 0,72
+
+[State 7500, 1]
+type = Changestate
+sprpriority = -3
+trigger1 = time = 40
+value = 7520
+
+[Statedef 7520]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+velset = 0,0
+anim = 7502
+ctrl = 0
+sprpriority = 2
+
+[State 7520, Capitan]
+type = helper
+trigger1 = time = 0
+helpertype = normal
+name = "CapiAmerica"
+id = 6996
+pos = 0,0
+postype = front
+stateno = 7511
+ownpal = 0
+
+[State 7520, Super Portrait]
+type = Explod
+trigger1 = animelem = 5
+anim = 7508
+postype = back
+pos = -31,0
+ownpal = 1
+ignorehitpause = 1
+sprpriority = -1
+scale = 1,1.08
+
+[State 7520, Super Portrait]
+type = Explod
+trigger1 = animelem = 5
+anim = 7507
+postype = back
+pos = -31,0
+ownpal = 1
+ignorehitpause = 1
+sprpriority = -1
+scale = 1,1.08
+
+[State 7520, 1]
+type = HitDef
+trigger1 = time = 1
+attr = S, HA
+animtype  = Hard
+damage    = 200
+guardflag = MA
+pausetime = 0, 0
+sparkxy = -10,-70
+hitsound   = 5,4
+guardsound = 6,0
+sparkno = 3
+fall = 1
+P2stateno = 7510
+
+[State 7520, 2]
+type = ChangeState
+triggerall = Moveguarded = 1
+trigger1 = Animtime = 0
+value = 7515
+
+[State 7520, 3]
+type = ChangeState
+triggerall = Movehit != 1
+trigger1 = P2Stateno != 7510
+trigger1 = Animtime = 0
+value = 7515
+
+[State 7520, 4]
+type = ChangeState
+triggerall = P2Stateno = 7510
+trigger1 = AnimTime = 0
+value = 7505
+ctrl = 1
+
+;------------------------------------------------
+; Fusion
+;------------------------------------------------
+[Statedef 7505]
+type    = A
+movetype= A
+physics = N
+juggle  = 0
+poweradd = -3000
+anim = 7501
+ctrl = 0
+
+[State 1199,]
+type = PlaySnd
+trigger1 = time = 15
+value = 0,74
+
+[State 1199,]
+type = PlaySnd
+triggerall = WinKO
+trigger1 = time = 36
+value = 0,84
+
+[State 7505, 1]
+type = Explod
+trigger1 = animelem = 2
+anim = 7510
+pos = 0,0
+sprpriority = 6
+scale = 1.1,1.1
+
+[State 7505, 2]
+type = SuperPause
+trigger1 = AnimElem = 19
+time = 50
+anim = 102
+pos = -10, -155
+
+[State 405, 6]
+type = PlaySnd
+trigger1 = Time = 34
+value = 0,43
+
+[State 405, 6]
+type = PlaySnd
+trigger1 = Time = 34
+value = 0,40
+
+[State 3200, flash]
+type = explod
+trigger1 = animelem = 19
+anim = 1050
+postype = p1
+pos = -10,-155
+sprpriority = 2
+ignorehitpause = 1
+removetime = 26
+removeongethit = 1
+ownpal = 1
+supermove = 1
+
+[State 7505, 3]
+type = Explod
+trigger1 = animelem = 9
+anim = 1050
+pos = 0,-70
+sprpriority = -1
+supermovetime = 29
+scale = 1,2
+
+;------------------------
+[State 31008, superpause]
+type = SuperPause
+trigger1 = AnimElem = 2
+time = 40
+sound = S10,1
+pos = -10,-45
+darken = 1
+poweradd = -1000
+
+[State 31008, hyperBg]
+type = Helper
+trigger1 = AnimElem = 4
+name = "Super BG"
+ID = 8005
+stateno = 8005
+postype = back
+facing = 1
+ownpal = 1
+supermovetime = 999999
+pausemovetime = 999999
+ownpal = 1
+
+[State 31008, hyperBG2]
+type = Explod
+trigger1 = Time = 0
+anim = 8999
+ID = 8999
+supermovetime = 999999
+pausemovetime = 999999
+removeongethit = 1
+removetime = -1
+vel = 0, 0
+postype = back
+pos = 0, 0
+sprpriority = -999995
+bindtime = -1
+ownpal = 1
+;------------------
+
+[State 7505, 6]
+type = assertspecial
+trigger1 = time = 0
+flag = noFG
+
+[State 7505, 7]
+type = PlaySnd
+trigger1 = AnimElem = 5
+value = 6,1
+
+[State 7505, 8]
+type = PlaySnd
+trigger1 = AnimElem = 6
+value = 3,5
+
+[State 7505, 9]
+type = PlaySnd
+trigger1 = win = 1
+persistent = 0
+value = 7,6
+
+[State 7505, 10]
+Type = AfterImage
+Trigger1 = Time = 15 
+time = 170
+length = 17
+palbright = 0, 0, 0
+palcontrast = 256, 256, 256
+palpostbright = 0, 0, 0
+palmul = 0.8, 0.8, 0.8
+trans = add
+
+[State 7505, Super Portrait]
+type = Explod
+trigger1 = Time = 0
+anim = 20007
+postype = back
+pos = -31,0
+ownpal = 1
+ignorehitpause = 1
+sprpriority = -1
+removetime = 50
+scale = 1,1.08
+
+[State 7505, 11] 
+type = Explod
+trigger1 = NumExplod(3001) = 0
+trigger1 = Time = 14 
+;trigger1 = Time < 160
+anim = 3001
+id = 3001
+bindtime = 600
+removetime = 122
+postype = left
+pos = 0, 0
+sprpriority = -8
+
+[State 7505, 12]
+type = ChangeState
+trigger1 = MoveGuarded
+value = 50
+ctrl = 1
+
+[State 7505, 13]
+type = EnvColor
+trigger1 = MoveHit
+value = 255,255,255
+time = 1
+ignorehitpause = 1
+persistent = 0
+
+[State 7505, 14]
+type = ChangeState
+trigger1 = Animelem = 30
+value = 7501
+
+;------------------------------------------------
+; Maximum Justice
+;------------------------------------------------
+[Statedef 7501, Super Soldier] 
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+velset = 0,0
+anim = 7506
+ctrl = 0
+sprpriority = 2
+
+[State 7501, 1]
+type = Pause
+trigger1 = time = 15
+time = 125
+movetime = 125
+
+[State 7501, 2]
+type = Posset
+trigger1 = Time = 0
+y = -30
+x = 30
+
+[State 7501, 3]
+type = Posset
+trigger1 = Time = 28
+y = -30
+x = 10
+
+[State 7501, 4]
+type = Posset
+trigger1 = Time = 54
+y = -10
+x = 10
+
+[State 7501, 5]
+type = Posset
+trigger1 = Time = 82
+y = -60
+x = 0
+
+[State 7501, 6]
+type = Posset
+trigger1 = Time = 112
+y = -105
+x = 0
+
+[State 7501, 7]
+type = TargetBind
+Trigger1 = Time = 0
+pos = 0,0
+time = 12
+
+[State 7501, 7]
+type = TargetBind
+Trigger1 = Time = 12
+pos = -5,0
+time = 5
+
+[State 7501, 8]
+type = TargetBind
+Trigger1 = Time = 17
+pos = -5,5
+time = 5
+
+[State 7501, 8]
+type = TargetBind
+Trigger1 = Time = 22
+pos = -5,10
+time = 5
+
+[State 7501, 8]
+type = TargetBind
+Trigger1 = Time = 27
+pos = -5,15
+time = 5
+
+[State 7501, 9]
+type = TargetBind
+Trigger1 = time = 28
+pos = -5,0
+time = 5
+
+[State 7501, 10]
+type = HitDef
+trigger1 = time >= 20
+trigger2 = time < 38
+attr = S, HA
+animtype  = Hard
+damage    = 5
+guardflag = MA
+pausetime = 0,0
+sparkxy = -10,-70
+guardsound = 6,0
+hitsound   = s0,29
+ground.hittime  = 25
+sparkno = 1
+fall = 1
+
+[State 405, 6]
+type = PlaySnd
+triggerall = movehit
+trigger1 = time = 20
+value = 0,79
+
+[State 7501, 11]
+type = TargetBind
+Trigger1 = Animelem = 6
+pos = -10,0
+time = 5
+
+[State 7501, 12]
+type = TargetBind
+Trigger1 = Animelem = 9
+pos = -10,0
+time = 5
+
+[State 7501, 13]
+type = HitDef
+trigger1 = time >= 38
+trigger2 = time < 65
+attr = S, HA
+animtype  = Hard
+damage    = 5
+guardflag = MA
+pausetime = 0,0
+sparkxy = -10,-70
+guardsound = 6,0
+hitsound   = s0,29
+ground.hittime  = 95
+sparkno = 3
+p2facing = -1
+fall = 1
+
+[State 405, 6]
+type = PlaySnd
+triggerall = movehit
+trigger1 = time = 38
+value = 0,79
+
+[State 7501, 14]
+type = TargetBind
+Trigger1 = Animelem = 10
+pos = -10,0
+time = 5
+
+[State 7501, 15]
+type = TargetBind
+Trigger1 = Animelem = 13
+pos = -10,0
+time = 5
+
+[State 7501,16]
+type = HitDef
+trigger1 = time >= 65
+trigger1 = time < 92
+attr = S, HA
+animtype  = Hard
+damage    = 5
+guardflag = MA
+pausetime = 0,0
+sparkxy = -10,-70
+hitsound   = 5,4
+guardsound = 6,0
+hitsound   = s0,29
+sparkno = 3
+ground.type = High
+ground.slidetime = 20
+ground.hittime  = 25
+ground.velocity = -1, 0 
+air.velocity = -1, 0
+fall = 1
+
+[State 405, 6]
+type = PlaySnd
+triggerall = movehit
+trigger1 = time = 65
+value = 0,79
+
+[State 7501, 17]
+type = TargetBind
+Trigger1 = Animelem = 14
+pos = -10,0
+time = 5
+
+[State 7501, 18]
+type = TargetBind
+Trigger1 = Animelem = 17
+pos = -10,0
+time = 5
+
+[State 7501, 19]
+type = HitDef
+trigger1 = time >= 92
+trigger2 = time < 138
+attr = S, HA
+animtype  = Hard
+damage    = 5
+guardflag = MA
+pausetime = 0,0
+sparkxy = -10,-70
+guardsound = 6,0
+hitsound   = s0,29
+sparkno = s7520
+ground.slidetime = 10
+ground.hittime  = 15
+fall = 1
+
+[State 7501, 20]
+type = TargetBind
+Trigger1 = Animelem = 18
+pos = 0,25
+time = 5
+
+[State 405, 6]
+type = PlaySnd
+triggerall = movehit
+trigger1 = time = 92
+value = 0,79
+
+[State 7501, 21]
+type = HitDef
+trigger1 = AnimElem = 23
+persistent = 0
+attr = A, NA  
+damage    = 250 
+animtype = Hard
+guardflag = HA
+hitflag = MAF
+priority = 1, Hit
+pausetime = 10,10
+sparkno = s9996
+sparkxy = -10,-70
+hitsound   = s0,52
+guardsound = 6,0
+ground.type = High
+air.type = Low
+ground.slidetime = 10
+ground.hittime  = 25
+ground.velocity = 0,12
+air.velocity = 0,11
+P2state = 943
+fall = 1
+
+[State 188, Fire]
+type = Explod
+triggerall = time >=131
+trigger1 = Movehit = 1
+anim = 9996
+random = 50, 50
+pos = -10,-75
+postype = p2
+sprpriority = 5
+
+[State 7501, 22]
+type = SprPriority
+trigger1 = animelem = 18
+value = -2
+
+[State 405, 6]
+type = PlaySnd
+trigger1 = time = 110
+value = 0,83
+
+[State 7501, 23]
+type = superpause
+trigger1 = animelem = 19
+time = 40
+movetime = 1
+pos = 15, -127
+sprpriority = 3
+anim = S708
+darken = 0
+
+[State 7501, Capitan2]
+type = helper
+trigger1 = animtime = 0
+helpertype = normal
+name = "CapiAmerica2"
+id = 6997
+pos = 40,-3
+postype = P1
+stateno = 7512
+ownpal = 0
+
+[State 7501, 24]
+type = SuperPause
+trigger1 = Animtime = 0
+time = 29
+anim = -1
+pos = 0, 0
+
+[State 7501, 25]
+type = Explod
+trigger1 = animtime = 0
+anim = 1050
+postype = p1
+pos = 10,-77
+sprpriority = 5
+supermovetime = 29
+scale = 0.1,2.75
+
+[State 7501, 26]
+type = PalFX
+trigger1 = animtime = 0
+time = 5
+add = 235, 235, 235
+ignorehitpause = 1
+
+[State 7501, 27]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 7518
+ctrl = 0
+
+;----------------------
+;state p2 Hit
+;----------------------
+[Statedef 7510]
+type    = A
+movetype= H ;Get hit
+physics = N
+anim = 5050
+ctrl = 0
+
+[State 7510, 1]
+Type = AfterImage
+Trigger1 = Time = 15 
+time = 122
+length = 17
+palbright = 0, 0, 0
+palcontrast = 256, 256, 256
+palpostbright = 0, 0, 0
+palmul = 0.8, 0.8, 0.8
+trans = add
+
+[State 7510, 2]
+type = velset
+trigger1 = time = 0
+x = -1
+y = -1
+
+[State 7510, 3]
+type = Changeanim2
+sprpriority = -3
+trigger1 = Time = 6
+value = 3602
+
+[State 7510, 4]
+type = velset
+trigger1 = time = 25
+x = 0
+y = 0
+
+[State 7510, 6]
+type = Changeanim2
+sprpriority = -3
+trigger1 = Time = 50
+value = 3600
+
+;---------------------------------------------------
+[Statedef 7511, Captain America] 
+type    = S
+movetype= A
+velset = 0,0                     
+ctrl = 0      
+anim = 7500
+ontop = 1
+
+[State 7511, 1]
+type = HitDef
+trigger1 = time = 1
+attr = S, HA
+animtype  = Hard
+damage    = 200
+guardflag = MA
+pausetime = 0, 0
+sparkxy = -10,-70
+hitsound   = 5,4
+guardsound = 6,0
+sparkno = 3
+fall = 1
+P2stateno = 7510
+
+[State 7511, 2]
+type = BindToParent 
+trigger1 = AnimElem = 1
+pos = 350,0 
+time = 20 
+
+[State 7511, 3]
+type = BindToParent 
+trigger1 = AnimElem = 4
+pos = 330,0 
+time = 2 
+
+[State 7511, 4]
+type = BindToParent 
+trigger1 = AnimElem = 5
+pos = 300,0 
+time = 2 
+
+[State 7511, 5]
+type = BindToParent 
+trigger1 = AnimElem = 6
+pos = 240,0 
+time = 3 
+
+[State 7511, 6]
+type = BindToParent 
+trigger1 = AnimElem = 7
+pos = 180,0 
+time = 3 
+
+[State 7511, 7]
+type = BindToParent 
+trigger1 = AnimElem = 8
+pos = 120,0 
+time = 3 
+
+[State 7511, 8]
+type = BindToParent 
+trigger1 = AnimElem = 9
+pos = 60,0 
+time = 3 
+
+[State 7511, 9]
+type = BindToParent 
+trigger1 = AnimElem = 10
+pos = 0,0 
+time = 3 
+
+[State 7511, 10]
+type = Destroyself 
+trigger1 = animtime = 0
+
+;---------------------------------------------------
+[Statedef 7512, Captain America2] 
+type    = A
+movetype= I
+physics = N
+velset = 0,0                     
+ctrl = 0      
+anim = 7505
+ontop = 1
+
+[State 7512, 1]
+type = PalFX
+trigger1 = time = 0
+time = 10
+add = 235, 235, 235
+ignorehitpause = 1
+
+[State 7512, 2]
+type = velset
+trigger1 = time = 0
+x = 4
+y = 1
+
+[State 7512, 3]
+type = velset
+trigger1 = time = 4
+x = 4
+y = 2.5
+
+[State 7512, 4]
+type = velset
+trigger1 = time = 9
+x = 0
+y = 5
+time = 3 
+
+[State 7512, 5]
+type = velset
+trigger1 = time = 12
+x = 0
+y = 6
+
+[State 7512, 6]
+type = Changestate 
+triggerall = WinKO
+trigger1 = Pos y >= 0
+value = 7519
+
+[State 7512, 6]
+type = Changestate 
+trigger1 = Pos y >= 0
+value = 7513
+
+;---------------------------------------------------
+[Statedef 7513, ] 
+type    = S
+movetype= A
+velset = 0,0                     
+ctrl = 0      
+anim = 7509
+ontop = 1
+
+[State 7513, 1]
+type = Changestate 
+trigger1 = Animtime = 0
+value = 7514
+
+[Statedef 7514, capi] 
+type    = S
+movetype= A
+velset = 0,0                     
+ctrl = 0      
+anim = 7503
+ontop = 1
+
+[State 7514, 1]
+type = velset
+trigger1 = animelem = 4
+x = 4
+y = 0
+
+[State 7514, 2]
+type = velset
+trigger1 = animelem = 7
+x = 5
+y = 0
+
+[State 7514, 3]
+type = velset
+trigger1 = animelem = 8
+x = 4
+y = 0
+
+[State 7514, 4]
+type = Destroyself 
+trigger1 = time = 150
+
+;---------------------------------
+[Statedef 7515, No hit]
+type    = A
+movetype= I
+physics = N
+juggle  = 0
+poweradd = -3000
+lifeadd = -100
+anim = 7511
+ctrl = 0
+
+[State 7515, 1]
+type = lifeAdd
+trigger1 = Time = 20
+value = -100
+
+[State 7515, 2]
+type = Explod
+trigger1 = animelem = 17
+anim = 7512
+pos = 0,40
+sprpriority = 6
+Supermovetime = 16
+scale = 2,2
+
+[State 405, 6]
+type = PlaySnd
+trigger1 = time = 28
+value = 0,82
+
+[State 7515, 3]
+type = SuperPause
+trigger1 = AnimElem = 17
+time = 16
+anim = -1
+pos = 0, 0
+
+[State 7515, 4]
+type = BGPalfx
+trigger1 = animelem = 13
+sinadd = -205,-205,-205,180
+add = 155,-55,-55
+ignorehitpause = 1
+time = 5
+Supermovetime = 5
+invertall = 1
+
+[State 7515, Capitan]
+type = helper
+trigger1 = animtime = 0
+helpertype = normal
+name = "CapiAmerica3"
+id = 6998
+pos = 30,0
+postype = P1
+stateno = 7517
+ownpal = 0
+
+[State 7515, 5]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 7516
+
+[Statedef 7516]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+velset = 0,0
+anim = 3601
+ctrl = 0
+sprpriority = 2
+
+[State 7516, 1]
+type = PalFX
+trigger1 = time = 0
+time = 5
+add = 235, 235, 235
+ignorehitpause = 1
+
+[State 7516, 2]
+type = PlaySnd
+trigger1 = AnimElem = 5
+value = 6,1
+
+[State 7516, 3]
+type = PlaySnd
+trigger1 = AnimElem = 6
+value = 3,5
+
+[State 7516, 4]
+type = Velset
+trigger1 = animelem = 1
+x = -4
+y = 0
+
+[State 7516, 5]
+type = Velset
+trigger1 = animelem = 2
+x = -5
+y = 0
+
+[State 7516, 6]
+type = Velset
+trigger1 = animelem = 6
+x = -1
+y = 0
+
+[State 7516, 7]
+type = Velset
+trigger1 = animelem = 7
+x = 0
+y = 0
+
+[State 7516, 8]
+type = ChangeState
+trigger1 = animtime = 0
+value = 12
+ctrl = 1
+
+[Statedef 7517, Captain America3]
+type    = S
+movetype= A
+velset = 0,0
+anim = 3603
+ctrl = 0
+ontop = 1
+
+[State 7517, 1]
+type = PalFX
+trigger1 = time = 0
+time = 5
+add = 235, 235, 235
+ignorehitpause = 1
+
+[State 7517, 2]
+type = PlaySnd
+trigger1 = AnimElem = 5
+value = 6,1
+
+[State 7517, 3]
+type = Velset
+trigger1 = animelem = 1
+x = 4
+y = 0
+
+[State 7517, 4]
+type = Velset
+trigger1 = animelem = 2
+x = 5
+y = 0
+
+[State 7517, 5]
+type = Velset
+trigger1 = animelem = 6
+x = 1
+y = 0
+
+[State 7517, 6]
+type = Velset
+trigger1 = animelem = 7
+x = 0
+y = 0
+
+[State 7517, 7]
+type = ChangeState
+trigger1 = animtime = 0
+value = 7514
+
+[Statedef 7518]
+type    = A
+movetype= I
+physics = N
+velset = 0,0                     
+ctrl = 0      
+anim = 7513
+ontop = 1
+
+[State 7518, 1]
+type = PalFX
+trigger1 = time = 0
+time = 10
+add = 235, 235, 235
+ignorehitpause = 1
+
+[State 7518, 2]
+type = velset
+trigger1 = time = 0
+x = -4
+y = 1
+
+[State 7518, 3]
+type = velset
+trigger1 = time = 4
+x = -4
+y = 2.5
+
+[State 7518, 4]
+type = velset
+trigger1 = time = 9
+x = 0
+y = 5
+time = 3 
+
+[State 7518, 5]
+type = velset
+trigger1 = time = 12
+x = 0
+y = 6
+
+[State 7518, 6]
+type = ChangeState
+trigger1 = pos y >= 0
+value = 52
+
+[Statedef 7519]
+type    = A
+movetype= I
+physics = N
+velset = 0,0                     
+ctrl = 0      
+anim = 7518
+ontop = 1
+
+[State 7518, 3]
+type = Playsnd
+trigger1 = time = 25
+value = 0,71

@@ -1,0 +1,43 @@
+;-------------------------------------------------------------------------------|
+; Definition file for character: "Martian Manhunter"                              |
+; by: Jhonny DC (Chak'z)                                                                  | 
+; Contains all the filenames needed for the character                           |
+;mangafahn@hotmail.com DetectiveMarciano JLMproyect                     |
+;-------------------------------------------------------------------------------|
+
+;------------------------Player information
+[Info]
+
+name = "Martian Manhunter"        ;Name of character
+displayname = "J'onn J'onnz"         ;Name of character to display
+;versiondate = 02,20,2008            ;Version date of character
+;mugenversion = 04,14,2001         ;Version of M.U.G.E.N character works on
+author = "Jhonny_DC"                    ;Character author
+pal.defaults = 2,1,5,4,6,3,7,8,9,11 ;Default palettes in order of preference
+
+;------------------------Files for the player
+[Files]
+
+cmd     = cns/martian.cmd  ;Command set
+cns     = cns/martian.cns    ;Constants
+st      = cns/martian.cns     ;States
+stcommon = common1.cns  ;Common states
+sprite  = J'onn.sff               ;Sprite
+anim   = cns/J'onn.air         ;Animation
+sound   = J'onn.snd            ;Sound
+pal1  = pal/J'onn.act          ;Original (comic's) ;---------Palettes (can have up to 12)  
+pal2  = pal/JLU.act            ;Justice League Unlimited (Animated Series)
+pal3  = pal/J'onnz.act         ;Capcom Style
+pal4  = pal/Trinity.act        ;Trinity
+pal5  = pal/J'onnzarro.act    ;J'onn Bizarro
+pal6  = pal/ExtraII.act
+pal7  = pal/ExtraIII.act
+pal8  = pal/Brown.act
+pal9  = pal/Human.act
+pal10 = pal/Extra.act
+pal11 = pal/Reverse.act
+
+;------------- Arcade Mode ------------------------------------------;
+[Arcade]
+intro.storyboard = Intro.def
+ending.storyboard = end.def

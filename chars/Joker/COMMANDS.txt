@@ -1,0 +1,60 @@
+
+--------------------------------------------------------------------------------
+*SPECIAL MOVES 
+--------------------------------------------------------------------------------
+- HAMMER CRUSH   "Hammer klemme"
+F,F + Z
+
+- MJOLNIR IGNITION (hold to build up energy)   " MJöLNIR ANTENNING"
+D,DF,F and HOLD X or Y or Z  
+
+- MJOLNIR LAUNCH " MJöLNIR Innlede"
+D,DF,F + X or Y or Z
+
+- THUNDER STRIKE  "Tordenet Streike"
+D,DB,B + X or Y or Z
+
+- AESIR RISING HERO  " Aesir Stiger helt" 
+F, D, F + X or Y or Z
+
+-BIFROST BREAK      "det stor Bifrost breat av"
+D, DF, F + A or B or C
+
+- GUNGNIR DIVE (only on air) " Gungnir dykke"
+D,DF,F + A or B or C
+
+- AESIR MISSILE (only on air)  "Grundig raketten"
+D,DF,F + X or Y or Z
+
+-COUNTER (at least 1 full powerbar)
+On block  use  B, DB, D  + X or Y or Z
+
+- RECOVERY ROLL
+B, DB, D  + A or B or C
+
+-GUARD PUSH
+On block  use  2 punchs
+
+- FLYING MODE
+D,B + 2 kicks
+
+-------------------------------------------------------------------
+*HYPER/SUPER MOVES
+-------------------------------------------------------------------
+- TEAR OF THE SKY (Hyper ThunderStrike)  " Tåre fra himmelen"
+D, DB ,B + 2 punchs
+
+- MYSTIC RAINFALL  "Hemmelighetsfull regn falle" 
+F, D, F + 2 kicks
+
+- MIGHTY URU COMET  "Mektig uru Komme"
+F, D, F + 2 punchs
+
+-NORDIC RAGE  "Nordic raseri" 
+D, DF, F  + 2 punchs
+
+-RAGNAROK HAMMER  "Ragnarok hammer :P "
+D, DF, F  + 2 kicks 
+
+- WARRIORS OF ASGARD (Level 3 hyper, unblockable)  " Det Kriger av Asgard "
+D, DB ,B  + punch + kick

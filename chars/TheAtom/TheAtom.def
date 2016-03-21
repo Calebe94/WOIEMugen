@@ -1,0 +1,35 @@
+[Info]
+name="The Atom"
+displayname="The Atom"
+versiondate=03,10,2010
+mugenversion=04,14,2001
+author="AngelusEcks"
+pal.defaults=1,2
+[Files]
+sprite=DCTemplate.sff
+sound=DCTemplate.snd
+anim=DCTemplate.air
+cmd=DCTemplate.cmd
+cns=DCTemplate.cns
+st=basics.st
+stcommon=DCvsMarvelcommon1.cns
+pal13=
+pal1=atompal3.act
+pal2=atompalalt.act
+pal3=wondertwins.act
+pal4=gl.act
+pal5=booster.act
+pal6=animalman.act
+pal7=atompal3.act
+pal8=atompalalt.act
+pal9=wondertwins.act
+pal10=gl.act
+pal11=booster.act
+pal12=animalman.act
+st1=specials.st
+st2=hypers.st
+st3=overrides.st
+st4=amalgam.st
+[Arcade]
+intro.storyboard=
+ending.storyboard=

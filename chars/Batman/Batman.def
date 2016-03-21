@@ -1,0 +1,41 @@
+;=======================================;
+;           {character name}            ;
+;             for WinMUGEN              ;
+;     http://www.scruffydragon.com/     ;
+;=======================================;
+
+[Info]
+name = "Batman"
+displayname = "Batman"
+versiondate = 08,17,2013
+mugenversion = 08,17,2013
+author = "red hood"
+pal.defaults = 1
+
+[Files]
+sprite   = DCTemplate.sff
+anim     = DCTemplate.air
+sound    = DCTemplate.snd
+stcommon = DCvsMarvelcommon1.cns
+cmd      = DCTemplate.cmd
+cns      = DCTemplate.cns
+st       = basics.st
+st1      = specials.st
+st2      = hypers.st
+st3      = overrides.st
+st4      = amalgam.st
+pal1     = capullo.act
+pal2     = gleason.act
+pal3     = heman.act
+pal4     = Lee.act
+
+
+;-----------------------
+;  DCvM Template Files
+;      provided by
+;       Buyog2099
+;(based on MEE template
+;  by Kitsune Sniper)
+;         ***
+;   Thanks, Kitsune!
+;-----------------------

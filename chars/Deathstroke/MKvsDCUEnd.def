@@ -1,0 +1,21 @@
+;MK vs DC Ending Liu Kang by chuchoryu
+
+[SceneDef]
+spr = MKvsDCUEnd.sff       ;Filename of sprite file to use
+
+[Scene 0]
+fadein.time = 50    
+fadein.col = 0,0,0
+fadeout.time = 50
+clearcolor = 0, 0, 0   
+; Overlay Anims (from 0 to 9)
+layerall.pos = 0,0 ;Default position for all layers
+layer0.anim =  0       ;Anim action number for slideshow pictures
+layer0.starttime = 0
+; Total time
+bgm = Mortal Kombat VS DC Universe- Deathstroke Ending.mp3
+end.time = 1400    ;600 ticks = 10 seconds
+
+;Animation to use for pictures
+[Begin Action 0]
+0,0,0, 0,-1

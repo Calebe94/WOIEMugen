@@ -1,0 +1,39 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name = "Superman"
+displayname = "SUPERMAN"
+versiondate = 12/25/2006
+mugenversion = 11,01,2001
+author = "Hannibal/Kal-Elvis and Friends"
+pal.defaults = 1.act
+
+[Files]
+sprite = Super.sff
+anim = Super2.air
+sound = Super.snd
+cmd = Super.cmd
+cns = Super.cns
+stcommon = common2.cns
+st = Super.cns
+st1 = Helpers.cns
+st2 = bizarro.cns
+pal1 = PreCrisis.act
+pal2 = KingdomCome.act
+pal3 = Gold.act
+pal4 = modern2.act
+pal5 = OWAW.act
+pal6 = earth2.act
+pal7 = 7.act
+pal8 = bizarro.act
+pal9 = bizarro2.act
+pal10 = birthright.act
+pal11 = blue.act
+pal12 = red.act
+
+[Arcade]
+intro.storyboard = intro2.def
+ending.storyboard = ending.def

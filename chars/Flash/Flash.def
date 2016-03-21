@@ -1,0 +1,31 @@
+; Definition file for Flash
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Flash"
+displayname ="Flash"
+versiondate =02,20,2005
+mugenversion =
+author ="Erradicator, Black_Dragon, EGOLESS, and Phantom"
+pal.defaults =1,2,3,4,5
+
+; Files for the player
+[Files]
+cmd     =Flash.cmd
+;cmd    =AIFlash.cmd
+cns     =Flash.cns
+st      =Flash.cns
+stcommon =common1.cns
+sprite  =Flash.sff
+anim    =Flash.air
+sound   =Flash.snd
+pal1=2010.act
+pal2=2001.act
+pal3=1998.act
+pal4=1991.act
+pal5=zoom.act
+pal6=BARRYNEWDCU.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

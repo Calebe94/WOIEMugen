@@ -1,0 +1,20 @@
+[Info]
+name="thejoker"
+displayname="THE JOKER"
+versiondate=01,01,2006
+mugenversion=14,11,2001
+author="DC"
+pal.defaults=1
+[Files]
+sprite=thor.sff
+sound=thor.snd
+anim=thor.air
+cmd=thor.cmd
+cns=thor.cns
+st=thor.cns
+stcommon=thor1.cns
+pal1=pal1.act
+st1=thor2.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

@@ -1,0 +1,37 @@
+Atom es el doceavo personaje MUGEN hecho por Animaraz
+Con la ayuda de Cravd y de Crow quien nos presentó
+Lanzado en internet el 23 de septiembre de 2010
+
+
+Es un personaje basado en personaje homonimo de DC comics.
+Fue descargado en http://www.mugenchina.org/animaraz/
+
+¿Qué tiene esta primera versión?
+
+* Todos los golpes y movimientos básicos.
+* Entrada, burla y win pose.
+* 1 helper (La Diosa Eris).
+* 14 Golpes Especiales.
+* 3 paletas.
+* Perder por tiempo, ¿Continuar?, Mareado.
+
+
+Si quieres comentar algo de este personaje puedes escribir a:
+LUZCRUEL@latinmail.com
+Recuerda titular tu correo como "Sobre Mugen" para tener la seguridad
+de que abrire tu correo, tus comentarios ayudarán a mejorar las
+siguientes versiones.
+
+Pues si les gusta opinen y esperen pronto a Silver Banshee
+
+Gracias a Marvel Comics por crear el personaje, a los creadores del mugen
+y agradecimiento especial a Cravd, Crow , Jhonny DC, Victor Von Doom 
+y a una estrella más del mugen que no quiero decir su nombre para no
+arruinar la sorpresa de su participacion en este char,
+todos ellos me hecharon porras con el personaje.
+
+A Shunchain por dejarme usar sus sprites de Eris
+
+Y sobre todo a los griegos por haber imaginado a este majestuoso dios
+
+Ares es un personaje Marvel Comics

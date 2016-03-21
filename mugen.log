@@ -1,0 +1,260 @@
+------------------------------------------
+M.U.G.E.N ver 1.00 (2011.01.18) status log
+------------------------------------------
+Parsing command line...
+Command line: Z:\home\calebe94\woie\mugen\mugen.exe
+Parse command line OK
+Initializing...
+Allocating game variables
+Reading configuration file...OK
+Initializing timer...performance timer enabled...frequency 10000000...OK
+Initializing keyboard...configuring...OK
+Initializing input engine...OK
+Initializing sound...Using SDL audio driver: dsound
+Requesting mixer parameters (44100, 16, 2, 2048)...
+Opened mixer with parameters (44100, 16, 2, 2048)...
+OK
+Initializing BGM...BGMThreadInit returned 0
+OK
+Initializing graphics...gameCoord 1366x768...render mode 0_2...trying 1366x768x16 mode 0x0...success...OK
+Setting callbacks...OK
+Initializing font...OK
+Initializing game variables...OK
+Loading system fonts...OK
+Loading options...
+Initializing pads...failed
+Reinitializing input engine...OK
+Remapping keys...OK
+Reinitializing input engine...OK
+Options loaded OK
+Loading system...
+  Load system file system.def...OK
+  Load system spr...OK
+  Load system snd...OK
+  Load system fonts...OK
+  Load system anim...OK
+  Load [Title Info]...OK
+  Load [Option Info]...OK
+  Load [Select Info]...OK
+  Load [VS Screen]...OK
+  Load [Victory Screen]...OK
+  Load [Demo Mode]...OK
+  Load [Continue Screen]...OK
+  Load [Game Over Screen]...OK
+  Load [Win Screen]...OK
+  Load [Survival Results Screen]...OK
+  Load [Default Ending]...OK
+  Load [End Credits]...OK
+  Load TitleBG...VersusBG...VictoryBG...SelectBG...OptionBG...OK
+  Loading fight data
+    Opening fight data file data/mugen1/fight.def...OK
+    Reading [Files]...OK
+    Loading fonts...OK
+    Load fight anim...OK
+    Reading [Lifebar]...[Turns Lifebar]...[Simul Lifebar]...[Powerbar]...
+    [Face]...[Simul Face]...[Turns Face]...
+    [Name]...[Simul Name]...[Turns Name]...
+    [Time]...[Combo]...[Round]...[WinIcon]...OK
+    Allocating explods...OK
+  Fight data loaded OK
+System loaded OK
+Initialize OK
+Set up graphics...timer...OK
+Initializing character info...OK
+Initializing select screen...finding characters...OK
+
+Entering main loop
+Entering character select.
+attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/Batman/Batman.def...
+  Loading info...OK
+  Loading cmd command set DCTemplate.cmd...OK
+  Loading cns DCTemplate.cns...OK
+  Loading cns specials.st...OK
+  Loading cns hypers.st...OK
+  Loading cns overrides.st...OK
+  Loading cns amalgam.st...OK
+  Loading cmd state entry DCTemplate.cmd...OK
+  Loading common states DCvsMarvelcommon1.cns...OK
+  Unloading command names...OK
+  Loading sff DCTemplate.sff...attempting load and start...no BGM...OK
+  Loading anim DCTemplate.air...OK
+  Loading snd DCTemplate.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)OK
+  SFF v1.01 palette hack engaged.
+  4994 expressions (1472 on trigger lines)
+Character Batman.def loaded OK
+Loading character chars/SuperGirl/SuperGirl.def...
+  Loading info...OK
+  Loading cmd command set supergirl.cmd...OK
+  Loading cns supergirl.cns...OK
+  Loading cmd state entry supergirl.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff supergirl.sff...OK
+  Loading anim supergirl.air...OK
+  Loading snd supergirl.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)(1,7)(1,8)(1,9)(1,10)(1,11)(1,12)OK
+  SFF v1.01 palette hack engaged.
+  5908 expressions (2054 on trigger lines)
+Character SuperGirl.def loaded OK
+Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Start of game loop
+End of game loop
+Total time: 49.34s
+Total frames: 2948 	Skipped frames: 942
+Avg game rate: 59.75
+Avg frame rate: 40.66
+
+Entering character select.
+attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/Darkseid/Darkseid.def...
+  Loading info...OK
+  Loading cmd command set Darkseid.cmd...OK
+  Loading cns Darkseid.cns...OK
+  Loading cns specials.st...OK
+  Loading cns overrides.st...OK
+  Loading cmd state entry Darkseid.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff Darkseid.sff...OK
+  Loading anim Darkseid.air...OK
+  Loading snd Darkseid.snd...OK
+  Loading pals...(1,1)OK
+  SFF v1.01 palette hack engaged.
+  988 expressions (510 on trigger lines)
+Character Darkseid.def loaded OK
+Loading character chars/TheAtom/TheAtom.def...
+  Loading info...OK
+  Loading cmd command set DCTemplate.cmd...attempting load and start...no BGM...OK
+  Loading cns DCTemplate.cns...OK
+  Loading cns specials.st...OK
+  Loading cns hypers.st...OK
+  Loading cns overrides.st...OK
+  Loading cns amalgam.st...OK
+  Loading cmd state entry DCTemplate.cmd...OK
+  Loading common states DCvsMarvelcommon1.cns...OK
+  Unloading command names...OK
+  Loading sff DCTemplate.sff...OK
+  Loading anim DCTemplate.air...OK
+  Loading snd DCTemplate.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)(1,7)(1,8)(1,9)(1,10)(1,11)(1,12)OK
+  SFF v1.01 palette hack engaged.
+  11840 expressions (3466 on trigger lines)
+Character TheAtom.def loaded OK
+Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Start of game loop
+End of game loop
+Total time: 20.29s
+Total frames: 1212 	Skipped frames: 489
+Avg game rate: 59.73
+Avg frame rate: 35.63
+
+Entering character select.
+attempting load and start...no BGM...Options Screen
+Return from Options Screen
+Options Screen
+Return from Options Screen
+attempting load and start...no BGM...Loading character chars/Nightwing/Nightwing.def...
+  Loading info...OK
+  Loading cmd command set nightwing.cmd...attempting load and start...no BGM...OK
+  Loading cns nightwing.cns...OK
+  Loading cns specials.st...OK
+  Loading cns hypers.st...OK
+  Loading cns overrides.st...OK
+  Loading cmd state entry nightwing.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff nightwing.sff...OK
+  Loading anim nightwing.air...OK
+  Loading snd nightwing.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
+  SFF v1.01 palette hack engaged.
+  1742 expressions (738 on trigger lines)
+Character Nightwing.def loaded OK
+Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Start of game loop
+End of game loop
+Total time: 84.60s
+Total frames: 5070 	Skipped frames: 1488
+Avg game rate: 59.93
+Avg frame rate: 42.34
+
+attempting load and start...no BGM...attempting load and start...no BGM...Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Start of game loop
+End of game loop
+Total time: 32.48s
+Total frames: 1947 	Skipped frames: 688
+Avg game rate: 59.94
+Avg frame rate: 38.76
+
+Entering character select.
+attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/Superman/Superman.def...
+  Loading info...OK
+  Loading cmd command set Super.cmd...OK
+  Loading cns Super.cns...Playing storyboard chars/Superman/intro2.def: scene
+
+Error loading storyboard: chars/Superman/intro2.def
+attempting load and start...no BGM...OK
+  Loading cns Helpers.cns...OK
+  Loading cns bizarro.cns...OK
+  Loading cmd state entry Super.cmd...OK
+  Loading common states common2.cns...OK
+  Unloading command names...OK
+  Loading sff Super.sff...OK
+  Loading anim Super2.air...OK
+  Loading snd Super.snd...OK
+  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)(1,7)(1,8)(1,9)(1,10)(1,11)(1,12)OK
+  SFF v1.01 palette hack engaged.
+  13815 expressions (3849 on trigger lines)
+Character Superman.def loaded OK
+Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Start of game loop
+End of game loop
+Total time: 19.92s
+Total frames: 1193 	Skipped frames: 433
+Avg game rate: 59.89
+Avg frame rate: 38.15
+
+Entering character select.
+attempting load and start...no BGM...Options Screen
+Config keys menu
+Setting up input
+Remapping keys...OK
+Reinitializing input engine...OK
+Return from config keys menu
+Return from Options Screen
+Returned from main loop
+Deinitializing...
+Frames      : 12370
+Time elapsed: 280.280 sec
+ticks: 28028, tps: 100, start 147, end 28175
+
+Clearing player cache...OK
+Freeing character info...OK
+Freeing select screen...OK
+Freeing fight data...OK
+Freeing system data...OK
+Freeing game variables...OK
+Deinitializing input...pad...keyboard...OK
+Removing callbacks...OK
+Deintializing timer...OK
+Deinitializing graphics...OK
+Deinitializing BGM...OK
+Deinitializing sound...OK
+Successful program termination.
+
+Log file successfully closed.

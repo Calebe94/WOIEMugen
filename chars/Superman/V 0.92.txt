@@ -1,0 +1,15 @@
+v9.2
+-added new face on alot of sprites.
+-new hit sounds and heat vision sounds
+-new strong punch move.
+-new super heat vision fx
+-new heat vison fx
+
+
+
+-Tweaked Earth puch Hyper for more dmg and fixed rock's distance so the wave is smoother.
+-Took out Solar Shield Hyper
+-Took out Fly mode
+-Added Aerial Fwd dash and Aerial Back Dash
+-New low Mid kick
+

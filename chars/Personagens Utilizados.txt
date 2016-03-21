@@ -1,0 +1,18 @@
+	Personagens		    Pasta		
+1   |	Superman		1-DCSuperman/Superman52
+2   |	Supergirl		2-DCSupergirl/supergirl
+3   |	Batman			3-DCBatman/newbatman
+4   |	Wonder Woman		4-DCWonder Woman/wonder_woman_melhor
+5   |	Aquaman			5-DCAquaman/Aquaman
+6   |	Flash			6-DCFlash/CVG_Flash
+7   |	Green Lantern		7-DCGreen Lantern/JohnStewart
+8   |	Martial Manhunter	8-DCMartian Manhunter/john
+9   |	Nightwing		9-DCNightwing/nightwing
+10  |	Green Arrow		10-DCGreen Arrow/GreenArrow
+11  |	Captain Atom		11-DCCaptain Atom/TheAtom
+12  |	Deathstroke		12-DCDeathstroke/MvC_DeathstrokeEO
+13  |	Joker			13-DCJoker/thejoker
+14  |	Doomsday		14-DCDoomsday/Doomsday-Melhor
+15  |	Ares			15-DCAres/Ares
+16  |	Lobo			16-DCLobo/Lobo
+Boss|	Darkseid		Boos-DCDarkseid/Darkseid

@@ -1,0 +1,52 @@
+;=======================================;
+;           {character name}            ;
+;             for WinMUGEN              ;
+;     http://www.scruffydragon.com/     ;
+;=======================================;
+
+[Info]
+name ="Green Arrow"
+displayname ="Green Arrow"
+versiondate =04,14,2001
+mugenversion =04,14,2001
+author ="ZVitor"
+pal.defaults =1
+
+[Files]
+sprite   =GreenArrow.sff
+anim     =GreenArrow.air
+sound    =GreenArrow.snd
+stcommon =GreenArrow.cns
+cmd      =GreenArrow.cmd
+cns      =DCTemplate.cns
+st       =basics.st
+pal1=novo.act
+pal2=novo2.act
+pal3=novo3.act
+pal4=novo4.act
+pal5=novo5.act
+pal6=novo6.act
+pal7=novo7.act
+pal8=novo8.act
+pal9=novo9.act
+pal10=novo10.act
+pal11=novo11.act
+pal12=novo12.act
+st1=specials.st
+st2=hypers.st
+st3=overrides.st
+st4=amalgam.st
+
+
+;-----------------------
+;  DCvM Template Files
+;      provided by
+;       Buyog2099
+;(based on MEE template
+;  by Kitsune Sniper)
+;         ***
+;   Thanks, Kitsune!
+;-----------------------
+[Arcade]
+intro.storyboard=
+ending.storyboard=

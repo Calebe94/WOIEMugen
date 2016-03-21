@@ -1,0 +1,42 @@
+-Superman New 52 V 0.91-
+
+-Tweaked Earth puch Hyper for more dmg and fixed rock's distance so the wave is smoother.
+-Took out Solar Shield Hyper
+-Took out Fly mode
+-Added Aerial Fwd dash and Aerial Back Dash
+-New low Mid kick
+
+
+
+Note that it is not 100% done. 
+Due to my extreme inexperience with coding and mugen in general, I am expecting plenty of bugs and gameplay mechanics 
+oversights.
+
+What started out as a simple private re-spriting project turned out to be so much more.
+I thought to myself that i would be respriting his costume and be done with it. Then i started to tinker with the 
+animations,next thing i knew i was dabbling into coding (Mainly look at what other people have done, change it a 
+little bit and put it in there). I consider none of these codes to be my original work. I guess frankencoding would be
+my word for it.
+
+I expect that after seeing Man of Steel and as more  New 52 Superman things comes out I hope that i will be able to adapt 
+what I see there into this Mugen character.
+
+
+Known bugs:
+-Some characters get bugged w/ lv3 hyper. They will get uppercut but fall down soon after.
+-Some charaters when frozen cannot be hit w/ ->, <-, ->,Y move.
+
+
+Credits:
+"Hannibal/Kal-Elvis and Friends"(as the orignal read me states) -Superman base
+Loganir- Coding,namely Superjump/Air combo/others, inspiration for heat vison lighting fx
+Zvitor- Coding, AI Air combo, Ai
+Sean Altly - Codes, Lv3 hyper (its basically his CvTW's supes. I just added a few things such as the grab and the flying 
+             chase animation, and tweaked some fx)
+POTS- Codes(Get hit custom states)
+Whoever did the ai patch (I forget name)- base ai
+
+*Read original read me for more (although the move list has changed)
+
+
+
