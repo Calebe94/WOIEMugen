@@ -1,0 +1,44 @@
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Hulk"
+displayname ="Hulk"
+pal.defaults =1,2,3,4,5,6,7,8
+versiondate=09/05/2008
+mugenversion=06,14,2003
+author="Hulk"
+
+; Files for the player
+[Files]
+;cmd     =MVC2_Hulk_Hard.cmd
+cmd     =MVC2_Hulk_Medium.cmd
+;cmd     =MVC2_Hulk_Easy.cmd
+cns     =MVC2_Hulk.cns
+st      =MVC2_Hulk.cns
+stcommon =common1.cns
+sprite  =MVC2_Hulk.sff
+anim    =MVC2_Hulk.air
+sound   =MVC2_Hulk.snd
+pal1=1.act
+pal2=Orange.act
+pal3=3.act
+pal4=4.act
+pal5=5.act
+pal6=6.act
+pal7=Capt.Universe.act
+pal8=8.act
+pal9=comic.act
+pal10=grey.act
+pal11=movie.act
+pal12=RedHulk.act
+st1=MVC2_Hulk_-2.cns
+st2=MVC2_Hulk_-3.cns
+st3=MVC2_Hulk_overide.cns
+
+; Arcade mode
+[Arcade]
+intro.storyboard=
+ending.storyboard=
+;intro.storyboard =intro.def
+;ending.storyboard =ending.def

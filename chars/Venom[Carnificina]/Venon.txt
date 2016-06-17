@@ -1,0 +1,89 @@
+( um Grande Beijo a minha filha que nasceu dia 19/03/2001  )
+Fala pessoal sou eu de novo estou lançando uma versão do Venon/Carnage está 98% + ja da para jogar , o Venon está
+faltando alguns sons e sprites por varios motivos 1° Ripei do PSX 2° a Porra do Meu CD-Rom não le + cds de PSx por
+isso não pude  pegar o que faltava :( quando sair uma versão para Final Burn ( Se Sair ) eu termino ele 
+
+=================================[Venon / Carnage]============================================
+Basicos   = 100%
+Especiais = 100% 
+Hyper     = 100%
+Agarões   = 100%
+Vitorias  = 60%
+Som       =  90%
+AirCombo  = Sim 
+Combo     = Sim
+Sprintes  = 80% Essa versão é uma Versão do PSX por isso falta alguns Sprintes Farei uma + completa ( Um dia )
+
+
+
+D = BAIXO
+F = FRENTE
+B = TRÁS
+U = CIMA
+
+
+=========================[Basicos]==========================
+Chutes    =  A B C
+Socos     =  X Y Z
+
+
+=========================[Especiais Venon]========================
+D, F, = X , Y , Z   pode ser feito no ar        
+D, B, = X , Y , Z
+D, F, = A , B , C           
+ 
+X+Y+Z =            Empurar
+D ,F, X+Y+Z =      Rolando só quando estiver sido derrubado
+D,U   =            Super Pulo
+
+
+=========================[Especiais Carnage]========================
+Para Pegar o Carnage segure ENTER   e aperte qualquer botão de soco ou chute
+
+D, F, = X , Y , Z   pode ser feito no ar        
+D, B, = X , Y , Z
+D, F, = A , B , C           
+ 
+X+Y+Z =            Empurar
+D ,F, X+Y+Z =      Rolando só quando estiver sido derrubado
+D,U   =            Super Pulo
+
+=========================[Hyper]============================
+
+D, F, = X+Y OU Y+Z OU X+Z OU AINDA X+Y+Z    
+
+D, F, = A+B OU B+C OU C+A OU AINDA A+B+C    
+
+=========================[Agradecimento]============================
+MCM                   Programa usado para gerar .sff [pena que não saiu + atualizações] 
+ADOBE PHOTOSHOP       Editor de imagens arregaça 
+ADOBE PREMIERE        Editor de videos 
+HyperCam              Capturardor de Video  Usei para capturar imagens do Bleem!
+Bleem                 Emulador de Playstation 
+THUMBS PLUS           Gerenciador de imagens Usei para recortar imagens 
+SOUND FORGE           Programa Usado para Ripar os Sons 
+Elecbyte              Por ter criado o Mugen
+MEU IRMÃO             Por encher o  meu saco com o RPGMaker ( O Pentelho )
+A GALERA DO MUGEN     Por não deixar o mugen acabar
+AKIRAZ                Por ter feito o Warmachine muito bom mesmo e ter Respondito meu E-mail Obrigado !!!
+Tenebrous             Por ter feito o Vega/Mr.Bison
+Marvel e Capcom       Pelo Dr. Doom
+Mugen11               Forum muito Legal !!
+Emuboarding           Conhecidos Antigos
+Mr. Karai             Conhecidos Antigos
+{_Carnificina_}       Por não ter Desanimado !!
+A Minha Filha e a Minha Esposa !! 
+
+
+Qualquer Bug ou outro Problema mande E-mail para :
+
+mugeneasy@bol.com.br
+Carnificina@xmen-com
+
+www.mugeneasy.hpg.com.br
+
+
+Bom Divertimento !!!!!!!!!
+
+
+{_carnificina_} 

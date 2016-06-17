@@ -1,0 +1,13 @@
+<!DOCTYPE VTKSnippetML>
+<snippet>
+
+  <field name="intro" title="Intro" type="string"/>
+  <field name="ending" title="Ending" type="string"/>
+
+  <code>
+    [Arcade]
+    intro.storyboard = @intro
+    ending.storyboard = @ending
+  </code>
+
+</snippet>

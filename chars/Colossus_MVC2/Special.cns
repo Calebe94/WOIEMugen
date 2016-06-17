@@ -1,0 +1,1040 @@
+;---------------------------------------------------------------------------
+; Dash
+[Statedef 1000]
+type    = S
+movetype= A
+physics = S
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1000, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1000
+trigger1 = Time = 0
+value = 1000
+
+[State 1000, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1000, Explod]
+type = Explod
+trigger1 = animelem = 1
+removetime = -2
+id = 6011
+anim = 6011
+pos = 0, 0
+postype = p1
+sprpriority = 1
+;facing = -1
+ownpal = 1
+bindtime = 1
+ignorehitpause = 1
+removeongethit = 1
+scale = .5,.5
+
+[State 1000, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 8
+
+[State 1000, VelSet]
+type = null;VelSet
+trigger1 = Animelem = 5
+x = 0
+
+[State 1000, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 50
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1000, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -15	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, -15		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air\
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1000, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1000, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1003;0
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; Mid Dash
+[Statedef 1005]
+type    = S
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1010, StateTypeSet]
+type = StateTypeSet
+trigger1 = Pos Y < 0
+statetype = A
+physics = N
+
+[State 1005, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1001
+trigger1 = Time = 0
+value = 1001
+
+[State 1005, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1005, Explod]
+type = Explod
+trigger1 = animelem = 1
+removetime = -2
+id = 6011
+anim = 6011
+pos = 0, 0
+postype = p1
+sprpriority = 1
+;facing = -1
+ownpal = 1
+bindtime = 1
+ignorehitpause = 1
+removeongethit = 1
+scale = .5,.5
+
+[State 1005, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 8
+y = -3
+
+[State 1005, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 50
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1005, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -17	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, -17	;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1005, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1005, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger2 = FrontEdgeDist < 30
+value = 1004
+
+;---------------------------------------------------------------------------
+; Falling
+[Statedef 1002]
+type    = A
+movetype= H
+physics = N
+velset = 0, 0
+ctrl = 0
+
+[State 1002, VelSet]
+type = VelSet
+trigger1 = Anim = 1002
+x = 1
+y = 3
+
+[State 1002, VelSet]
+type = VelSet
+trigger1 = Animtime = 0
+x = 0
+y = 0
+
+[State 1002, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1002
+trigger1 = Time = 0
+value = 1002
+
+[State 3500, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Standing
+[Statedef 1003]
+type    = S
+movetype= I
+physics = S
+velset = 0, 0
+ctrl = 0
+
+[State 1002, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1003
+trigger1 = Time = 0
+value = 1003
+
+[State 1003, VelSet]
+type = VelSet
+trigger1 = Animtime = 0
+x = 0
+y = 0
+
+[State 1003, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Falling
+[Statedef 1004]
+type    = A
+movetype= H
+physics = A
+velset = 0, 0
+ctrl = 0
+
+[State 1002, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1002
+trigger1 = Time = 0
+value = 1002
+
+[State 3500, ChangeState]
+type = null;ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; Heavy Dash
+[Statedef 1010]
+type    = S
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1010, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1001
+trigger1 = Time = 0
+value = 1001
+
+[State 1010, StateTypeSet]
+type = StateTypeSet
+trigger1 = Pos Y < 0
+statetype = A
+physics = N
+
+[State 1010, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1010, Explod]
+type = Explod
+trigger1 = animelem = 1
+removetime = -2
+id = 6011
+anim = 6011
+pos = 0, 0
+postype = p1
+sprpriority = 1
+;facing = -1
+ownpal = 1
+bindtime = 1
+ignorehitpause = 1
+removeongethit = 1
+scale = .5,.5
+
+[State 1010, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 8
+y = -6
+
+[State 1010, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 50
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1010, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -10, -20	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -10, -20	;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1010, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1010, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger2 = FrontEdgeDist < 30
+value = 1004
+
+;---------------------------------------------------------------------------
+; Air Dash
+[Statedef 1015]
+type    = A
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1015, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1001
+trigger1 = Time = 0
+value = 1001
+
+[State 1015, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1015, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 8
+
+[State 1015, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 40
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1015, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -15	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, -15	;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1015, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1015, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger2 = FrontEdgeDist < 30
+value = 1004
+
+;---------------------------------------------------------------------------
+; Air Mid Dash
+[Statedef 1016]
+type    = A
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1016, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1001
+trigger1 = Time = 0
+value = 1001
+
+[State 1016, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1016, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 8
+y = 4
+
+[State 1016, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+y = 0
+
+[State 1016, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 40
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1016, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -17	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, -15	;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1016, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1016, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger1 = Pos Y < 0
+trigger2 = FrontEdgeDist < 30
+value = 1004
+
+[State 1016, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1003
+
+;---------------------------------------------------------------------------
+; Air Heavy Dash
+[Statedef 1017]
+type    = A
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+poweradd = 100
+hitcountpersist = 1
+
+[State 1017, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 1001
+trigger1 = Time = 0
+value = 1001
+
+[State 1017, PlaySnd]
+type = PlaySnd
+trigger1 = PrevStateno != 9000
+trigger1 = PrevStateno != 9001
+trigger1 = Time = 0
+value = S1000, 1
+volume = 255
+
+[State 1017, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+x = 9
+y = 6
+
+[State 1016, VelSet]
+type = VelSet
+trigger1 = Time > 8 && Time  < 34
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+y = 0
+
+[State 1017, AfterImage]
+type = AfterImage
+trigger1 = (!Time)
+time 	= 40
+timegap = 1
+framegap = 5
+length = 20
+paladd = 0, 0, 0
+palmul = 1, 1, 1
+palcontrast = 255,255,255
+trans = add1
+
+[State 1017, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 75, 20			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 20, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -20	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, -17	;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 1017, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 1017, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger1 = Pos Y < 0
+trigger2 = FrontEdgeDist < 30
+value = 1004
+
+[State 1017, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1003
+
+;---------------------------------------------------------------------------
+; Super Throw
+[Statedef 1100]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+velset = 0,0
+ctrl = 0
+anim = 1100
+
+[State 1005, VelSet]
+type = VelSet
+trigger1 = Time > 14 && Time < 25
+x = 5
+
+[State 1100, HitDef]
+type = HitDef
+Trigger1 = Time = 0
+attr = S, NT          ;Attributes: Standing, Normal Throw
+hitflag = MA          ;Affect only ground people who are not being hit
+priority = 1, Miss    ;Throw has low priority, must be miss or dodge type.
+sparkno = -1          ;No spark
+sprpriority = 1       ;Draw in front of p2
+;p1facing = ifelse (command = "holdfwd", -1, 1) ;Turn if holding forwards
+;p2facing = 1          ;Force p2 to face player
+p1stateno = 1103       ;On success, player changes to state 810
+p2stateno = 1105       ;If hit, p2 changes to state 820 in player's cns
+fall = 1              ;Force p2 into falling down
+
+[State 1100, ChangeState]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Throwing the opponent
+[Statedef 1103]
+type    = S
+movetype= A
+physics = N
+anim = 1103
+sprpriority = 0
+poweradd = 60
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 1
+pos = 123, 0
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 2
+pos = 116, 28
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 3
+pos = 6, -66
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 4
+pos = -126, 10
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 5
+pos = -113, -23
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 6
+pos = -59, -61
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 7
+pos = -56, -77
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 8
+pos = 18, -76
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 9
+pos = 123, 0
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 10
+pos = 116, 28
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 11
+pos = 6, -66
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 12
+pos = -124, 11
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 13
+pos = -113, -23
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 14
+pos = -59, -61
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 15
+pos = -56, -77
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 16
+pos = 18, -76
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 17
+pos = 123, 0
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 18
+pos = 116, 28
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 19
+pos = 6, -66
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 20
+pos = -124, 11
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 21
+pos = -113, -23
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 22
+pos = -59, -61
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 23
+pos = -56, -77
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 24
+pos = 19, -83
+
+[State 1103, 1]
+type = TargetBind
+trigger1 = Animelem = 25
+pos = 169, 0
+
+[State 1103, 1]
+type = SprPriority
+trigger1 = !Time
+value = 4
+
+[State 810, State End]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+;---------------------------------------------------------------------------
+[Statedef 1105]
+type    = A
+movetype= H
+physics = N
+velset = 0,0
+
+[State 820, 1]
+type = ChangeAnim2
+Trigger1 = Time = 0
+value = 1105
+
+;---------------------------------------------------------------------------
+; Opponent thrown into the air
+; (a custom gethit state)
+; Description: This state has the opponent flying through the air and
+;     falling down onto the ground. The SelfState controller sets the
+;     opponent back using to his own state file when he his the ground.
+;     Controllers 821,2 and 821,3 allow the opponent to recover by
+;     hitting his recovery command when he is falling.
+[Statedef 1105]
+type    = A
+movetype= H
+physics = N
+;velset = 4.8,-8
+poweradd = 40
+
+[State 821, 1] ;Gravity
+type = VelAdd
+Trigger1 = 1
+x = 2
+y = -.4
+
+[State 821, 1] ;Gravity
+type = VelAdd
+Trigger1 = time = 5
+x = 1
+y = 0
+
+[State 821, 1] ;Gravity
+type = VelAdd
+Trigger1 = time = 10
+x = 1
+y = 2
+
+[State 821, 2] ; Recover near ground (use ChangeState)
+type = null;ChangeState
+triggerall = Vel Y > 0
+triggerall = Pos Y >= -20
+triggerall = alive
+triggerall = CanRecover
+trigger1 = Command = "recovery"
+value = 5200 ;HITFALL_RECOVER
+
+[State 821, 3] ; Recover in mid air (use SelfState)
+type = SelfState
+trigger1 = time = 15
+value = 5210
+
+[State 821, 4] ;Hit ground
+type = null;SelfState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 5100 ;Hit ground
+
+;-----------------------------------------------------------------------------------
+; Super Throw
+[Statedef 1101]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+velset = 0,0
+ctrl = 0
+anim = 1101
+
+[State 1005, VelSet]
+type = VelSet
+trigger1 = Time > 14 && Time < 35
+x = 5
+
+[State 1100, HitDef]
+type = HitDef
+Trigger1 = Time = 0
+attr = S, NT          ;Attributes: Standing, Normal Throw
+hitflag = MA          ;Affect only ground people who are not being hit
+priority = 1, Miss    ;Throw has low priority, must be miss or dodge type.
+sparkno = -1          ;No spark
+sprpriority = 1       ;Draw in front of p2
+;p1facing = ifelse (command = "holdfwd", -1, 1) ;Turn if holding forwards
+;p2facing = 1          ;Force p2 to face player
+p1stateno = 1103       ;On success, player changes to state 810
+p2stateno = 1105       ;If hit, p2 changes to state 820 in player's cns
+fall = 1              ;Force p2 into falling down
+
+[State 1100, ChangeState]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;-----------------------------------------------------------------------------------
+; Super Throw
+[Statedef 1102]
+type    = S
+movetype= A
+physics = S
+juggle  = 0
+velset = 0,0
+ctrl = 0
+anim = 1102
+
+[State 1005, VelSet]
+type = VelSet
+trigger1 = Time > 14 && Time < 45
+x = 5
+
+[State 1100, HitDef]
+type = HitDef
+Trigger1 = Time = 0
+attr = S, NT          ;Attributes: Standing, Normal Throw
+hitflag = MA          ;Affect only ground people who are not being hit
+priority = 1, Miss    ;Throw has low priority, must be miss or dodge type.
+sparkno = -1          ;No spark
+sprpriority = 1       ;Draw in front of p2
+;p1facing = ifelse (command = "holdfwd", -1, 1) ;Turn if holding forwards
+;p2facing = 1          ;Force p2 to face player
+p1stateno = 1103       ;On success, player changes to state 810
+p2stateno = 1105       ;If hit, p2 changes to state 820 in player's cns
+fall = 1              ;Force p2 into falling down
+
+[State 1100, ChangeState]
+type = ChangeState
+Trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+

@@ -1,0 +1,146 @@
+[Statedef 9000]
+type = U
+movetype = H
+physics = U
+velset = 0, 0
+ctrl = 0
+hitcountpersist = 1 
+
+[State 9000, PalFx]
+type = PalFx
+trigger1 = Alive
+trigger1 = !Time
+trigger2 = Time = 1
+trigger3 = Time = 5
+trigger4 = Time = 9
+trigger5 = Time = 13
+time = 2
+add = 250,250,250
+mul = 250,250,250
+color = 256
+ignorehitpause = 1
+
+[State 9000, Turn]
+type = Turn
+trigger1 = Time >= 1
+trigger1 = Facing != Var(9)
+ignorehitpause = 1
+
+[State 9000, VarSet]
+type = VarSet
+trigger1 = Time = 0
+v = 12
+value = var(4)
+
+[State 5000, 0]
+type = ChangeState
+trigger1 = !alive
+value = 5050
+ignorehitpause = 1
+
+[State 5000, 1]
+type = ChangeAnim
+trigger1 = !HitShakeOver
+trigger1 = Life > 0
+value = Anim
+elem = Var(3)
+ignorehitpause = 1
+
+[State 9000, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,AA,AP
+time = 1
+
+[State 9000, PosFreeze]
+type = PosFreeze
+trigger1 = 1
+value = 1
+
+[State 9000, VarSet]
+type = VarSet
+trigger1 = Time = 0
+v = 13
+value = AnimElemNo(0)
+ignorehitpause = 1
+
+[State 9000, ChangeAnim]
+type = ChangeAnim
+trigger1 = !HitShakeOver
+trigger1 = Life > 0
+value = Anim
+elem = Var(3)
+ignorehitpause = 1
+
+[State 9000, ChangeState]
+type = ChangeState
+trigger1 = HitShakeOver
+value = Var(1)
+ctrl = ifelse(Var(1) = 0, 1, 0)
+
+;---------------------------------------------------------------------------
+; Dash Super Armor
+[Statedef 9001]
+type = U
+movetype = H
+
+[State 9000, 1]
+type = PalFX
+trigger1 = Alive
+trigger1 = !Time
+trigger2 = Time = 1
+trigger3 = Time = 5
+trigger4 = Time = 9
+trigger5 = Time = 13
+time = 2
+add = 164,11,0
+mul = 358,256,256
+color = 128
+ignorehitpause = 1
+
+[State 9000, b]
+type = VarSet
+trigger1 = time <= 0
+v = 13
+value = AnimElemNo(0)
+ignorehitpause = 1
+
+[State 9000, 1]
+type = VarSet
+trigger1 = time = 0
+v = 12
+value = var(4)
+
+[State 9000, 2]
+type = Null ;VarSet
+trigger1 = time = 0
+v = 4
+value = 0
+
+[State 9000, PosFreeze]
+type = PosFreeze
+trigger1 = 1
+value = 1
+
+[State 9000, VarSet]
+type = VarSet
+trigger1 = Life <= 0
+v = 7
+value = 1
+
+[State 9000, ChangeState];Dead
+type = ChangeState
+trigger1 = Life <= 0
+value = ifelse(StateType = A, 5020,5000)
+
+[State 9000, ChangeAnim]
+type = ChangeAnim
+trigger1 = 1
+value = Anim
+elem = var(13)
+
+[State 9000, End]
+type = ChangeState
+trigger1 = (time >= floor(gethitvar(hittime) * 0.8)) && (Life > 0)
+value = var(5)
+ctrl = var(6)

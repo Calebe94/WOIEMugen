@@ -1,0 +1,54 @@
+;TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+;The Mighty THOR -  0.93   01/01/2006
+;Edits: Loganir and Black Dragon
+;Programmer: Loganir
+;weapon.x@ig.com.br
+;TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+[Info]
+name = "The Mighty Thor" ;Name of character
+displayname = "Thor" ;Name of character to display
+versiondate = 01,01,2006 ;Version date of character (MM-DD-YYYY)
+mugenversion = 14,11,2001 ;Version of M.U.G.E.N character works on
+author = "Loganir & BlackDragon" ;Character author name
+pal.defaults = 1,2,4,5,7 ;Default palettes in order of preference
+
+; Files for the player
+[Files]
+
+;
+;
+;=== A.I. easy: remove the " ; " in the first line below and put another " ; " in the mid  line =============================
+;=== Tag battle off: remove the " ; " in the last  line below and put another " ; " in the mid line =========================
+;cmd   	= thoreasy.cmd
+cmd   	= thor.cmd	
+;cmd   	= thornotag.cmd	
+;================================================================================================
+;
+;===Tag battle off: remove the " ; " in the  line below and put another " ; " in the next line ==========================
+;st1   	= thor2notag.cns
+st1   	= thor2.cns	
+;==================================================================================================
+;
+;
+cns   	= thor.cns   	;Constants
+st   	= thor.cns   	;states
+stcommon   = thor1.cns 	;Common states
+sprite	= thor.sff		;Sprite
+anim  	= thor.air		;Animation
+sound 	= thor.snd	;Sound
+;
+;========== palettes========================================
+;
+pal1  	= pal1.act ;default  
+pal2  	= pal6.act ;golden helmet 
+pal3  	= pal2.act ;sf3 shade
+pal4  	= pal4.act ;thunderstrike
+pal5  	= pal3.act ;Red Norvell
+pal6  	= pal5.act ;light blue 
+pal7  	= pal7.act
+
+; Arcade mode
+[Arcade]
+intro.storyboard =intro.def
+ending.storyboard = ending.def

@@ -1,0 +1,35 @@
+; Definition file for player
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name = "Marvel Vs Capcom 2 Colossus"        ;Name of character
+displayname = "Colossus" ;Name of character to display
+author = "Cloudius"      ;Character author name
+pal.defaults = 1, 2  ;Default palettes in order of preference
+
+; Files for the player
+[Files]
+cmd     = Colossus.cmd   ;Command set
+cns     = Colossus.cns   ;Constants
+st      = Colossus.cns   ;States
+st1 	  = Armor.cns
+st2 	  = Hyper.cns
+st3 	  = Special.cns
+stcommon = common1.cns ;Common states
+sprite  = Colossus.sff   ;Sprite
+anim    = Colossus.air   ;Animation
+ai	  = Colossus.ai
+sound  = Colossus.snd   ;Sound
+pal1   = Act/Colossus.act   ;Palettes (can have up to 12)
+pal2   = Act/Orange.act
+pal3   = Act/Colossus01.act
+pal4   = Act/Colossus02.act
+pal5   = Act/C4.act
+pal6   = Act/C1.act
+pal7   = Act/C3.act
+pal8   = Act/C2.act
+pal9   = Act/Colossus03.act
+pal10  = Act/Colossus04.act
+;pal11  = Act/
+;pal12  = Act/

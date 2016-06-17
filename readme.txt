@@ -1,9 +1,9 @@
 ﻿        M.U.G.E.N
 
-  Version 1.0
-  18 Jan 2011
+  Version 1.1 Beta 1
+  27 Jul 2013
 
-  (c) 1999-2011 Elecbyte
+  (c) 1999-2013 Elecbyte
 
 
 About
@@ -11,6 +11,9 @@ About
 
 M.U.G.E.N is a 2D fighting game engine with many customizable
 components.
+
+This is an public beta release. Beta releases contain work-in-progress
+features and have more bugs than the stable releases.
 
 Please visit our forums at elecbyte.com for support, bug reports and
 other useful resources.
@@ -562,7 +565,6 @@ http://creativecommons.org/licenses/by-nc/3.0/
 A. License Agreement
 =====================================================================
 
-
 By using M.U.G.E.N, you agree to the terms and conditions of this
 license.
 
@@ -657,7 +659,7 @@ B. Acknowledgements
 =====================================================================
 
 Thanks to:
-- All our beta testers.
+- All our alpha and beta testers.
 - Everyone who contributed to us in any way.
 - All of you who gave feedback to us.
 - Everyone responsible for the software libraries we used:

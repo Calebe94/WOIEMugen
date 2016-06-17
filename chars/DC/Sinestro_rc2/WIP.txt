@@ -1,0 +1,126 @@
+Sinestro WIP page; obviously still a lot to be done!
+
+Added in RC1 (4/23/2010):
+* get-hits
+* jump up
+* skick1/2 (redid all the standing basics, in fact)
+* all air basics 
+* 1 crouching punch, 1 crouching kick
+* falling axes hyper
+* spear anti-air special
+* redid needle hyper
+* 
+
+Basics still missing:
+* fwd/back jumps
+* remaining crouching basics
+
+
+Specials to do:
+* Hellhound (from Mambojambo)
+* Morningstar
+* Armored Assault 
+* Bubble squeeze
+* (need more ideas)
+
+
+Hypers to do:
+* Sinestro Corps (helper gang attack)
+* Parallax
+* (need more ideas)
+
+
+---------------------------
+Work done:
+
+2009-04-21
+- added fwd/back dashes & effect
+- finished chains of despair (fadeout anim etc; sounds was done a while ago)
+
+2008-12-10
+- finished chains of despair (well, still needs a sound)
+
+2008-07-29
+- fixed/finished standing & crouching guards... still need unique air guard
+- pretty much finished up Needle Storm (except for minor tweaks, it's about done)
+
+2008-07-06
+- added preliminary guard code
+- started adding Needle Storm hyper
+
+2008-03-09
+- added s. hard kick (but it's currently just a bit too fast)
+- started to add "chains of despair" special
+
+2007-12-27
+- added standing punches
+- tweaked Ravenous Beam
+- added God_King's voice samples
+
+
+
+
+---------------------------
+Feedback:
+
+ChaosSentry:
+    he's a good start...have you thought of possibly adding a parallax super? Where the entity flies across the screen doing a flowing chain attack...like the final form of abyss doing that jumping attack....add a few face touch ups and then turn it yellow and dive across the screen.
+    for a grab move...you could have sinestro make yellow chain constructs wrap around the neck of opponent.
+    another idea is to give him a magneto style bubble of energy to wrap around his own body that repels energy attacks.
+    here are my idea for specials...
+    D, B + Punch = a rising yellow jagged dagger appears from the ground next to the opponent,strength of punch determines distance. The spiky protrusions from superman's ground punch special provide the natural sprites for the jagged pieces.
+    D, F + Kick = a Giant spiked mace comes down on the charactor at a swinging down angle.
+    D, B Kick = a sinestro corp's helper comes out to do a quick bum rush attack...arquillo comes across the screen just plowing through the opponent.
+
+    supers
+    D,F + 2 punch = Sinestro creates a big dragon blast creature to plow through the screen...think johnathan talbain of darkstalkers with that fire dragon blast or the thanos move where mephisto comes out and those dragon looking fire waves come out. just color it yellow,if you choose add some feet and eyes and you got a dragon
+    D,B + 2 Punch = Sinestro creates a giant single axe, and has it chop down 3 times and each time it goes a little further foward on each swipe
+    D,F + 2 Kick = Sinestro calls forth arquillo and he lands on the opposite side of sinestro. with the opponent inbetween and both sinestro and arquillo shoot out a fist of yellow energy coming in to squash the opponent.
+    D,B + 2 Kick = Sinestro creates a a spiked gloved hand that grabs the opponent and slams the opponent in it's fist 3 times on the ground.
+
+Spider:
+    I think a good hyper would be to make him a great big yellow T-Rex. Not only to gobble up poor old Hal but I pictured it in my head and it would look awesome. It can be set up like Jill's Nemesis super from MvC2 except it doesn't have to come out of the ground. Sinestro can shoot it out of his power ring and from there it goes and savagely attacks the oppositing character. Mouth grab --> chew --> spit out --> punish, afterwards the Rex can stand there and taunt with a massive roar then he may disappear into thin air as the opponent falls to the ground head first. It's up to you whether you want to use my idea or not I just want to help.
+
+Uche for SD:
+    
+    Bubble of Fear:
+    Sinestro encases his opponent in a bubble that slowly drains the life out of the opponent.
+    
+    Weapon Assault:
+    Sinestro's ring conjurs up any weapon he can think of and hurls them at his foe.
+
+Danilokao:
+    So, what about a intro or a Special where he Shows the "worst nightmare" of the enemy?? example: vs Batman, he shows Mr. & Mrs. (?) Wayne being killed, vs Superman the Krypton's Big BOOM things like that, whaddya think?? spidey-blink.gif 
+
+Maestro:
+    -An anti-air special where sinestro juts his ring-bearing hand up and it transforms into a yellow hand with long, clawed fingers
+    
+    -A special similar to Wonder Woman's lasso to grasp the opponent and violently smash him onto the opposite side of the screen
+    
+    -A special or potentially a hyper where sinestro reaches behind him and the ring strikes the opponent from the opposite side, possibly in the form of needles or a monster's toothy maw (if a hyper, then parallax perhaps?)
+    
+    -A hyper similar to magneto's shockwave
+    
+    -maybe the needlestorm could shoot out of Sinestro's ring in a more cone-like manner
+    
+    -Now this is really out there, but just a brief concept. For a possible summon-hyper, Perhaps Sinestro could call in some 3 to 5 other members of the corps, in one of those typical brief-appearance summon hypers where they all fly by and pummel the heck out of the opponent, or something similar to the current Ironman version's armor summon, where they all blast the opponent simultaneously. However, (and being one who knows peanuts about making anything for mugen I feel out of place in speculating), I imagine, it wouldn't really require too much extra spriting in this sense: One could recycle the sprites of already existing mugen characters almost entirely--For example, I forget which issue of the sinestro corps war it is, but it opens up with a two-page spread of a horde of sinestro corps lanterns advancing toward eath. In the background is a predator, still retaining the shoulder-mounted canon, just dressed up in sinestro uniform--or superman could be edited to look like Sinestro corps cyborg supes, etc. Or--to make someone new, for example-take Red Earth's hydron / Nool--alter the pallete collors to make him yellow and black, different skin coloration, and slap a corps symbol on his shell. Either way with as many mugen characters as there are out there to pass off as cosmic baddies who just had a ring fly into their possession-- it's a possibility.
+
+flashmagic:
+    Sinestro forms a yellow force field around himself and flies at the opponent similar to Bison's Psycho Crusher
+    
+    Another move where he forms a yellow force field & flies into the air then comes back down stomping on the opponent
+    
+    Traps the opponent in a evil looking hand, then forms a weapon like a mace and beats on the opponent
+    
+    Forms a giant weapon like a mace or hammer that slams down on the opponent
+    
+    Snares the opponent in some kind of trap like a net that electrocutes the opponent
+    
+    An uppercut that has a trail of yellow energy
+
+twinimage:
+    The only tip I can think of is this: The needle hyper is cool, but I personally think it would be nice if the needles weren't so close together, make them more like Lex's nano hyper (or whatever it's called). It just looks a bit odd, the needles being so close together like that.
+
+Kovacks
+    good stuff Dragons but when you taunt with him on my computer he freezes,MUGEN doesn't crash or anything it's just that sinestro doesn't move unless the opponent hits him
+

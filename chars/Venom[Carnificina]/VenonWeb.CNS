@@ -1,0 +1,573 @@
+                                                                     
+;==================================================[Venon Web Parte 1]======================================================
+; Venon Web
+[Statedef 3190]
+type     = S
+movetype = A
+physics  = S
+velset = 0,0
+anim = 40
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4,1
+
+[State 1300, 4]
+type = ChangeState ; Pulando para Frente
+trigger1 = BackEdgeBodyDist <= 100 ; Esse Comando busca a distancia na tela !!!
+trigger1 = BackEdgeBodyDist >= 30
+value = 3031
+ctrl = 1
+
+[State 1300, 5]
+type = ChangeState ; Pulando para Trás
+trigger1 = FrontEdgeDist <= 90  ; Esse Comando busca a distancia na tela !!!
+;trigger1 = FrontEdgeDist >= 20
+value = 3032
+ctrl = 1
+
+[State 1300, 6]
+type = ChangeState ; Pulando parado
+trigger1 = FrontEdgeDist >= 90
+trigger1 = BackEdgeBodyDist >= 101
+value = 3033
+ctrl = 1
+
+[State 1300, 7]
+type = ChangeState ; Pulando para frente do Canto
+trigger1 = BackEdgeBodyDist <= 29
+value = 3035
+ctrl = 1
+
+;==================================================[Venon Web Parte 2]======================================================
+;Pula Para Frente
+[Statedef 3031]
+type     = S
+movetype = A
+physics  = S
+velset = 0,0
+anim = 3190
+juggle = 5
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4,1
+
+[State 1300, 1]
+type = Velset
+trigger1 = AnimElem = 1
+trigger2 = AnimElem = 2
+trigger3 = AnimElem = 3
+trigger4 = AnimElem = 4
+trigger5 = AnimElem = 5
+trigger6 = AnimElem = 6
+trigger7 = AnimElem = 7
+trigger8 = AnimElem = 8
+x = 7
+y = -5
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = Pos Y <= -80
+trigger1 = Pos X < 20
+trigger2 = Pos Y <= -80
+value = 3034
+ctrl = 1
+
+;Pula Para Frente
+[Statedef 3035]
+type     = S
+movetype = A
+physics  = S
+velset = 0,0,0
+anim = 3190
+;juggle = 5
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4,1
+
+[State 1300, 1]
+type = Velset
+trigger1 = AnimElem = 1
+trigger2 = AnimElem = 2
+trigger3 = AnimElem = 3
+trigger4 = AnimElem = 4
+trigger5 = AnimElem = 5
+trigger6 = AnimElem = 6
+trigger7 = AnimElem = 7
+trigger8 = AnimElem = 8
+x = 8
+y = -4
+
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = Pos Y <= -80
+trigger1 = Pos X < 20
+trigger2 = Pos Y <= -80
+value = 3034
+ctrl = 1
+
+;Pula para Trás
+[Statedef 3032]
+type     = S
+movetype = A
+physics  = S
+velset = 0,0
+anim = 3190
+juggle = 5
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4,1
+
+[State 1300, 1]
+type = Velset
+trigger1 = AnimElem = 1
+trigger2 = AnimElem = 2
+trigger3 = AnimElem = 3
+trigger4 = AnimElem = 4
+trigger5 = AnimElem = 5
+trigger6 = AnimElem = 6
+trigger7 = AnimElem = 7
+trigger8 = AnimElem = 8
+x = -7
+y = -5
+
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = Pos Y <= -80
+trigger1 = Pos X < 20
+trigger2 = Pos Y <= -80
+value = 3034
+ctrl = 1
+
+;Pula Parado
+[Statedef 3033]
+type     = S
+movetype = A
+physics  = S
+velset = 0,0
+anim = 3190
+juggle = 5
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 0
+value = 4,1
+
+[State 1300, 1]
+type = Velset
+trigger1 = AnimElem = 1
+trigger2 = AnimElem = 2
+trigger3 = AnimElem = 3
+trigger4 = AnimElem = 4
+trigger5 = AnimElem = 5
+trigger6 = AnimElem = 6
+trigger7 = AnimElem = 7
+trigger8 = AnimElem = 8
+y = -5
+
+[State 1300, 1]
+type = Null;PosSet
+Trigger1 = time =20
+x = 0
+y = -10
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = Pos Y <= -80
+trigger1 = Pos X < 20
+trigger2 = Pos Y <= -80
+value = 3034
+ctrl = 1
+
+;==========================================[Venon Web Parte 3 Teia Vai]====================================================
+[Statedef 3034]
+type     = A
+movetype = A
+physics  = N
+velset = 0,0
+anim = 3200
+juggle = 5
+sprpriority = 2
+ctrl = 0
+
+[State 990, 0]
+type = PlaySnd
+trigger1 = Time = 3
+value = 4,2
+
+[State 3034, 0]
+type = PosSet
+Trigger1 = time =0
+x = 0
+y = -80
+
+[State 3034, 1]
+type = Velset
+trigger1 = time >= 3
+x = 0
+y = 0
+
+[State 3034, 2]
+type = Superpause
+trigger1 = AnimElem = 1
+anim = 102
+time = 40
+Pos = 15, -40
+
+[State 3034, 3]
+type = Null;BGPalfx
+trigger1 = AnimElem = 1
+time = 350
+;add = 255, 0, 0
+mul = 255, 0, 0
+;sinadd = 255, 0, 0
+invertall = 1
+
+[State 3034, 4]
+type = Hitdef
+trigger1 = AnimElem = 3
+attr = S, SP
+damage = 35,9
+getpower = 60
+givepower = 40
+guardflag = MA
+pausetime = 0,100
+guard.pausetime = 10,10
+sparkno=-1
+hitsound = S7,1
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 15
+ground.hittime = 20
+ground.velocity = 0
+air.velocity = 0
+p2stateno = 1112
+
+[State 3034, 5]
+type = Explod
+trigger1 = time >= 2
+trigger1 = AnimElem = 3
+anim = 1026
+ID = (1026)
+pos= 0,0
+postype= P2
+sprpriority = 1
+shadow = 64,64,64
+
+[State 3034, 5]
+type = Explod
+trigger1 = Animelem = 2
+anim = 3201
+ID = (3202)
+supermovetime = 200
+pos= 0,-30
+removetime = 300
+postype= P1
+sprpriority = -2
+shadow = 64,64,64
+
+[State 3034, 7]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+
+[State 3034, 8]
+type = ChangeState
+trigger1 = P2StateNo = (1112)
+trigger1 = AnimElem = 6
+value = 3036
+
+[State 3034, 9]
+type = ChangeState
+trigger1 = Moveguarded = 1
+trigger1 = AnimElem = 3
+trigger2 = P2StateNo = 5101
+trigger2 = AnimElem = 3
+trigger3 = P2StateNo = 5110
+trigger3 = AnimElem = 3
+trigger4 = P2StateNo = 5120
+trigger4 = AnimElem = 3
+value = 50
+ctrl = 1
+
+;=============================================[Venon Vai atras]=====================================================
+[statedef 3036]
+type = A
+movetype = A
+anim = 3203
+velset = 0,0
+ctrl = 0
+
+[State 3801,1]
+type = Velset
+trigger1 = P2BodyDist Y <= 50
+y = -5
+
+[State 3801,1]
+type = Velset
+trigger1 = P2BodyDist Y >= 50
+y = 5
+
+[State 3801,2]
+type = Velset
+trigger1 = P2BodyDist X <= -20
+x = -5
+
+[State 3801,2]
+type = Velset
+trigger1 = P2BodyDist X >= -20
+x = 5
+
+[State 3801,4]
+type = HitDef
+trigger1 = time = 0
+attr = S, NA
+animtype = hard
+damage = 35
+guardflag = MA
+pausetime = 15,100
+sparkno = -1
+hitsound   = S6,1
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 10
+ground.hittime = 10
+ground.velocity = -5
+air.velocity = -5,-5
+p1stateno = 3038
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;=============================================[Venon Pega]=====================================================
+[statedef 3038]
+type = A
+movetype = A
+anim = 3204
+velset = 0,0
+ctrl = 0
+
+[State 3038, 1]
+type = BindToTarget
+trigger1 = time = 0
+pos = 60,0
+
+[State 3038, 2]
+type = TargetBind
+trigger1 = time = 0
+pos = 30,0
+
+[State 3038, 3]
+type = HitDef
+trigger1 = AnimElem = 2
+trigger2 = AnimElem = 8
+trigger3 = AnimElem = 12
+trigger4 = AnimElem = 17
+numhits = 3
+attr = S, NA
+animtype = hard
+damage = 35
+guardflag = MA
+pausetime = 15,20
+sparkno = S7004
+sparkxy = -10,-90
+hitsound   = S6,1
+guardsound = 6,0
+ground.type = High
+ground.slidetime = 10
+ground.hittime = 10
+ground.velocity = 2,-2
+air.velocity = 2,-2
+air.hittime = 15
+
+[State 3801,4]
+type = HitDef
+trigger1 = AnimElem = 5
+trigger2 = AnimElem = 10
+trigger3 = AnimElem = 16
+trigger3 = AnimElem = 18
+numhits = 3
+attr = S, NA
+animtype = Med
+damage = 35
+guardflag = MA
+pausetime = 15,20
+sparkno = S7004
+sparkxy = -10,-90
+hitsound   = S6,1
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 10
+ground.hittime = 10
+ground.velocity = 2,-2
+air.velocity = 2,-2
+
+[State 1300, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 3039
+ctrl = 1
+
+;=====================================================[Bocada]========================================================
+[Statedef 3039]
+type = A
+movetype = A
+physics = N
+anim = 3039
+ctrl = 0
+
+[State 1401, 1]
+type = null;PlaySnd
+trigger1 = Time = 1
+value = 1, 0
+
+[State 1401, 3]
+type = VelSet
+trigger1 = Time = 0
+x = 4.8
+y = -5.5
+
+[State 1401, 4]
+type = VelAdd
+trigger1 = Time > 0
+y = .6
+
+[State 1401, 5]
+type = HitDef
+trigger1 = AnimElem = 1
+trigger2 = AnimElem = 2
+trigger3 = AnimElem = 3
+attr = S, SA
+damage = 40
+guardflag = HA
+animtype = Hard
+sparkno = S7004
+sparkxy = -10,-85
+pausetime = 8,8
+hitsound = S6,3
+guardsound = 6,0
+ground.slidetime = 0
+ground.hittime = 18
+ground.velocity = -5 ,-3  
+air.velocity = -5 ,-3
+fall = 1
+
+[State 1401, 5]
+type = HitDef
+trigger1 = AnimElem = 4
+attr = S, NA
+animtype = Med
+damage = 35
+guardflag = MA
+pausetime = 15,20
+sparkno = S7004
+sparkxy = -10,-85
+hitsound   = S6,3
+guardsound = 6,0
+ground.type = Low
+ground.slidetime = 10
+ground.hittime = 10
+ground.velocity = -7,-7
+air.velocity = -7,-7
+fall = 1
+
+[State 1401, 6]
+type = ChangeState
+trigger1 = Pos Y >= 0
+trigger1 = Vel Y > 0
+value = 3040
+ctrl = 1
+
+
+; Venon Medio Fim
+[Statedef 3040]
+type = S
+movetype = I
+physics = S
+anim = 991
+velset = 0,0
+ctrl = 0
+
+[State 1402, 1]
+type = PosSet
+trigger1 = Time = 0
+y = 0
+
+[State 1402, 2]
+type = PosAdd
+trigger1 = Time = 0
+x = 130
+
+[State 1402, 3]
+type = PlaySnd
+trigger1 = Time = 0
+value = 2, 1
+
+[State 1402, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+[Statedef 1112]
+type    = S
+movetype= H
+physics = N
+anim = 5000
+sprpriority = -2
+ctrl = 0
+
+[State 1025, 1]
+type = ChangeAnim2
+trigger1 = time = 0
+value = 1112
+
+[State 1025,3]
+type = velset
+trigger1 = time = 0
+y = 0
+
+[State 1025,5]
+type = selfstate
+trigger1 = Time >= 54
+trigger1 = Life <= 0
+trigger2 = HitCount = 1
+value = 5000
+ctrl = 0
+
+[State 1025,6]
+type = selfstate
+trigger1 = Time >= 54
+trigger1 = Life > 0
+trigger1 = Pos Y >= 0
+value = 0
+ctrl = 1
+
+[State 1025,6]
+type = selfstate
+trigger1 = Time >= 54
+trigger1 = Life > 0
+trigger1 = Pos Y < 0
+value = 51
+ctrl = 1
+
+
+
+

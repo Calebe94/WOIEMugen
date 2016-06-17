@@ -1,0 +1,40 @@
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Spiderman"
+displayname ="Spiderman"
+pal.defaults =1,2,3,4,5,6,7,8
+versiondate=09/05/2008
+mugenversion=06,14,2003
+author="Spiderman"
+
+; Files for the player
+[Files]
+;cmd     =MVC2_Spiderman_Hard.cmd
+cmd     =MVC2_Spiderman_Medium.cmd
+;cmd     =MVC2_Spiderman_Easy.cmd
+cns     =MVC2_Spiderman.cns
+st      =MVC2_Spiderman.cns
+stcommon =common1.cns
+sprite  =MVC2_Spiderman.sff
+anim    =MVC2_Spiderman.air
+sound   =MVC2_Spiderman.snd
+pal1=1.act
+pal2=2.act
+pal3=3.act
+pal4=4.act
+pal5=5.act
+pal6=6.act
+pal7=7.act
+pal8=8.act
+st1=MVC2_Spiderman_-2.cns
+st2=MVC2_Spiderman_-3.cns
+st3=MVC2_Spiderman_overide.cns
+
+; Arcade mode
+[Arcade]
+intro.storyboard=
+ending.storyboard=
+;intro.storyboard =intro.def
+;ending.storyboard =ending.def

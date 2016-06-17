@@ -1,0 +1,12 @@
+<!DOCTYPE VTKSnippetML>
+<snippet>
+
+  <field name="comment" title="Comment" type="string"/>
+
+  <code>
+    ;--------------------------------------------------
+    ; @comment
+    ;--------------------------------------------------
+  </code>
+
+</snippet>

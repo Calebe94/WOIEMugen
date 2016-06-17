@@ -1,0 +1,487 @@
+
+
+;Marvel Vs Capcom Project v1.4 by Sludge, AeroGP, Roque
+;------------------------------------------
+;Tag state definitions - If all these state number's match with the partner's state number's then there should be no problem, if they don't match with the partner then there will most likely be a problem
+;4711 - Your being tagged in, enter the screen flying towards your character getting ready to jump kick him
+;4712 - You are tagging in your partner, start the taunt animation and wait for your partner to enter the screen
+;4713 - Begin jumping out of the screen (your partner has been tagged in, an assist has been finished, a dual hyper has been finished
+;4714 - You have been tagged out, this state will keep you out of the screen until you are called in again
+;4715 - Enter the screen without jump kicking the opponent (activated when: your partner has been KO'ed or the jump kick animation doesn't exist for this character
+;4716 - You are trying to call your parter in for an assist, so begin the taunt animation and wait for your partner to enter the screen
+;4717 - your parter has called you in for an assist, so run into the screen and perform your assist
+;4718 - (dual hypers) you are calling in your partner to do his hyper move, when your parter get's into the screen you then perform your hyper (you have also been tagged out)
+;4719 - (dual hypers) your partner has called you in to do your hyper move, so run into the screen and perform your hyper (you have also been tagged in)
+--------------------------
+;StateNo's Found by tag team workshop:
+;Assist = 0 ;<--- Assist state (if value is 0 there is no assist)
+;hyper (for dual hyper) = 3000  ;<--- Hyper state (if value is 0 there is no hyper)
+;Tagged in kick = 1331
+;Taunt = 195
+;jump animation = 100
+;starting jump animation = 40
+;jumping backwards animation = 43
+;jumping forwards animation = 42
+;running forward animation = 100
+;------------------------------------------------
+;Tag Variable's Found by tag team workshop
+;Tag AI Activation Variable = Var(53)
+
+;Tag definer variable = Var(26) 
+;---------------------------------------------------
+;Description of tag definer values
+;Value = 1 - Character will be pushed offscreen if they have no business being on it
+;Value = 2 - Only applicable to the first character at the beginning of the round
+;Value = 3 - Performing dual hypers, leave the stage when the character has finished his attack
+;Value = 4 - Character has died, so get rid of him
+;---------------------------------------------------
+
+; Entering the screen
+[Statedef 4711]
+type = A
+movetype = A
+physics = A
+anim = 40	; <- You can use the standard running animation or put another one
+sprpriority = 2
+ctrl = 0
+
+[State 4711, setvar]
+type = VarSet
+trigger1 = Life
+v = 26
+value = 2
+
+[State 4711, 1]
+type = ChangeAnim
+trigger1 = Partner, Life <= 0
+trigger1 = Anim != 4711
+value = 4711 
+
+[State 4711, position]
+type = PosSet
+trigger1 = time = 0
+x = -243*facing
+y = -100
+
+[State 4711, velocity]
+type = VelSet
+trigger1 = Anim != 4711
+x = 14
+Y= 4
+
+[State 4711, velocity2]
+type = VelSet
+trigger1 = Anim = 4711
+trigger1 = AnimElem = 2, >= 0
+x = 24
+Y = 4
+
+[State 4711, invincibility] ; the character cannot be hit until he has fully entered on the stage
+type = NotHitBy
+trigger1 = BackEdgeBodyDist <= 0
+value = SCA
+time = 2
+
+[State 4711, invincibility] ; if partner was KOed, appear being invincible
+type = NotHitBy
+trigger1 = Partner, Life <= 0
+value = SCA
+time = 6
+
+[State 4711, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4711, attack state] ; the character attacks his opponent when :
+type = ChangeState
+triggerall = BackEdgeBodyDist >= 0	; he is on the stage
+triggerall = selfanimexist (720)					; <--- change this...
+trigger1 = partner, life > 0		; and his partner is alive
+value = 720 ;<-- Jump in kick
+ctrl = 1	
+
+[State 4711, end state] ; cancel if:
+type = ChangeState
+triggerall = BackEdgeBodyDist <= 0
+trigger1 = Time >= 100
+value = 0
+ctrl = 1
+
+
+; Leaving Taunt
+;--------------
+[Statedef 4712] ; Define your own taunt here
+type = S
+movetype = I
+physics = S
+anim = 195 ;<--- taunt stateno
+sprpriority = -2
+velset = 0,0
+ctrl = 0
+
+[State 4712, setvar]
+type = VarSet
+trigger1 = Life
+v = 26
+value = 1
+
+[State 4712, invincibility] ; the character cannot be hit since he is leaving
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4712, ghost] ; Prevents the camera from following the char
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4712, end state]
+type = ChangeState
+trigger1 = (partner, BackEdgeBodyDist >= 0) && (AnimTime = 0)
+trigger2 = (partner, BackEdgeBodyDist >= 0) && (Time >= 50)
+value = 4713
+
+; Leave the stage
+;----------------
+[Statedef 4713]
+type = S
+movetype = I
+physics = N
+anim = 40	; <- Jump Start animation
+sprpriority = -2
+
+ctrl = 0
+
+
+[State 4713, end state] ;don't jump off the stage if your partner isn't onscreen
+type = ChangeState
+trigger1 = partner, BackEdgeBodyDist <= -800
+value = 0
+ctrl = 1
+
+
+[State 4713, anim]
+type = ChangeAnim
+trigger1 = Anim = 40 && AnimTime = 0 ; <- plays the jump back animation when the jump start animation is finished
+value = 43
+
+
+[State 4713, state type]
+type = StateTypeSet
+trigger1 = Anim = 43 && AnimElem = 1
+statetype = A
+
+[State 4713, velocity]
+type = VelSet 
+trigger1 = Anim = 43 && AnimElem = 1 ; <- jumping back animation
+x = -12
+y = -7.5
+
+[State 4713, invincibility]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4713, ghost]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4713, screen bound]
+type = ScreenBound
+trigger1 = 1
+
+value = 0
+
+[State 4713, wait outside state]
+type = ChangeState
+trigger1 = backedgedist < -30
+trigger2 = Time >= 100
+value = 4714
+
+ ; Wait out of the screen
+;-----------------------
+[Statedef 4714]
+type = A
+movetype = I
+physics = N
+anim = 0
+velset = 0,0
+ctrl = 0
+
+[State 4714, invincibility]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+
+[State 4714, ghost]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 4714, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4714, life add] ; Gains life (optional)
+type = LifeAdd
+trigger1 = Life
+trigger1 = (gametime%40) = 0 ;<-- Lower percentage for a faster life regenration rate. example: (gametime%20)
+value = 1
+
+[State 4714, turn] ; always face the same direction as partner
+type = turn
+trigger1 = facing != partner,facing
+
+[State 4714, position] ; always stay behind and at the same distance of the char on the stage
+type = posset
+trigger1 = 1
+x = (partner, pos x) - 1000*facing
+
+y = 0;-150
+
+;---------------------------------------------------------------------------
+; Jumping in without kicking the opponent (no kick move was found, also used for the jump in state after partner's ko)
+[Statedef 4715]
+type = A
+movetype = I
+physics = A
+anim = 40	; <- jump start animation
+sprpriority = 2
+ctrl = 0
+
+[State 4715, setvar]
+type = VarSet
+trigger1 = life
+v = 26
+value = 2
+
+[State 4715, 1]
+type = ChangeAnim
+;trigger1 = Partner, Life <= 0
+
+trigger1 = Anim != 4715
+value = 4715 
+
+[State 4715, position]
+type = PosSet
+trigger1 = time = 0
+x = -243*facing
+y = -150
+
+[State 4715, velocity]
+type = VelSet
+trigger1 = Anim != 4715
+x = 8
+y = 8
+
+[State 4715, velocity2]
+type = VelSet
+trigger1 = Anim = 4715
+trigger1 = AnimElem = 2, >= 0
+Y = 4
+x = 2
+
+[State 4715, invincibility] ; the character cannot be hit until he has fully entered on the stage
+type = NotHitBy
+trigger1 = BackEdgeBodyDist <= 0
+value = SCA
+
+time = 2
+
+[State 4715, invincibility] ; if partner was KOed, appear being invincible
+type = NotHitBy
+trigger1 = Partner, Life <= 0 
+value = SCA
+time = 6
+
+[State 4715, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4715, end state] ; cancel if:
+type = ChangeState
+trigger1 = statetype != A
+
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;Taunt (waiting for character's assist)
+;---------------------------------------------------------------------------
+[Statedef 4716]
+type = S
+movetype = I
+anim = 195 ;<- taunt animation
+physics = S
+ctrl = 0
+
+[State 4716, end state]
+type = ChangeState
+trigger1 = partner, StateNo = 4713 ;<-- partner leaving state
+trigger2 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;--------------------------
+; Entering the screen for assist move
+[Statedef 4717]
+type = S
+movetype = I
+physics = S
+anim = 100	; <- You can use the standard running animation or put another one
+sprpriority = 2
+ctrl = 0
+
+[State 4717, 1]
+type = ChangeAnim
+trigger1 = Partner, Life <= 0
+trigger1 = Anim != 4717
+value = 4717
+
+[State 4717, position]
+type = PosSet
+trigger1 = time = 0
+x = -243*facing
+y = 0
+
+[State 4717, velocity]
+type = VelSet
+trigger1 = Anim != 4717
+x = 10
+
+[State 4717, velocity2]
+type = VelSet
+trigger1 = Anim = 4717
+trigger1 = AnimElem = 2, >= 0
+x = 8
+
+
+[State 4717, invincibility] ; the character cannot be hit until he has fully entered on the stage
+type = NotHitBy
+trigger1 = BackEdgeBodyDist <= 0
+value = SCA
+time = 2
+
+
+[State 4717, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4717, attack state] ; the character attacks his opponent when :
+type = ChangeState
+trigger1 = BackEdgeBodyDist >= 20	; he is on the stage
+triggerall = selfanimexist (1450)
+value = 1450 ;<--- Assist state
+ctrl = 1
+
+[State 4717, end state] ;The partner's assist move doesn't exist so make him jump out of the screen
+type = ChangeState
+trigger1 = BackEdgeBodyDist >= 40
+value = 4713
+ctrl = 0
+
+;--------------
+; dual hypers, waiting for partner to appear onscreen and perform hyper
+;----------------
+[Statedef 4718]
+type = S
+movetype = I
+physics = N
+anim = 0	; <-- Animation to perform while waiting for partner to run into the screen
+sprpriority = -2
+ctrl = 0
+
+[State 4718, setvar]
+type = VarSet
+trigger1 = Life
+trigger1 = partner, BackEdgeBodyDist <= 20
+v = 26
+value = 3
+
+[State 4718, end state]
+type = ChangeState
+triggerall = selfanimexist (3000) ;<--- Hyper state
+trigger1 = partner, BackEdgeBodyDist >= 20
+trigger2 = Time >=50
+value = 3000 ;<--- Hyper state
+ctrl = 1
+
+[State 4718, end state] ;Hyper state doesn't exist so return to a standing state (with control)
+type = ChangeState
+trigger1 = Time >=60
+value = 0
+ctrl = 1
+
+ ;----Entering the screen for dual hyper
+[Statedef 4719]
+type = S
+movetype = I
+physics = S
+anim = 100	; <- You can use the standard running animation or put another one
+ctrl = 0
+
+
+
+[State 4719, setvar]
+type = VarSet
+trigger1 = selfanimexist (3000) ;<--- Hyper state
+v = 26
+value = 2
+
+[State 4719, 1]
+
+type = ChangeAnim
+trigger1 = Partner, Life <= 0
+trigger1 = Anim != 4719
+value = 4719
+
+
+[State 4719, position]
+type = PosSet
+trigger1 = time = 0
+x = -243*facing
+
+y = 0
+
+[State 4719, velocity]
+type = VelSet
+trigger1 = Anim != 4719
+x = 10
+
+[State 4719, velocity2]
+type = VelSet
+trigger1 = Anim = 4719
+trigger1 = AnimElem = 2, >= 0
+x = 8
+
+[State 4719, invincibility] ; the character cannot be hit until he has fully entered on the stage
+
+type = NotHitBy
+trigger1 = BackEdgeBodyDist <= 0
+value = SCA
+time = 2
+
+[State 4719, screen bound] ; Prevents the camera from following the char
+type = ScreenBound
+trigger1 = 1
+value = 0
+
+[State 4719, attack state] ; the character attacks his opponent when :
+type = ChangeState
+trigger1 = BackEdgeBodyDist >= 20	; he is on the stage
+triggerall = selfanimexist (3000)	;<--- Hyper state
+value = 3000 ;<--- Hyper state
+ctrl = 1
+
+[State 4719, attack state] ;Hyper state doesn't exists, so return him to a standing state and give him control
+type = ChangeState
+trigger1 = BackEdgeBodyDist >= 30
+value = 0
+ctrl = 1
+
+

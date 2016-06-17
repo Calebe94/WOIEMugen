@@ -56,6 +56,11 @@ trigger1 = !alive
 value = 5050
 ctrl = 0
 
+[State 0, 5] ;Are you floating?
+type = ChangeState
+trigger1 = pos y < 0
+value = 50
+
 ;---------------------------------------------------------------------------
 ; Stand to Crouch
 [Statedef 10]
@@ -147,7 +152,6 @@ physics = S
 anim = 40
 ctrl = 0
 sprpriority = 1
-facep2 = 1
 
 [State 40, 1]
 type = VarSet

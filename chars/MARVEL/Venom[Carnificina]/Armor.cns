@@ -1,0 +1,176 @@
+;--------------------------------------------------------------------------
+;AM
+[Statedef 1931]
+type = S
+movetype = I
+physics = S
+poweradd= -3000
+velset = 0,0,0
+anim = 181
+ctrl = 0
+
+[State 863, 1]
+type = SuperPause
+trigger1 = AnimElem = 1
+anim = -1
+pos = 0,190
+time = 20
+movetime = 20
+
+[State 901,1];L
+type = null;Explod
+trigger1 = AnimElem = 7
+trigger1 = Var(0) = 3
+id = 930
+anim = 111
+pos = 0,0
+postype = Left
+sprpriority = -20
+persistent = 0
+removetime = 900
+bindtime = 900
+ownpal = 0
+
+[State 1000,1]
+type = Varset
+trigger1 = AnimElem = 7
+v=30 
+value = 1
+
+[State 3034, 3]
+type = BGPalfx
+trigger1 = AnimElem = 1
+time = 60
+mul = 255, 0, 0
+sinadd = 255, 0,0, 3
+invertall = 1
+
+[State -2, 4] 
+type = AfterImage
+trigger1 = AnimElem = 7
+time = 800
+PalBright = 255, 0, 0
+PalContrast =  255, 0, 0
+PalMul = 0.8, 0.8, 0.8
+;palpostbright = 255,0,0
+;paladd = 255,0,0
+
+[State 3034, 4]
+type = Palfx
+trigger1 = AnimElem = 7
+time = 900
+;add = 255, 0, 0
+mul = 255, 0, 0
+sinadd = 255, 0, 0,3
+invertall = 1
+
+[State 3034, 4]
+type = BGPalfx
+trigger1 = AnimElem = 7
+time = 900
+;add = 255, 0, 0
+mul = 255, 0, 0
+;sinadd = 255, 0, 0
+invertall = 1
+
+[State 400, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+;-------------------------------------------------------------------------
+;AMH
+[Statedef 1938]
+type = S
+movetype = A
+physics = S
+ctrl = 0
+
+[State 1531, 5]
+type = ChangeAnim
+trigger1 = time = 0
+value = 0
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = Time <= 4
+value = SCA
+time = 1
+
+[State 111, 2]
+type = velset
+trigger1 = time <= 5
+x = -3
+
+[State 9, 0]
+type = PosSet
+trigger1 = Pos Y != 0
+y = 0
+
+[State 400, 4]
+type = ChangeState
+trigger1 = time >= 6
+trigger1 = Pos Y = 0
+value = 0
+ctrl = 1
+
+
+;AMH
+[Statedef 1939]
+type = C
+movetype = H
+physics = C
+ctrl = 0
+anim = 11
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = Time <= 4
+value = SCA
+time = 1
+
+[State 111, 2]
+type = velset
+trigger1 = time <= 5
+x = -3
+
+[State 9, 0]
+type = PosSet
+trigger1 = Pos Y != 0
+y = 0
+
+[State 400, 4]
+type = ChangeState
+trigger1 = time >= 6
+trigger1 = Pos Y = 0
+value = 11
+ctrl = 1
+
+;AMH
+[Statedef 1940]
+type = A
+movetype = H
+physics = A
+ctrl = 0
+
+[State 170, 1]
+type = NotHitBy
+trigger1 = Time <= 4
+value = SCA
+time = 1
+
+[State 111, 2]
+type = velset
+trigger1 = time <= 5
+x = -3
+
+[State 9, 4]
+type = CtrlSet
+trigger1 = time >= 6
+value = 1
+
+
+;=============================================================================================
+

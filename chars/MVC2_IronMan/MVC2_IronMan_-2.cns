@@ -1,0 +1,578 @@
+;---------------------------------------------------------------------------
+; States that are always executed (use statedef -2)
+;---------------------------------------------------------------------------
+
+[Statedef -2]
+
+[State Debug Display]
+type = DisplayToClipboard
+text = "%f %f %f %f "
+params = pos x,pos y,P2BodyDist X, P2BodyDist Y;Pos X,Pos Y
+trigger1 = 1
+
+[State Append]
+type = AppendToClipboard
+text = "%d %d %d %d %d"
+params = prevstateno,FrontEdgeDist,BackEdgeDist,var(38),NumHelper;
+trigger1 = 1
+
+[State -2]
+type = null;SelfState
+triggerall = lose
+triggerall = stateno != 30000 && stateno != 171
+triggerall = HitShakeOver
+trigger1 = Pos Y < -50
+value = 30000
+
+
+
+[State -2]
+type = SelfState
+triggerall = stateno != 7722
+triggerall = StateType = A && MoveType != A
+trigger1 = Win
+value = 7722
+
+
+[State -2]
+type = null;SelfState
+trigger1 = LoseTime
+triggerall = stateno != 170
+value = 170
+
+
+
+
+[State -2]
+type = null;SelfState
+triggerall = stateno != 173
+trigger1 = stateno = 5150
+trigger1 = LoseKO
+trigger1 = statetime = 60
+value = 173
+
+[State -2]
+type = null;SelfState
+trigger1 = matchover
+triggerall = stateno != 30000 && stateno != 171
+;triggerall = HitShakeOver
+;trigger1 = StateType != A
+value = 30000
+
+
+[State -2]
+type = null;Helper
+helpertype = normal
+trigger1 = NumHelper(10000) = 0
+name = "Stand Arm"
+stateno = 10000
+id = 10000
+ignorehitpause = 0
+supermovetime = 9999
+pausemovetime = 9999
+
+
+[State -2]
+type = null;pause
+trigger1 = anim = 3000
+trigger1 = animelem = 1, >= 0
+time = 30
+
+
+[State -2]
+type = null;NotHitBy
+trigger1 = 1
+value = SCA
+
+
+;---------------------------------------------
+;Pos Y
+[State -2]
+type = PosSet
+trigger1 = PrevStateno = [100,107] 
+trigger1 = StateType != A && Pos Y != 0
+y = 0
+
+
+;------------------------------------
+;run into screen
+
+[State -2]
+type = ScreenBound
+trigger1 = P2StateNo = [9020,9030]
+trigger2 = enemynear,stateno = 857
+;trigger3 = enemynear,stateno = 21285
+value = p2bodydist x < 30 && BackEdgeDist < 30
+
+
+[State -2]
+type = ChangeState
+triggerall = roundstate = 2
+triggerall = Movetype != H && Stateno != 7827 
+trigger1 = BackEdgeDist < -10 -const(size.ground.front)-const(size.ground.back)
+trigger1 = StateType != A
+value = 7827
+
+
+
+;---------------------------------
+;Flight
+
+[State -2]
+type = varadd
+trigger1 = var(54) = [1,1320]
+var(54) = 1
+
+
+
+[State -2]
+type = varset
+trigger1 = var(54) > 1320
+trigger2 = StateType != A && var(54)
+trigger2 = stateno != 1330
+trigger3 = roundstate = 3
+var(54) = 0
+
+
+[State -2]
+type = AssertSpecial
+trigger1 = var(54)
+flag = noairguard
+
+
+;---------------------------------
+;Kyuukouka Dance ((Heavy and Defensce)
+
+[State -2]
+type = varadd
+trigger1 = var(49) = [1,500]
+var(49) = 1
+
+
+[State -2]
+type = PalFx
+trigger1 = var(49)
+trigger1 = GameTime%8 = 0
+color = 256
+time = 4
+add = -32,64,-32
+
+[State -2]
+type = varset
+trigger1 = var(49) > 500
+trigger2 = roundstate = 3
+var(49) = 0
+
+[State -2]
+type = null;VelAdd
+trigger1 = var(49) = [1,50]
+trigger1 = StateType = A
+y = 0.5
+
+;---------------------------------
+;Power Dance
+[State -2]
+type = varadd
+trigger1 = var(50) = [1,500]
+var(50) = 1
+
+
+[State -2]
+type = PalFx
+trigger1 = var(50)
+trigger1 = GameTime%8 = 0
+color = 256
+time = 4
+add = 64,-32,-32
+
+
+[State -2]
+type = varset
+trigger1 = var(50) > 500
+trigger2 = roundstate = 3
+var(50) = 0
+;---------------------------------------------
+;Speed  Dance
+
+[State -2]
+type = varadd
+trigger1 = var(39) = [1,500]
+var(39) = 1
+
+[State -2]
+type = ChangeAnim
+triggerall = var(39)
+triggerall = (RoundState = 2) && (MoveType != H)
+trigger1 = AnimElemTime(AnimElemNo(0) + 1) < 0
+trigger1 = AnimElemTime(AnimElemNo(0)) > floor ((AnimElemTime(AnimElemNo(0)) - AnimElemTime(AnimElemNo(0) + 1))/2)
+ignorehitpause = 1
+value = anim
+elem = AnimElemNo(0) + 1
+
+[State -2]
+type = PalFx
+trigger1 = var(39)
+trigger1 = GameTime%8 = 0
+color = 256
+time = 4
+add = -32,-32,64
+
+
+[State -2]
+type = varset
+trigger1 = var(39) > 500
+trigger2 = roundstate = 3
+var(39) = 0
+
+;-------------------------------------
+;Life
+
+[State -2]
+type = varset
+trigger1 = !var(30)
+var(30) = floor(LifeMax/(100))
+
+[State -2]
+type = varset
+trigger1 = !var(31)
+var(31) = floor(const(data.life)/LifeMax/(100))
+
+[State -2]
+type = varset
+trigger1 = !var(33)
+trigger1 = numenemy > 1
+var(33) = floor(enemy(1),LifeMax/(100))
+
+
+
+;---------------------------------
+
+
+[State -2]
+type = AttackMulSet
+trigger1 = var(56) != 4
+trigger1 = roundstate = 2
+value = 0.8+0.3*(var(50) > 1)
+
+
+[State -2]
+type = DefenceMulSet
+trigger1 = var(56) != 4
+trigger1 = roundstate = 2
+value = 1-0.3*(var(49) >= 1)
+
+;--------------------------------
+
+[State -2]
+type = null;Ctrlset
+trigger1 = roundstate < 2
+value = 0
+
+;-------------------------------------------------------
+;Launcher reset
+
+
+[State -2]
+type = Varset
+trigger1 = p2movetype != H
+var(29) = 0
+ignorehitpause = 1 
+
+
+;-----------------------------------
+[State -2];Miss Hit
+type = VarSet
+triggerall = var(9)
+trigger1 = movetype != A
+var(9) = 0
+
+;-----------------------------------
+[State -2];Light Hit
+type = VarSet
+triggerall = var(19)
+trigger1 = movetype != A
+trigger2 = p2movetype != H
+var(19) = 0
+
+;-----------------------------------
+
+[State -2];Medium Hit
+type = VarSet
+triggerall = var(20)
+trigger1 = movetype != A
+trigger2 = p2movetype != H
+var(20) = 0
+
+;-----------------------------------
+[State -2];Hard Hit
+type = VarSet
+triggerall = var(21)
+trigger1 = movetype != A
+trigger2 = p2movetype != H
+var(21) = 0
+
+;---------------------------------------
+;-----------------------------------------------------
+
+
+[State -2,r]
+type = SelfState
+triggerall = stateno != 7777
+triggerall = var(56) = 4
+trigger1 = gethitvar(damage) >= life
+trigger2 = Life < 10
+value = 7777
+
+
+[State -2, Life]
+type = LifeAdd
+triggerall = Lose = 0
+triggerall = var(56) = 4
+trigger1 = Life < 70*Var(31)
+value = 30*Var(31)
+
+
+[State -2, Life]
+type = PowerAdd
+triggerall = Lose = 0
+trigger1 = Life < 70*Var(31)
+trigger1 = var(56) = 4
+value = 30*Var(31)
+
+
+
+;---------------------------------------------------------------
+
+
+[State -2,t]
+type = varset
+trigger1 = Time = 0
+trigger2 = !gethitvar(isbound) 
+v = 11
+value = 12
+
+
+
+
+[State -2,t]
+type = varset
+trigger1 = gethitvar(isbound)
+v = var(11)
+value = enemynear,prevstateno
+
+
+
+[State -2,t]
+type = varadd
+trigger1 = gethitvar(isbound)
+trigger1 = var(11) < 14
+v = 11
+value = 1
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(43)
+var(43) = var(12)
+
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(44)
+trigger1 = var(12) != var(43)
+var(44) = var(12)
+
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(45)
+trigger1 = var(12) != var(43)
+trigger1 = var(12) != var(44)
+var(45) = var(12)
+
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(46)
+trigger1 = var(12) != var(43)
+trigger1 = var(12) != var(44)
+trigger1 = var(12) != var(45)
+var(46) = var(12)
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(47)
+trigger1 = var(12) != var(43)
+trigger1 = var(12) != var(44)
+trigger1 = var(12) != var(45)
+trigger1 = var(12) != var(46)
+var(47) = var(12)
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(48)
+trigger1 = var(12) != var(43)
+trigger1 = var(12) != var(44)
+trigger1 = var(12) != var(45)
+trigger1 = var(12) != var(46)
+trigger1 = var(12) != var(47)
+var(48) = var(12)
+
+
+
+[State -2,t]
+type = varset
+trigger1 = !gethitvar(isbound)
+trigger1 = !var(49)
+trigger1 = var(12) != var(43)
+trigger1 = var(12) != var(44)
+trigger1 = var(12) != var(45)
+trigger1 = var(12) != var(46)
+trigger1 = var(12) != var(47)
+trigger1 = var(12) != var(48)
+var(49) = var(12)
+
+;--------------------------------------------------------------------------------------
+
+; ====Screenpack Combo Messages and Score control ======= 
+
+;var(13) Combo adder 
+;Var(14) number and text decider 
+;Var(15) is Danger 
+;var(16) normalize 
+
+[State -2, VS_Combo] 
+type = VarSet 
+trigger1 = var(13) >= 3 
+trigger2 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+var(14) = 1+(var(13)>4)+(var(13)>5)+(var(13)>7)+(var(13)>9)+(var(13)>29)+(var(13)>49)+(var(13)>69)-(var(13)=-1) 
+ignorehitpause = 1 
+
+[State -2, Danger] 
+type = VarSet 
+trigger1 = var(15) !=1 && roundstate=2 && life = [1,250] 
+var(14) = 9 
+ignorehitpause = 1 
+
+[State -2, First Attack] 
+type = PlaySnd 
+triggerall = var(13)=-1 
+triggerall = NumExplod(8701) = 0 
+trigger1 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+persistent = 0 
+value = S230,0 
+volume = 255 
+ignorehitpause = 1 
+
+[State -2, Combo Sound] 
+type = PlaySnd 
+trigger1 = NumExplod(8701) = 0 
+trigger1 = var(13)=0 && var(14)!=0 
+persistent = 0 
+value = S230,var(14) 
+volume=255 
+ignorehitpause = 1 
+
+[State -2, Left] 
+type = explod 
+trigger1 = var(13)=0 && var(14)!=0 
+trigger2 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+triggerall = TeamSide = 1 && NumExplod(8701) = 0 
+anim = f8000 + var(14) 
+ID = 8701 
+postype = left 
+pos = 0,80 
+ontop = 1 
+bindtime = -1 
+removetime = 60 
+supermovetime = 60 
+pausemovetime = 60 
+scale = 0.5,0.5 
+persistent = 0 
+ignorehitpause = 1 
+
+[State -2, Right] 
+type = explod 
+trigger1 = var(13)=0 && var(14)!=0 
+trigger2 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+triggerall = TeamSide = 2 && NumExplod(8701) = 0 
+anim = f8100+ var(14) 
+ID = 8701 
+postype = right 
+pos = -1,80 
+ontop = 1 
+bindtime = -1 
+removetime = 60 
+supermovetime = 60 
+pausemovetime = 60 
+scale = 0.5,0.5 
+persistent = 0;1 
+ignorehitpause = 1 
+
+[State -2, VS_Combo] 
+type = VarAdd 
+trigger1 = enemynear, time = 0 
+trigger1 = enemynear, Hitshakeover = 0 
+trigger1 = p2stateno = 6300 || p2stateno = [5000,5899] 
+trigger2 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+var(13) = 1 + (var(13)=-1) 
+ignorehitpause = 1 
+
+[State -2, VS_Combo] 
+type = VarSet 
+trigger1 = var(13)!=-1 && (p2movetype!=H || enemynear, ctrl) 
+trigger2 = var(13)=-1 && stateno = [5000,5899] 
+var(13) = 0 - (roundstate<2) 
+ignorehitpause = 1 
+
+[State -2, VS_Combo] 
+type = VarSet 
+triggerall = numexplod(8701)!=0 
+trigger1 = var(13)=0 
+var(14) = 0 
+ignorehitpause = 1 
+
+[State -2, Score] 
+type = Varadd 
+trigger1 = enemynear, time=0 
+trigger1 = enemynear, Hitshakeover=0 
+trigger1 = moveguarded || p2stateno = 6300 || p2stateno = [5000,5899] 
+trigger2 = var(13)=-1 && (movehit || p2stateno = 6300 || p2stateno = [5000,5899]) 
+trigger3 = roundstate=4 && time=0 && stateno = [180,189] 
+var(16) = ceil(stateno/50)*var(13) + (life)*(roundstate=4) + (moveguarded) 
+ignorehitpause = 1 
+
+[State -2, Normalize Score] 
+type = Varset 
+triggerall = numpartner=1 
+trigger1 = var(16)< partner, var(16) 
+var(16) = partner, var(16) 
+
+[State -2, Is Danger] 
+type = VarSet 
+trigger2 = var(15) = 0 && life <= 250 
+trigger1 = var(15) = 1 && roundstate!=2 
+var(15) = (roundstate>1) 
+ignorehitpause = 1 
+
+[State -2, Is First Attack p3] 
+type = VarSet 
+triggerall = numpartner=1 
+trigger1 = partner, movehit 
+trigger1 = partner, var(13) != -1 
+var(13) = 0 
+ignorehitpause = 1 
+; ============
+
+

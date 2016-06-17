@@ -1,0 +1,28 @@
+1° Quero Agradecer a sua colaboração para que eu possa poder terminar o Venon com sua ajuda !!!
+
+Você ja deve ter visto o Venon Web né , ele funciona da seguinte forma o Venon sempre pula para 
+o Centro da Tela Para Lançar a Teia, se ele tiver atrás ele Pula Para frente, se estiver no meio ele pula parado e se ele estiver na frente ele pula para trás, para ficar no centro da tela !!!
+Depois que ele Fica no centro da tela ele lança a teia Grande  (A teia grande fica de Fundo até acabar o Especial) quando o oponente recebe o hit da teia Grande ele fica envolvido por outra teia! Ai o Venon vai atrás do oponente ,como se fosse teleguiado , porque a teia paraliza o oponente onde quer que ele esteja !! pegando o Hit ele começa a Fazer a sequencia de Golpes terminando com a Mordida !!!
+
+(Se você ja sabia como o Venon Web funciona desconsidere este texto acima !! :) )
+
+Aqui em baixo está a relação das Animações para o Venon Web todas as Animações estão no final
+do aquivo Venon.air
+
+===========================[ Animações do Venon Web ]==========================================
+
+[Begin Action 3190] = Venon Pulando Para lançar a Teia !! 
+
+[Begin Action 3200] = Venon Lançando a super teia
+
+[Begin Action 3201] = A teia Que Venon lança e fica depois por trás dele 
+
+[Begin Action 3202] = Teia que Evolverá o P2 
+
+[Begin Action 3203] = Venon Indo Atacar P2 depois de estar Paralizado pela Teia 
+
+[Begin Action 3204] = Sequencia de Golpes 
+
+[Begin Action 3205] = Ultimos Hits ( A Mordida ) 
+
+[Begin Action 3206] = Venon Caindo no chão depois da Sequencia 

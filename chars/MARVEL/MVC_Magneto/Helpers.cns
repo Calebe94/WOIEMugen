@@ -1,0 +1,153 @@
+ 
+[Statedef 196]
+type = A
+physics = N
+anim = 9999
+velset = 0,0
+
+[State 196, Dust]
+type = Explod
+trigger1 = time = 0 
+anim = 9998
+id = 9998
+postype = p1
+pos = -40, -20
+removetime = 50
+ontop = 1
+ownpal = 1
+
+[State 196, test]
+type = modifyexplod
+trigger1 = time > 0
+trigger1 = numexplod(9998) > 0
+id = 9998
+scale = 1-(0.01*time),1-(0.01*time)
+removetime = 50
+
+[State 196, rock]
+type = ChangeAnim
+Trigger1 = time = 50
+value = 3201
+
+[State 196,1]
+Type = Velset
+trigger1 = time = 51
+x = 8
+y = -2
+
+[State 195,2]
+Type = HitDef
+trigger1 = Time = 0
+attr = S, HA
+damage = 72
+getpower = 0
+guardflag = MA
+sprpriority = 2
+pausetime = 2,2
+sparkxy = 5,-5
+hitsound   = S0,28
+guardsound = 6,0
+ground.slidetime = 30
+ground.hittime  = 30
+ground.velocity = -.5,-1
+guard.velocity = -7
+animtype = Medium
+air.velocity = -.5,-2
+airguard.velocity = -4.5,-2.5
+;p1stateno = 3660
+;p2stateno = 3670
+;ID = 3650 ;For chaining 
+;fall = 1
+;fall.recover = 0
+;yaccel = .89
+;xaccel = .64
+
+[State 195,3]
+type = DestroySelf
+trigger1 = time = 100
+;---------------------------------------------------------------------------
+;[Statedef 195]
+;type = A
+;movetype = A
+;Physics = N
+;Anim = 3201
+;[State 195,1]
+;Type = Velset
+;trigger1 = time = 0
+;x = 8
+;y = -2
+;------------------------------------------------------------
+[Statedef 198]
+type = A
+physics = N
+anim = 9999
+velset = 0,0
+
+[State 198, Dust]
+type = Explod
+trigger1 = time = 0 
+anim = 9998
+id = 9998
+postype = p1
+pos = -30, -50
+removetime = 50
+ontop = 1
+ownpal = 1
+
+[State 198, test]
+type = modifyexplod
+trigger1 = time > 0
+trigger1 = numexplod(9998) > 0
+id = 9998
+scale = 1-(0.01*time),1-(0.01*time)
+removetime = 50
+
+[State 198, rock]
+type = Changestate
+Trigger1 = time = 50
+value = 199
+
+;---------------------------------------------------------------------------
+Statedef 199]
+type = A
+movetype = A
+Physics = N
+Anim = 3202
+
+[State 199,1]
+Type = Velset
+trigger1 = time = 0
+x = 6
+y = 4
+
+[State 199,2]
+Type = HitDef
+trigger1 = Time = 0
+attr = S, HA
+damage = 72
+getpower = 0
+guardflag = MA
+sprpriority = 2
+pausetime = 2,2
+sparkxy = 5,-5
+hitsound   = S0,28
+guardsound = 6,0
+ground.slidetime = 30
+ground.hittime  = 30
+ground.velocity = -.5,-1
+guard.velocity = -7
+animtype = Medium
+air.velocity = -.5,-2
+airguard.velocity = -4.5,-2.5
+;p1stateno = 3660
+;p2stateno = 3670
+;ID = 3650 ;For chaining 
+;fall = 1
+;fall.recover = 0
+;yaccel = .89
+;xaccel = .64
+
+[State 195,2]
+type = DestroySelf
+trigger1 = time = 80
+

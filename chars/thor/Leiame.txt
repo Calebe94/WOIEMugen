@@ -1,0 +1,301 @@
+
+____________>>>>>>>> THE MIGHTY THOR - God of Thunder <<<<<<<<<<_______________________
+	By LOGANIR (weapon.x@ig.com.br) & BLACK DRAGON (wbbio@ig.com.br)
+
+0.93 version -01/01/2006      DOS & WINMUGEN  COMPÁTIVEL
+
+*GAMEPLAY :  VS style... com algumas customizações :P
+*NOTE: O estilo de sparks/fx e jogabilidade não correspondem aos que serão usados no projeto final dos games (MvsC3/DcvsM)
+
+=========================================================================================
+Nome - The Mighty Thor
+Game de origem -  Editado do AlexSF3 - Dr. Doom - Sabretooth - Cable - Leo - Venom...etc 
+Versão - 0.93
+Character design by Loganir
+Edição de sprites - Loganir & Black Dragon
+Programação  - Loganir 
+=========================================================================================
+
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+UPDATE 0.93 release
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+- Adicionado tela de continue customizada.... Deusa nórdica da morte, Hela.
+- Adicionado 1 nova intro..... "Mjolnir portal"
+- Adicionado 2 novas winposes.... "Odin my father" & "Thundergod"
+- Adicionado efeito de finalização  Winko normal
+- Adicionado alguns novos sparks (poeira, hitwall, pouso)
+- Adicionado código de Hit Wall em alguns ataques - Valeu DG & SMI =)
+- Adicionado dash sendo cancelado em golpes da stand como na série VS (exceção do comando HCRUSH) 
+- Adicionado Negative Edge pros especiais... ( ainda faltando pros hypers que usam 2 botões) =P
+- Adicionado 2 in1 combo system nos ataques que faltavam
+- Ajuste nos combos e  apenas o Thunderstrike pode ser cancelado em hypers agora
+- Ajuste na dinâmica de combos aéreos
+- Acerto no dash aéreo.... funciona depois dos básicos como na série VS
+- Acerto na anim 800 sem colisions
+- Acerto nos sons com loop do Thunderstrike e Tear of the sky( outros sons também)
+- Acerto no explode da Chuva, agora ativa se o P2 estiver com  Y>= - 150, e o BGpalfx não some com Hypers do Thor.
+- Acerto no helper do Bifrost break em reversals  e  3 combos do B.B. conectam apenas se o primeiro acertar.
+- Acerto na barra da chuva quando o Thor é o P2, aparece no lado certo agora.
+- Acerto no Mjolnir Launch....bug fixes e agora o Thor pode ser agarrado durante o golpe  
+- Removido o infinito dash>wp>mp
+- Mexida no Hyper Nordic Rage, gira e termina mais rápido 
+- Mexida no hyper do W.O.A, custom state do P2 e sons ( obs: não funciona legal no team mode sem personagens com tag battle)
+- Mexida na A.I. e adicionei uma versão easy a pedidos,  é só mudar a linha indicada no arquivo def 
+- Tag battle pode ser removido agora,  é só mudar a linha indicada no arquivo def 
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+OQUE FALTA:
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+ainda.....
+- Arrumar os bugs reportados 
+- Mexida no  WOA e os Hypers/ superarmor
+- Otimização dos códigos (e algumas revisões de dano)
+- Mexida no tag battle mode ( anim e vozes específicas)
+- Dizzy system
+- Special Hammer typhoon
+- Outros  Hyper portraits
+- Winpose & intros de outras versões do Thor (Armadura do Simonson, Lorde Thor etc...)
+- Intro & Winpose especial contra a MulherMaravilha
+- Midnight Bliss (Thorgirl/Tarene, a escolhida talvez)
+- Algumas sugestões do JaguarHX pra movimentos  (e tem um monte :P)
+
+E apenas um destes hypers pra cada versão:
+- Hyper Rune king Thor, ultimate move 2	_______	(Solo version) 	
+- Hyper do time Avengers___________________	(MvsC3 project)
+- Hyper Amalgama Thorion of Asgods_________	 (DcvsM project)
+
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+OQUE ESTÁ PRONTO:
+0.91 release
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+- Todo o básico
+- 4 intros (1 especial para o Flash by Erradicator & Black Dragon, ainda precisa de uns ajustes)
+- 1 hyper portrait
+- 1 portrait
+- 3 win poses
+- Vozes dos cartoons Marvel em que o Thor aparece by JohnRhysDavies, e algumas que ele dublou pro LOTR games.
+- Sparks MVC2 customizados e efeitos similares de outros jogos
+- 1 Taunt
+- Super Jump
+- Chain and Air Combos
+- Flying mode
+- 7 Specials 
+- 6 Hyper/Supers 
+- 6 palettes 
+- A.I.
+- Tag Battle implemented for team arcade mode 
+- Recovery Roll
+- Guard Push
+- Counter
+- Intro arcade
+- End arcade
+
+
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+COMMAND LIST - Veja a lista de comandos na intro arcade para mais detalhes
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+-------------------------------------------------------------------------------
+*SPECIAL MOVES 
+--------------------------------------------------------------------------------
+- HAMMER CRUSH   "Hammer klemme"
+F,F + Z
+
+- MJOLNIR IGNITION (hold to build up energy)   " MJöLNIR ANTENNING"
+D,DF,F and HOLD X or Y or Z  
+
+- MJOLNIR LAUNCH " MJöLNIR Innlede"
+D,DF,F + X or Y or Z
+
+- THUNDER STRIKE  "Tordenet Streike"
+D,DB,B + X or Y or Z
+
+- AESIR RISING HERO  " Aesir Stiger helt" 
+F, D, F + X or Y or Z
+
+-BIFROST BREAK      "det stor Bifrost breat av"
+D, DF, F + A or B or C
+
+- GUNGNIR DIVE (only on air) " Gungnir dykke"
+D,DF,F + A or B or C
+
+- AESIR MISSILE (only on air)  "Grundig raketten"
+D,DF,F + X or Y or Z
+
+-COUNTER (at least 1 full power bar)
+On block  use  B, DB, D  + X or Y or Z
+
+- RECOVERY ROLL
+B, DB, D  + A or B or C
+
+-GUARD PUSH
+On block  use  2 punches
+
+- FLYING MODE
+D,B + 2 kicks
+
+-------------------------------------------------------------------
+*HYPER/SUPER MOVES
+-------------------------------------------------------------------
+- TEAR OF THE SKY (Hyper ThunderStrike)  " Tåre fra himmelen"
+D, DB ,B + 2 punchs
+
+- MYSTIC RAINFALL  "Hemmelighetsfull regn falle" 
+F, D, F + 2 kicks
+
+- MIGHTY URU COMET  "Mektig uru Komme"
+F, D, F + 2 punchs
+
+-NORDIC RAGE  "Nordic raseri" 
+D, DF, F  + 2 punchs
+
+-RAGNAROK HAMMER  "Ragnarok hammer :P "
+D, DF, F  + 2 kicks 
+
+- WARRIORS OF ASGARD (Level 3 hyper, unblockable)  " Det Kriger av Asgard "
+D, DB ,B  + punch + kick
+
+
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+CHARACTER PROFILE & BACKGROUND
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+Pra entendermos quem é o Deus do trovão, uma pincelada da versão Mitológica e a versão da Marvel.
+
+_________________________________________________________________________
+VERSÃO DA MITOLOGIA:  O filho de Odin e Jord. Thor é o Deus do Trovão e relâmpago, o qual
+ele emite em cada golpe de seu martelo, Mjolnir. Ele é o mais poderoso dos deuses, ultrapassando
+Odin em força. Ele tem um porte  musculoso, com uma barba ruiva e olhos faiscantes.
+Um dos mais populares deuses nordicos como protetor de humanos e deuses, ele chega a 
+ultrapassar a popularidade de Odin por não requerer sacrificíos humanos. E não da mesma
+forma que Odin, ele é bem mais confiável. Durante o Ragnarok (o crepúsculo dos Deuses), ele
+irá matar Jormungand, a serpente de Midgard..... mas será morto posteriormente pelo seu
+veneno. É casado com SIF, a deusa da fertilidade. 
+Seu símbolo é a suástica (não me olhe assim! é verdade!)
+FROM: Gamefaqs - Norse Mythology by Hexum - nixhexus@yahoo.com / Valkyrie Profile section
+
+
+_______________________________________________________________________________________________________
+VERSÃO MARVEL UNIVERSE:  Verdadeira com os fundamentos da mitologia, a HQ do Thor não é 
+oque podemos considerar um estudo rápido. 
+O filho de Odin, apesar de ter um excesso de bravura e determinação, tem a carência de inteligência e bom senso 
+pra salvar a si mesmo de planos traiçoeiros nos Mitos e quadrinhos 
+
+Thor não poderia se juntar a outros heróis Marvel sem ter um visual e uniforme do tipo; para criar a aparência apropriada
+para o poderoso Thor, o artista Jack Kirby pesquisou as lendas sobre o deus nórdico. Um detalhe dominante da
+vestimenta de Thor é o seu elmo, que possui largas asas de águia. Evidentemente, asas de águia são amplamente
+conhecidas como símbolos de guerra Viking; talvez Kirby tenha visto estes artefatos e se inspirou para criar
+o design do  elmo de Thor dessa forma.
+
+Talvez a mais importante peça de seu vestuário seja sua capa vermelha, que o colocou  acima de outros no começo
+dos clássicos heróis do universo Marvel; a maior parte deles no começo dos anos 60  tinham seus pápeis como heróis
+mas sem usarem capas.
+Adicionando a capa vermelha, Thor automáticamente alcançou um status majestoso,  lembrando robes de 
+realeza...ou de fato, o uniforme do Superman da DC comics. 
+
+Na série em quadrinhos, Thor nunca atua da forma "Mais sagrado que vós", porque ele entende que não é
+a força dominante da realidade; talvez o maior exemplo do comportamento de Thor ser mais próximo
+de um soldado (e não um rei) fica mais claro se examinarmos a  relação com seu pai, Odin.
+
+O escritor Stan Lee explica,  "Os poderes de Thor permitem que ele aja com grandiosidade, em escala cósmica, ainda
+assim os antigos contos Nórdicos que a Marvel adaptou demonstram que ele é subordinado a uma força ainda
+maior. Odin, o virtualmente onisciente lider dos deuses lendários, é o pai de Thor e governa com uma mão de ferro.
+Muitos heróis de quadrinhos são orfãos, inspirados a lutar contra o crime pela morte de seus parentes.... então
+Thor de alguma forma nessa posição embaraçosa de filho submisso o coloca a parte ."
+
+OS PODERES DE THOR:
+
+*Controle Climático: Os encantamentos mágicos são ativados batendo com seu martelo Mjolnir , Thor pode invocar todos 
+os elementos da tempestade
+
+*Força: Thor pode levantar acima de 100 toneladas, colocando ele na classe de elite da Marvel. Ele possui
+incrível resistência, tolerância a virtualmente todas as doenças e enfermidades e pode aguentar e curar
+praticamente qualquer ferida.
+
+*Inter-dimensional transporte: Mjolnir pode abrir portais dimensionais para qualquer lugar, e permite
+que Thor viaje entre a Terra, Asgard e outras realidades
+
+*Habilidade de luta: Thor é um guerreiro altamente habilidoso com muitos séculos de batalha que
+aperfeiçoaram essa arte.
+
+*Habilidade de vôo:  Através de seu  martelo, Mjolnir. Lançando o martelo místico e agarrando
+a sua correia, Thor é impulsionado  as alturas.
+
+From Wizard Magazine 80, April 1998
+________________________________________________________________________________
+
+
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+Creditos e agradecimentos:
+Muita gente .....me perdoem se esquecer alguém : P
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+=======================================================================
+LOGANIR:
+=======================================================================
+- O verdadeiro e único DEUS, por me dar inspiração todos os dias \o/
+- Elecbyte pelo  Mugen
+- Marvel Comics:
+StanLee, JackKirby, WaltSimonson, JohnBuscema pelos trabalhos inspiradores do Thor
+- BlackDragon, parceiro :)...... pela grande ajuda na edição
+
+- MVSC3 Mugenesis team,  DCvsM team  e  WarmachineMadness forums em especial:
+Buyog,  Magus,  Midnight Spirit, SuperVenom, WarmachineX pelos feedbacks e backups 
+- Galera dos foruns mgbr & mfg pelos bug reports, valeu mesmo..
+
+- Anubis por alguns efeitos sonoros bem legais e o feedback 
+- Chris Vaughan pelo mehor site do Thor na net, todas as vozes do J.Rhys Davies vieram de http://www.immortalthor.net/
+- DG pelo feedback e dicas, também liberou seus chars de referência...Mjolnir isolando o P2 de perto é baseado no Ryu,  thanks pro GGN também pelo conceito! :)
+- Erradicador por alguns sparks do Cable e os feedbacks, me deu uma ajuda com os códigos do superarmor.... valeu mano!
+- IxnayDK pelo feedback e  dicas pro Thor funcionar no LinuxMugen
+- Ilusionista pelo feedback e sugestões pros nomes  mitológicos dos golpes,  movimentos e bases
+- JaguarHX pelos brainstorm e sugestões pro Thor, ainda pretendo implentar algumas delas  na versão final 
+- McCready pelo WinKO bg effeito e os feedbacks... valeu !
+- Phantom.of.the.Server..... pelas grandes dicas e feedbacks, também me deu códigos pra trabalhar em cima...valeu mesmo mano! :)
+
+- Flowagirl/Necromancer pelos tutoriais e  archive codes.    http://blargh.i-xcell.com
+- RyouWin pelo Tag team Battle códigos que vamos usar no  MvsC3,  valeu cara!
+- SodonHid pelo código  quebra parede  ( MGBR forum archivos de código)
+- Soldats/MysticBlaze pelos tutoriais e archive codes do site antigo dele
+
+- DeeJack e Danielps por alguns MvsC2 rips (DrDoom and FX)
+- DreamSlayer pelos spritepacks Cvs2 (Joe, Chang) 
+- Hoshi`s pelos EFZ rips open source pack, eu usei alguns FX de lá
+- Joram Zwei fuss pelos  rips do SF3/Alex packs... a  main base do Thor, big thanks
+- Kung Fu Man pelo Leo(CFJ) taunt e alguns objetos do NxC... e  MvsC2 rips, usei um pouco da Rubyheart e Cable
+- New and ZantetsuMUG pelos rips de Tohou  open source pack, editei uns FX de lá
+- Xenozip & Blip pelos rips de GGXX open source pack, editei uns FX de lá  
+Sim, o Thor é um milkshake de efeitos  :P
+
+-  Aqueles que esqueci de mencionar...
+
+===============================================================================
+BLACK DRAGON:
+===============================================================================
+- A Deus por tudo de bom que tenho em minha vida
+- Elecbyte for Mugen
+- A toda equipe Mugenesis e time MVSC3 por seus comentários e apoio
+- Aos já citados acima pelo Loganir por toda a ajuda que nos foi dada neste projeto
+- Jaguarx e Erradicator por todas as suas idéias e incentivos
+- Ao mala do meu irmão que vive dando palpite mas que nunca me deixa desanimar  
+- E é claro, meu parceiro Loganir que aceitou minha humilde ajuda  
+
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+Thor created with the Tools:
+Photoshop, Gamani Gifmoviegear, Susie, MEE v0.39, Zcharcad 7, Kawaks, NeroWaveEdit 
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+
+* ESTE CHARACTER NÃO PODE SER USADO PARA NENHUM FIM COMERCIAL!!!!
+* Thor é propriedade da Marvel comics.
+* Alguns gráficos são propriedade da Capcom, Sammy e Tasofro.
+
+*Galera do mugen...... Não hospede este character sem autorização prévia, e sobre
+permissões ou qualquer coisa relativa ao character: 
+weapon.x@ig.com.br
+;)

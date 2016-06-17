@@ -1,0 +1,15 @@
+<!DOCTYPE VTKSnippetML>
+<snippet>
+
+  <code>
+    [Remap]
+    x = x
+    y = y
+    z = z
+    a = a
+    b = b
+    c = c
+    s = s
+  </code>
+
+</snippet>

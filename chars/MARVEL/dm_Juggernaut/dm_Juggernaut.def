@@ -1,0 +1,35 @@
+;============================================
+;by ZVitor & Acey - Edited by davismaximus 
+;	Version 0.9
+;www.projectx.infinitymugenteam.com
+;============================================
+
+[Info]
+name 		="Juggernaut"
+displayname 	="Juggernaut"
+versiondate 	=07/03/13
+mugenversion 	=1.0
+author 		="Acey"
+pal.defaults	=1,2,3,4,5,6
+
+[Files]
+sprite =Juggernaut_MvC.sff
+anim =Juggernaut_MvC.air
+sound =Juggernaut_MvC.snd
+cmd =Juggernaut_MvC.cmd
+cns =Juggernaut_MvC.cns
+stcommon =common1.cns
+st =Juggernaut_MvC.cns
+pal1=Default.act
+pal2=Classic.act
+pal3=Tank.act
+pal4=Goldenaut.act
+pal5=DeepBlue.act
+pal6=Blackout.act
+pal7=Scarlet.act
+pal8=PurpleStuff.act
+pal9=Aquarius.act
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

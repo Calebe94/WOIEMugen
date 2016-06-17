@@ -1,0 +1,13 @@
+<!DOCTYPE VTKSnippetML>
+<snippet>
+
+  <field name="time" title="Time" type="int"/>
+  <field name="buftime" title="Buffer time" type="int"/>
+
+  <code>
+    [Defaults]
+    command.time = @time
+    command.buffer.time = @buftime
+  </code>
+
+</snippet>

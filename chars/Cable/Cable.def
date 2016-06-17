@@ -1,0 +1,40 @@
+; Contains all the filenames needed for the character
+
+; Player information
+[Info]
+name ="Cable"
+displayname ="Cable"
+pal.defaults =6,1,2,3,4,5,7
+versiondate=09/10/2008
+mugenversion=06,14,2003
+author="Cable"
+
+; Files for the player
+[Files]
+;cmd     =MVC2_Cable_Hard.cmd
+cmd     =MVC2_Cable_Medium.cmd
+;cmd     =MVC2_Cable_Easy.cmd
+cns     =MVC2_Cable.cns
+st      =MVC2_Cable.cns
+stcommon =common1.cns
+sprite  =MVC2_Cable.sff
+anim    =MVC2_Cable.air
+sound   =MVC2_Cable.snd
+pal1=1.act
+pal2=2.act
+pal3=3.act
+pal4=4.act
+pal5=5.act
+pal6=6.act
+pal7=7.act
+pal8=8.act
+st1=MVC2_Cable_-2.cns
+st2=MVC2_Cable_-3.cns
+st3=MVC2_Cable_overide.cns
+
+; Arcade mode
+[Arcade]
+intro.storyboard=
+ending.storyboard=
+;intro.storyboard =intro.def
+;ending.storyboard =ending.def

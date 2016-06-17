@@ -1,0 +1,536 @@
+;---------------------------------------------------------------------------
+; Super Armor (Activation)
+[Statedef 3500]
+type    = S
+movetype= A
+physics = S
+velset = 0, 0
+ctrl = 0
+poweradd = -1000
+hitcountpersist = 1
+
+[State 3500, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 3500
+trigger1 = Time = 0
+value = 3500
+
+[State 1000, Explod]
+type = Explod
+trigger1 = Time = 0
+removetime = -2
+id = 6011
+anim = 6011
+pos = 0, 0
+postype = p1
+sprpriority = 1
+;facing = -1
+ownpal = 1
+bindtime = 1
+supermovetime = 40
+supermove = 1
+ignorehitpause = 1
+removeongethit = 1
+scale = .5,.5
+
+[State 3000, 2]
+type = SuperPause
+Trigger1 = PrevStateno != 9000
+trigger1 = AnimElem = 2
+time = 40
+movetime = 40
+anim = -1
+
+[state 4000, 9] 
+type  = AssertSpecial 
+Trigger1 = PrevStateno != 9000
+trigger1 = time = [0, 500] 
+flag = nobg 
+flag2 = nofg 
+;flag3 = nobardisplay
+
+[State 3000, 9] 
+type = Explod 
+Trigger1 = PrevStateno != 9000
+trigger1 = Time = [3,13] 
+anim = 9001 
+postype = back 
+ID = 9001
+sprpriority = -1
+supermovetime = 1 
+removetime = 1
+supermove = 1
+scale = 3 - (time * 0.15), 3 - (time * 0.15) 
+pos = 0,60-time * 5 
+
+[state 3000, 9] 
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = time = 14 
+anim = 9001
+postype = back 
+id = 9001
+vel = -.25,0 
+sprpriority = -1
+supermovetime = 29
+removetime = 30
+pos = 0,0 
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = Animelem = 3
+removetime = -2
+id = 6006
+anim = 6004
+pos = 160, 0
+postype = Left
+scale = 0.642,1
+sprpriority = -4
+facing = 1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 1
+removeongethit = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = Animelem = 3
+removetime = -2
+id = 6006
+anim = 6006
+pos = -160, 0
+postype = Right
+scale = 0.642,1
+sprpriority = -4
+facing = 1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 1
+removeongethit = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = animelem = 2
+removetime = -2
+id = 6005
+anim = 6005
+pos = 20, -110
+postype = p1
+sprpriority = 5
+;facing = -1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 50
+ontop = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3500, PlaySnd]
+type = PlaySnd
+Trigger1 = Time = 0
+Trigger1 = PrevStateno != 9000
+value = S3500, 0
+volume = 255
+
+[State 3500, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Animelem = 3
+value = S0, 3
+volume = 255
+
+[State 3500, VarSet]
+type = VarSet
+trigger1 = time = 45 
+var(50) = 500
+
+[State 3500, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; Super Dive
+[Statedef 3000]
+type    = A
+movetype= A
+physics = S
+velset = 0, 0
+ctrl = 0
+poweradd = -1000
+hitcountpersist = 1
+
+[State 1000, Explod]
+type = Explod
+trigger1 = Time = 0
+trigger1 = Statetype = S
+removetime = -2
+id = 6011
+anim = 6011
+pos = 0, 0
+postype = p1
+sprpriority = 1
+;facing = -1
+ownpal = 1
+bindtime = 1
+supermovetime = 40
+supermove = 1
+ignorehitpause = 1
+removeongethit = 1
+scale = .5,.5
+
+[State 3000, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 3000
+trigger1 = Time = 0
+value = 3000
+
+[State 3000, StatetypeSet]
+type = StatetypeSet
+trigger1 = Time = 5
+statetype = A
+
+[State 3000, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 5
+value = S3000, 0
+volume = 255
+channel = 1
+
+[State 3500, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 0
+value = S3500, 0
+volume = 255
+
+[State 3000, 0]
+type = Turn
+trigger1 = Time = [0,5]
+trigger1 = p2dist X < -5
+
+[State 3000, 2]
+type = SuperPause
+Trigger1 = PrevStateno != 9000
+trigger1 = AnimElem = 2
+time = 40
+movetime = 40
+anim = -1
+
+[state 4000, 9] 
+type  = AssertSpecial 
+Trigger1 = PrevStateno != 9000
+trigger1 = time = [0, 500] 
+flag = nobg 
+flag2 = nofg 
+;flag3 = nobardisplay
+
+[State 3000, 9] 
+type = Explod 
+Trigger1 = PrevStateno != 9000
+trigger1 = Time = [3,13] 
+anim = 9001 
+postype = back 
+ID = 9001
+sprpriority = -1
+supermovetime = 1 
+removetime = 1
+supermove = 1
+scale = 3 - (time * 0.15), 3 - (time * 0.15) 
+pos = 0,60-time * 5 
+
+[state 3000, 9] 
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = time = 14 
+anim = 9001
+postype = back 
+id = 9001
+vel = -.25,0 
+sprpriority = -1
+supermovetime = 29 
+removetime = 30 
+pos = 0,0 
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = Animelem = 3
+removetime = -2
+id = 6004
+anim = 6004
+pos = 160, 0
+postype = Left
+scale = 0.642,1
+sprpriority = -4
+facing = 1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 1
+removeongethit = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = Animelem = 3
+removetime = -2
+id = 6004
+anim = 6006
+pos = -160, 0
+postype = Right
+scale = 0.642,1
+sprpriority = -4
+facing = 1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 1
+removeongethit = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3000, Explod]
+type = Explod
+Trigger1 = PrevStateno != 9000
+trigger1 = animelem = 2
+removetime = -2
+id = 6005
+anim = 6005
+pos = 20, -110
+postype = p1
+sprpriority = 5
+;facing = -1
+ownpal = 1
+bindtime = -1
+supermove = 1
+supermovetime = 50
+ontop = 1
+pausemovetime = 9999999
+ignorehitpause = 1
+
+[State 3000, VelSet]
+type = VelSet
+Trigger1 = PrevStateno != 9000
+trigger1 = time = 50 ;Animelem = 3
+trigger2 = HitShakeOver && Anim = 3000
+trigger2 = time = 50
+y = -15
+
+[State 600, VarSet]
+type = VarSet
+trigger1 = AnimElemNo(0) = 1
+fvar(4) = const(velocity.airjump.y)
+
+[State 600, VelSet]
+type = VelSet
+triggerall = PrevStateNo = 9000
+trigger1 = AnimElemNo(0) != 1
+trigger1 = Time = 0
+y = fvar(4)
+
+[State 1000, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 150, 50			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAF			;Flags of conditions that move can hit
+priority = 7, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 12, 19		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -9, -5	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -5, 6		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+fall = 1
+
+[State 3000, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 3000, ChangeState]
+type = ChangeState
+trigger1 = Time = 98
+trigger2 = Command = "Dive"
+trigger2 = time > ifelse((Pos Y <= -120), 45, 65)
+trigger3 = Pos Y <= -650
+value = 3001
+
+;---------------------------------------------------------------------------
+; DIVE!!!
+[Statedef 3001]
+type    = A
+movetype= A
+physics = N
+velset = 0, 0
+ctrl = 0
+hitcountpersist = 1
+
+[State 3500, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 3001
+trigger1 = Time = 0
+value = 3001
+
+[State 3001, StopSnd]
+type = StopSnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 0
+value = S3000, 0
+volume = 255
+channel = 1
+
+[State 3001, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 0
+value = S0, 4
+volume = 255
+channel = 2
+
+[State 3001, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 0
+value = S3000, 1
+volume = 255
+channel = 3
+
+[State 3001, VelSet]
+type = VelSet
+Trigger1 = PrevStateno != 9000
+trigger1 = Time = 0
+trigger2 = HitShakeOver && Anim = 3001
+trigger2 = time = 0
+x = 8
+y = 20
+
+[State 1000, HitDef]
+type = HitDef
+trigger1 = HitCount = 0
+trigger1 = Time = 0
+trigger2 = PrevStateno = [200, 3999]
+trigger2 = TIme = 0
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 150, 50			;Damage that move inflicts, guard damage
+animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAFD			;Flags of conditions that move can hit
+priority = 7, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 25, 25		;Time attacker pauses, time opponent shakes
+sparkno = 0				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = S220, 0			;Sound to play on hit
+guardsound = S7, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5		;Time that the opponent slides back
+ground.hittime  = 12		;Time opponent is in hit state
+ground.velocity = -5, 9	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -9, 8		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+fall = 1
+envshake.time = 20
+envshake.freq = 100
+envshake.ampl = 10
+envshake.phase = 100
+
+[State 3000, EnvShake]
+type = EnvShake
+trigger1 = MoveGuarded
+time = 20
+freq = 100
+ampl = 10
+phase = 100
+persistent = 0
+ignorehitpause = 1
+
+[State 3001, ChangeState]
+type = ChangeState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 3002
+
+;---------------------------------------------------------------------------
+; Finish
+[Statedef 3002]
+type    = S
+movetype= H
+physics = N
+velset = 0, 0
+ctrl = 0
+hitcountpersist = 1
+
+[State 3500, ChangeAnim]
+type = ChangeAnim
+trigger1 = Anim != 3002
+trigger1 = Time = 0
+value = 3002
+
+[State 3002, PlaySnd]
+type = PlaySnd
+Trigger1 = PrevStateno != 9000
+Trigger1 = Time = 0
+value = S3000, 2
+volume = 255
+
+[State 3002, EnvShake]
+type = EnvShake
+Trigger1 = PrevStateno != 9000
+trigger1 = time = 0
+time = 48
+freq = 100
+ampl = -10
+phase = 90
+
+[State 3002, Posset]
+type = PosSet
+Trigger1 = PrevStateno != 9000
+trigger1 = time = 0
+y = 0
+
+[State 3001, ChangeState]
+type = ChangeState
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+

@@ -1,0 +1,145 @@
+---------------------------------------------------------------------------
+; Golpe Chute 3
+[Statedef 3000]
+type    = S                      
+movetype= A                      
+physics = S                      
+juggle  = 1                      
+;Commonly-used controllers:
+velset = 0,0                    
+ctrl = 0                        
+anim = 807                   
+poweradd = -1500
+
+[State 3000, Super A]
+type = SuperPause
+trigger1 = Animelem = 5
+pos = -5, -67
+anim = 31
+
+[State 3120, 1]
+type = width
+trigger1 = time >= 65
+trigger1 = time <= 94
+value = 40,0
+
+[State 3000, 0] 
+type = PlaySnd
+trigger1 = Animelem = 5
+value = 4, 0
+
+[State 3000, 1]
+type = explod
+trigger1 = animelem = 16
+pos = 90
+postype = p1
+bindtime = 100
+sprpriority = 7
+anim = 808
+supermove = 1
+ID = 802  
+
+[State 3000, 2]
+type = explod
+trigger1 = animelem = 26
+pos = 150
+postype = p1
+bindtime = 100
+sprpriority = 7
+anim = 809
+supermove = 1
+ID = 802
+
+[State 3000, 3]
+type = explod
+trigger1 = animelem = 36
+pos = 220
+postype = p1
+bindtime = 100
+sprpriority = 7
+anim = 810
+supermove = 1
+ID = 802
+
+[State 3000, 3]
+type = explod
+trigger1 = animelem = 46
+pos = 275
+postype = p1
+bindtime = 100
+sprpriority = 7
+anim = 811
+supermove = 1
+ID = 802
+
+[State 3000, 0] 
+type = PlaySnd
+trigger1 = AnimElem = 7
+trigger2 = AnimElem = 11
+trigger3 = AnimElem = 17
+trigger4 = AnimElem = 20
+trigger5 = AnimElem = 27
+trigger6 = AnimElem = 30
+trigger7 = AnimElem = 37
+trigger8 = AnimElem = 40
+trigger9 = AnimElem = 47
+trigger10 = AnimElem = 50
+trigger11 = AnimElem = 53
+value = 2,1
+ 
+[State 3000, 4]
+type = HitDef
+trigger1 = AnimElem = 7
+trigger2 = AnimElem = 8
+trigger3 = AnimElem = 9
+trigger4 = AnimElem = 11
+trigger5 = AnimElem = 13
+trigger6 = AnimElem = 14
+trigger7 = AnimElem = 17
+trigger8 = AnimElem = 18
+trigger9 = AnimElem = 19
+trigger10 = AnimElem = 20
+trigger11 = AnimElem = 22
+trigger12 = AnimElem = 23
+trigger13 = AnimElem = 27
+trigger14 = AnimElem = 28
+trigger15 = AnimElem = 29
+trigger16 = AnimElem = 30
+trigger17 = AnimElem = 32
+trigger18 = AnimElem = 33
+trigger19 = AnimElem = 37
+trigger20 = AnimElem = 38
+trigger21 = AnimElem = 39
+trigger22 = AnimElem = 40
+trigger23 = AnimElem = 42
+trigger24 = AnimElem = 43
+trigger25 = AnimElem = 47
+trigger26 = AnimElem = 48
+trigger27 = AnimElem = 49
+trigger28 = AnimElem = 50
+trigger29 = AnimElem = 52
+trigger30 = AnimElem = 53
+attr = S, NA                     
+damage    = 20               
+animtype = hard          
+guardflag = MA              
+hitflag = MAF                    ;Flags of conditions that move can hit
+priority = 3, Hit                ;Attack priority: 0 (least) to 7 (most), 4 default
+;pausetime = 1                  ;Time attacker pauses, time victim shakes
+;numhits = 1
+sparkno = S7004                  ;Number of hits to count as (Def: 1)
+sparkxy = -10,-70                ;X-offset for the "hit spark" rel. to p2,
+hitsound = -1             
+guardsound = 6,0    
+ground.type = Low               ;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 5            ;Time that the victim slides back
+ground.hittime  = 60             ;Time victim is in hit state
+ground.velocity = -2             ;Velocity at which victim is pushed
+airguard.velocity = -2       ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.velocity = -2,-1           ;X-velocity at which victim is pushed,
+
+[State 3000, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1

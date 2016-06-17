@@ -1,0 +1,42 @@
+;======================================================================================
+;DareDevil by Arkady
+; with special thanks to Rgop
+;======================================================================================
+
+[Info] 
+name		="Daredevil"
+displayname	="Daredevil"
+versiondate 	=3/26/2015
+mugenversion 	=1.0
+author 		="Arkady"
+pal.defaults	=1,2,3,4,5,6,7
+
+[Files]
+cmd		=DareDevil.cmd
+cns		=DareDevil.cns
+stcommon	=common1.cns
+st		=DareDevil.cns
+sprite		=DareDevil.sff
+anim		=DareDevil.air
+sound		=DareDevil.snd
+pal1=Avx1.act
+pal2=Avx2.act
+pal3=Avx3.act
+pal4=Avx4.act
+pal5=Avx5.act
+pal6=Avx6.act
+pal7=Avx7.act
+pal8=Avx7.act
+pal9=Avx7.act
+pal10=Avx7.act
+pal11=Avx7.act
+pal12=Avx7.act
+
+[Arcade]
+intro.storyboard	=intro.def
+ending.storyboard	=ending.def
+
+
+;;;;Sprites by Arkady
+;;;;;;Smart Pallet by Rgop & Arkady
+;;;;;;;;;Coded by Arkady

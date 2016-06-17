@@ -1,0 +1,20 @@
+[Info]
+Name="MVC_Magneto"
+DisplayName="Magneto"
+Author="BillyKane"
+VersionDate=
+MugenVersion= 07,23,2000
+Pal.Defaults=
+
+[Files]
+cmd=magneto.cmd
+cns=magneto.cns
+st=magneto.cns
+st1=helpers.cns
+stcommon=common1.cns
+sprite=magneto.sff
+anim=magneto.air
+sound=magneto.snd
+pal1=1.act
+
+

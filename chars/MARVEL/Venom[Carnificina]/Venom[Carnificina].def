@@ -1,0 +1,32 @@
+; Definition file for Player
+; Contains all the filenames needed for the character
+; Template player 9X-09-12
+
+; Character information
+[Info]
+name    = "Venon";<-- Replace with a real name
+displayname = "Venon";<-- Replace with name to display
+author="By {_Carnificina_}"
+pal.defaults = 6,7,8,9,10,11
+
+; Files for the character
+[Files]
+cmd     = Venon.cmd     ;Command set
+cns     = Venon.cns     ;Constants
+st      = Venon.cns     ;States 
+st1     = Venon-S.CNS
+st2     = VenonWeb.CNS
+st3     = SuperV.cns
+st4     = Armor.cns
+st5     = AI.cns
+stcommon = common1.cns   ;Common states
+sprite  = Venon.sff
+anim    = Venon.air     ;Animation
+sound   = Venon.snd     ;Sound
+pal1    = Venon1.act     ;Palettes
+pal2    = Venon2.act
+pal3    = Venon3.act
+pal4    = Venon4.act
+pal5    = Venon5.act
+pal6    = Venon.act
+

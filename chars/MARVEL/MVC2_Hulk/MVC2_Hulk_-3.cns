@@ -1,0 +1,197 @@
+;---------------------------------------------------------------------------
+; States that are executed when in self's state file (use statedef -3)
+;---------------------------------------------------------------------------
+
+
+[Statedef -3]
+
+
+
+
+[State -3, hurt Sound 1]
+type = PlaySnd
+triggerall = Time = 1
+triggerall = random < 200
+trigger1 = Stateno = 5000 || stateno = 5010 || Stateno = 5020
+trigger1 = movetype = H
+trigger1 = GetHitVar(animtype) <= 2
+value = 5000,GetHitVar(animtype)
+
+
+
+
+[State -3]
+type = null;PalFx
+trigger1 = Time = 0 
+trigger1 = MoveType != H
+time = 0
+add = 0,0,0
+
+
+[State -3]
+type = AfterImage
+trigger1 = time = 0  && !var(57)
+time = 0
+length = 7
+palbright = 30,30,130
+palpostbright = 0,0,50
+palcontrast =120,120,220
+paladd = 0,0,0
+palmul = 1,1,1
+palcolor = 0
+timegap = 2
+framegap = 3
+
+[State -3]
+type = null;AfterImage
+trigger1 = time = 0
+time = 0
+length = 7
+palbright = 0,0,0
+palpostbright = 0,0,0
+palcontrast =256,256,256
+paladd = 0,0,0
+palmul = 1,1,1
+palcolor = 256
+timegap = 2
+framegap = 3
+
+
+[State -2]
+type = null;ScreenBound
+trigger1 = 1
+value = 0
+movecamera = 0,0
+
+;-----------------------------------------
+;Wall Hit
+
+[State -3]
+type = Helper
+triggerall = NumEnemy = [1,2]
+triggerall = NumHelper(7750) = 0
+triggerall = enemy(0),stateno != [120,159]
+trigger1 = enemy(0),movetype = h
+trigger1 = enemy(0),backedgedist <= 15
+trigger1 = enemy(0),statetype = a
+trigger1 = enemy(0),vel x < 0
+stateno = 7750
+id = 7750
+pos = floor(enemy(0),pos x - pos x), floor(enemy(0),pos y)
+
+[State -3]
+type = Helper
+triggerall = NumEnemy = 2
+triggerall = NumHelper(7751) = 0
+triggerall = enemy(1),stateno != [120,159]
+trigger1 = enemy(1),movetype = h
+trigger1 = enemy(1),backedgedist <= 15
+trigger1 = enemy(1),statetype = a
+trigger1 = enemy(1),vel x < 0
+stateno = 7750
+id = 7751
+pos = floor(enemy(1),pos x - pos x), floor(enemy(1),pos y)
+
+;-----------------------------------------
+;Ground Hit
+
+[State -3]
+type = Helper
+triggerall = NumEnemy = [1,2]
+triggerall = NumHelper(7755) = 0
+triggerall = enemy(0),stateno != [120,159]
+trigger1 = enemy(0),movetype = h
+trigger1 = enemy(0),pos y >= 0
+trigger1 = enemy(0),vel y > 5
+stateno = 7755
+id = 7755
+pos = floor(enemy(0),pos x - pos x), floor(enemy(0),pos y)
+
+[State -3]
+type = Helper
+triggerall = NumEnemy = 2
+triggerall = NumHelper(7756) = 0
+triggerall = enemy(1),stateno != [120,159]
+trigger1 = enemy(1),movetype = h
+trigger1 = enemy(1),pos y >= 0
+trigger1 = enemy(1),vel y > 5
+stateno = 7755
+id = 7756
+pos = floor(enemy(1),pos x - pos x), floor(enemy(1),pos y)
+
+;----------------------------------------------
+
+;----------------------------------------------
+;KO Sound
+[State -3]
+type = Helper
+triggerall = !alive
+trigger1 = NumHelper(7760) = 0
+stateno = 7760
+id = 7760
+
+;----------------------------------------------
+
+
+;----------------------------------------------
+;KO Delay
+[State -3]
+type = null;helper
+trigger1 = roundstate = 2 && !numhelper(7600)
+helpertype = Normal
+id = 7600
+pos = 0,0
+postype = p1
+name = "Ko Helper"
+stateno = 7600
+supermovetime = 9999999999
+pausemovetime = 9999999999
+
+------------------------
+
+[State -3, hit ground Sound]
+type = PlaySnd
+triggerall = Time = 1
+trigger1 = stateno = 5100
+value = 5100,0
+
+
+[State 130]
+type = AssertSpecial
+trigger1 = 1
+trigger1 = Stateno = [120,155]
+flag = NoWalk
+
+
+[State -3]
+type = null;AttackMulSet
+trigger1 = var(56) = 4
+trigger1 = roundstate = 2
+value = ifelse( var(32) >= 1, var(32), 1)
+
+
+[State -3]
+type = null;DefenceMulSet
+trigger1 = var(56) = 4
+trigger1 = roundstate = 2
+value = ifelse( var(32) >= 1, var(32), 1)
+
+[State -3,r]
+type = SelfState
+triggerall = stateno != 7777
+triggerall = var(56) = 4
+trigger1 = gethitvar(damage) >= life
+trigger2 = Life < 10
+value = 7777
+
+
+
+[State -3,ai]
+type = varset
+trigger1 = !var(58)
+trigger1 = var(59)
+var(58) = 1
+
+
+
+

@@ -1,0 +1,44 @@
+;====================================;
+;              Sinestro              ;
+;            for WinMUGEN            ;
+;       by Larramones & Buyog        ;
+; based on work by Smogon & McCready ;
+;  (which was based on GMSpectre's)  ;
+;                                    ;
+;       http://buyog.com/MUGEN       ;
+;    http://www.scruffydragon.com    ;
+;====================================;
+
+[Info]
+name = "Sinestro"
+displayname = "Sinestro"
+versiondate = 07,21,2011
+mugenversion = 04,14,2002
+author = "ScruffyDragon"
+pal.defaults = 1,4,2,5,3,6,7,8,9,10,11,12
+
+[Files]
+cns      = Sinestro.cns
+cmd      = Sinestro.cmd
+stcommon = DCvsMarvelcommon1.cns
+sprite   = Sinestro.sff
+anim     = Sinestro.air
+sound    = Sinestro.snd
+;--
+st =basics.st
+st1 =specials.st
+st2 =hypers.st
+st3 =overrides.st
+;--
+pal1 = corps.act
+pal2 = corps2.act
+pal3 = corps3.act
+pal4 = corps4.act
+pal5 = classic.act
+pal6 = classic2.act
+pal7 = green.act
+pal8 = green2.act
+;pal9 = green3.act
+pal10 = white.act
+pal11 = white2.act
+;pal12 = white3.act

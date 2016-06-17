@@ -1,0 +1,54 @@
+;---------------------------------------------------
+;LEGACY GAME OVER
+;---------------------------------------------------
+[Info]
+name = "GAME OVER"
+author = "NoZ"
+mugenversion = 1.0
+localcoord = 1280,720
+
+[SceneDef]
+spr = GameOver.sff
+startscene = 0         ;Starting scene number (for debugging)
+;------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time = 15
+fadeout.col = 0,0,0
+; Screen color
+;clearcolor = 0,0,0
+; Overlay Anims (from 0 to9)
+layerall.pos = 640,0  ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer1.anim =  1       ;Anim action number
+layer1.offset = 0,0   ;Position offset
+layer1.starttime = 0   ;Time to start display
+; Music
+bgm = GameOver.ogg        ;Name of music file to play
+bgm.loop = 0
+; Total time
+end.time = 1238
+;---------------
+[Begin Action 0] ;GAME OVER
+1,1, 0,0, 135,
+1,0, 0,0, 135,
+[Begin Action 1] ;FLAMES
+1,0, 0,0, 100,
+1,0, 0,0, 5,,AS256D10
+1,0, 0,0, 5,,AS210D50
+1,0, 0,0, 5,,AS170D90
+1,0, 0,0, 5,,AS130D130
+1,0, 0,0, 5,,AS90D170
+1,0, 0,0, 5,,AS50D210
+1,0, 0,0, 5,,AS10D256
+1,1, 0,0, 100,
+1,1, 0,0, 5,,AS256D10
+1,1, 0,0, 5,,AS210D50
+1,1, 0,0, 5,,AS170D90
+1,1, 0,0, 5,,AS130D130
+1,1, 0,0, 5,,AS90D170
+1,1, 0,0, 5,,AS50D210
+1,1, 0,0, 5,,AS10D256

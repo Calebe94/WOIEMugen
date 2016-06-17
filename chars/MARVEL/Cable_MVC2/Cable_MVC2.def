@@ -1,0 +1,36 @@
+[Info]
+name = "Marvel vs Capcom 2 Cable"       
+displayname = "Cable" 
+author = "Cloudius"      
+pal.defaults = 1, 2, 3  
+[Files]
+;-------------------------------------------------------
+; 6 BUTTON CONFIGURATION
+;cmd     	= 6/Cable6.cmd	;6 button
+;cns     	= 6/Cable6.cns	;6 button
+;st      	= 6/Cable6.cns    ;6 button
+;st1      	= 6/Special6.cns	;6 button
+;------------------------------------------------------- 
+; 4 BUTTON CONFIGURATION (DEFAULT)  
+cmd     	= Coding/Cable.cmd 
+cns     	= Coding/Cable.cns  
+st      	= Coding/Cable.cns  
+st1      	= Coding/Special.cns 
+;--------------------------------------------------------
+st2      	= Coding/Hyper.cns 
+stcommon 	= Coding/Common.cns
+sprite  	= Cable.sff   
+anim    	= Coding/Cable.air   
+sound  	= Cable.snd   
+pal1   	= Act/Cable.act   
+pal2  	= Act/MGS.act 	;Thanks to Snake/TTG
+pal3  	= Act/Darkgreen.act 
+pal4   	= Act/MGS2.act 	;Thanks to Snake/TTG
+pal5   	= Act/Gray.act 	
+pal6   	= Act/CableRed.act
+pal7   	= Act/Alt.act
+pal8   	= Act/Evil.act 	;Thanks to Snake/TTG
+pal9   	= Act/Cyclops.act
+;pal10  	= Act/Cable.act
+;pal11  	= Act/Mgs.act
+;pal12  	= Act/Mgs2.act

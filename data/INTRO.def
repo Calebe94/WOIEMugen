@@ -1,0 +1,200 @@
+[Info]
+name = "LEGACY INTRO"
+author = "NoZ"
+mugenversion = 1.1
+localcoord = 1280,720
+
+[SceneDef]
+spr = INTRO.sff
+startscene = 0         ;Starting scene number (for debugging)
+;------------------------------------
+[Scene 0]
+; Fade
+fadein.time = 60       ;Time to take for fading in
+fadein.col = 0,0,0     ;Use 255,255,255 for white-fade
+fadeout.time = 15
+fadeout.col = 0,0,0
+; Screen color
+;clearcolor = 0,0,0
+; Overlay Anims (from 0 to9)
+layerall.pos = 0,0  ;Default position for all layers
+layer0.anim =  0       ;Anim action number
+layer0.offset = 0,0   ;Position offset
+layer1.starttime = 0   ;Time to start display
+layer1.anim =  1       ;Anim action number
+layer1.offset = 0,0   ;Position offset
+layer1.starttime = 0   ;Time to start display
+layer2.anim =  2       ;Anim action number
+layer2.offset = 0,0   ;Position offset
+layer2.starttime = 0   ;Time to start display
+layer3.anim =  3       ;Anim action number
+layer3.offset = 0,0   ;Position offset
+layer3.starttime = 0   ;Time to start display
+layer4.anim =  4       ;Anim action number
+layer4.offset = 0,0   ;Position offset
+layer4.starttime = 0   ;Time to start display
+layer5.anim =  5       ;Anim action number
+layer5.offset = 0,0   ;Position offset
+layer5.starttime = 0   ;Time to start display
+layer6.anim =  6       ;Anim action number
+layer6.offset = 0,0   ;Position offset
+layer6.starttime = 0   ;Time to start display
+;Music
+bgm = INTRO.ogg        ;Name of music file to play
+bgm.loop = 0
+; Total time
+end.time = 1500
+;---------------
+[Begin Action 0] ;BG
+1,0, 0,0, 1,
+[Begin Action 1] ;ART
+0,0, 0,0, 15,
+2,0, 0,0, 5,,AS10D256
+2,0, 0,0, 5,,AS50D210
+2,0, 0,0, 5,,AS90D170
+2,0, 0,0, 5,,AS130D130
+2,0, 0,0, 5,,AS170D90
+2,0, 0,0, 5,,AS210D50
+2,0, 0,0, 5,,AS256D10
+2,0, 0,0, 100,
+2,0, 0,0, 5,,AS256D10
+2,0, 0,0, 5,,AS210D50
+2,0, 0,0, 5,,AS170D90
+2,0, 0,0, 5,,AS130D130
+2,0, 0,0, 5,,AS90D170
+2,0, 0,0, 5,,AS50D210
+2,0, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,1, 0,0, 5,,AS10D256
+2,1, 0,0, 5,,AS50D210
+2,1, 0,0, 5,,AS90D170
+2,1, 0,0, 5,,AS130D130
+2,1, 0,0, 5,,AS170D90
+2,1, 0,0, 5,,AS210D50
+2,1, 0,0, 5,,AS256D10
+2,1, 0,0, 100,
+2,1, 0,0, 5,,AS256D10
+2,1, 0,0, 5,,AS210D50
+2,1, 0,0, 5,,AS170D90
+2,1, 0,0, 5,,AS130D130
+2,1, 0,0, 5,,AS90D170
+2,1, 0,0, 5,,AS50D210
+2,1, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,2, 0,0, 5,,AS10D256
+2,2, 0,0, 5,,AS50D210
+2,2, 0,0, 5,,AS90D170
+2,2, 0,0, 5,,AS130D130
+2,2, 0,0, 5,,AS170D90
+2,2, 0,0, 5,,AS210D50
+2,2, 0,0, 5,,AS256D10
+2,2, 0,0, 100,
+2,2, 0,0, 5,,AS256D10
+2,2, 0,0, 5,,AS210D50
+2,2, 0,0, 5,,AS170D90
+2,2, 0,0, 5,,AS130D130
+2,2, 0,0, 5,,AS90D170
+2,2, 0,0, 5,,AS50D210
+2,2, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,3, 0,0, 5,,AS10D256
+2,3, 0,0, 5,,AS50D210
+2,3, 0,0, 5,,AS90D170
+2,3, 0,0, 5,,AS130D130
+2,3, 0,0, 5,,AS170D90
+2,3, 0,0, 5,,AS210D50
+2,3, 0,0, 5,,AS256D10
+2,3, 0,0, 100,
+2,3, 0,0, 5,,AS256D10
+2,3, 0,0, 5,,AS210D50
+2,3, 0,0, 5,,AS170D90
+2,3, 0,0, 5,,AS130D130
+2,3, 0,0, 5,,AS90D170
+2,3, 0,0, 5,,AS50D210
+2,3, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,4, 0,0, 5,,AS10D256
+2,4, 0,0, 5,,AS50D210
+2,4, 0,0, 5,,AS90D170
+2,4, 0,0, 5,,AS130D130
+2,4, 0,0, 5,,AS170D90
+2,4, 0,0, 5,,AS210D50
+2,4, 0,0, 5,,AS256D10
+2,4, 0,0, 100,
+2,4, 0,0, 5,,AS256D10
+2,4, 0,0, 5,,AS210D50
+2,4, 0,0, 5,,AS170D90
+2,4, 0,0, 5,,AS130D130
+2,4, 0,0, 5,,AS90D170
+2,4, 0,0, 5,,AS50D210
+2,4, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,5, 0,0, 5,,AS10D256
+2,5, 0,0, 5,,AS50D210
+2,5, 0,0, 5,,AS90D170
+2,5, 0,0, 5,,AS130D130
+2,5, 0,0, 5,,AS170D90
+2,5, 0,0, 5,,AS210D50
+2,5, 0,0, 5,,AS256D10
+2,5, 0,0, 100,
+2,5, 0,0, 5,,AS256D10
+2,5, 0,0, 5,,AS210D50
+2,5, 0,0, 5,,AS170D90
+2,5, 0,0, 5,,AS130D130
+2,5, 0,0, 5,,AS90D170
+2,5, 0,0, 5,,AS50D210
+2,5, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,6, 0,0, 5,,AS10D256
+2,6, 0,0, 5,,AS50D210
+2,6, 0,0, 5,,AS90D170
+2,6, 0,0, 5,,AS130D130
+2,6, 0,0, 5,,AS170D90
+2,6, 0,0, 5,,AS210D50
+2,6, 0,0, 5,,AS256D10
+2,6, 0,0, 100,
+2,6, 0,0, 5,,AS256D10
+2,6, 0,0, 5,,AS210D50
+2,6, 0,0, 5,,AS170D90
+2,6, 0,0, 5,,AS130D130
+2,6, 0,0, 5,,AS90D170
+2,6, 0,0, 5,,AS50D210
+2,6, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+2,7, 0,0, 5,,AS10D256
+2,7, 0,0, 5,,AS50D210
+2,7, 0,0, 5,,AS90D170
+2,7, 0,0, 5,,AS130D130
+2,7, 0,0, 5,,AS170D90
+2,7, 0,0, 5,,AS210D50
+2,7, 0,0, 5,,AS256D10
+2,7, 0,0, 100,
+2,7, 0,0, 5,,AS256D10
+2,7, 0,0, 5,,AS210D50
+2,7, 0,0, 5,,AS170D90
+2,7, 0,0, 5,,AS130D130
+2,7, 0,0, 5,,AS90D170
+2,7, 0,0, 5,,AS50D210
+2,7, 0,0, 5,,AS10D256
+[Begin Action 2] ;FLAMES
+3,0,0,0,3,,
+3,1,0,0,3,,
+3,2,0,0,3,,
+3,3,0,0,3,,
+3,4,0,0,3,,
+3,5,0,0,3,,
+3,6,0,0,3,,
+3,7,0,0,3,,
+3,8,0,0,3,,
+3,9,0,0,3,,
+[Begin Action 3]
+4,0,0,0,3,,
+4,1,0,0,3,,
+4,2,0,0,3,,
+4,3,0,0,3,,
+[Begin Action 4]
+5,0, 0,0, 1
+[Begin Action 5] ;PRESS START
+6,0, 0,0, 1
+[Begin Action 6] ;LOGO
+6,1, 0,0, 1

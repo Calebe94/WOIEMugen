@@ -1,0 +1,18 @@
+Cable_MVC2
+Colossus_MVC2
+Cyclops_HD
+DC
+Deadpool
+file.txt
+gambit
+MARVEL
+MVC2_CaptainAmerica
+MVC2_Hulk
+MVC2_IronMan
+MVC2_Spiderman
+MVC2_Thanos
+MVC2_Wolverine
+MVC_Magneto
+Personagens Utilizados.txt
+thor
+Venom[Carnificina]

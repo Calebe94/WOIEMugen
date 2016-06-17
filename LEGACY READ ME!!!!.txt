@@ -1,0 +1,61 @@
+Legacy read me
+
+This took a lot of work to make fellas so enjoy and please give feedback
+also this screenpack is open source,but if youre going to use something
+ask for permission first and give credit,this is my gem,so dont be an asshole
+
+the portrait order goes like this:
+
+9000,0 = small
+9000,1 = big
+9000,2 = win and vs
+9000,3 = lifebar
+9000,4 = team lifebar
+
+there is a 150+ characters that have portraits made by me
+you can find the ports in the ports and templates folder
+there are all the templates for the screenpack
+
+Custom things you can do:
+
+*you can have images for stage select
+ there is a folder in the ports area
+ thats has a few pre-made ports for the
+ stages,in order to use images in stage
+ select,in the data folder select the version
+ that says custom,either big roster or small,
+ the is a stage font map to tell you how to
+ change them,open the stage font in fighter factory
+ to change them
+
+*you can change the press start intro art and
+ the main menu art,templates are included and
+ some pre-made ports thanks to a few guys at 
+ mugen figthers guild
+
+*there's 2 versions of the lifebars,one with the 
+ powerbars on top(default) and one with the power
+ bars on the bottom,you can choose it on the data
+ folder
+
+*you can choose from 3 announcers
+ sfxt,ssf4 and kof13
+
+*you have 2 roster types big and small,the difference
+ is they have different small portraits,9000,0
+ 
+Special Thanks:
+
+ArmorGon,for the vs and fight animations
+
+R@CE and Infinite,for beta testing and for the characters for the betas
+
+My beta testers:
+HUNGRY WOLF,Neocide,Star Fucker(Cybaster),Iced,Maxbeta,BIG BOSS,
+Balthazar,Dissidia,Marpachi,Saikoro,Watta
+
+thank you all for the feedback and help
+
+if you have any questions for the screenpack let me know by pm on
+mugen fighters guild
+

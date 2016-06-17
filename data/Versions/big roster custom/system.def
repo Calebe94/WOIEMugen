@@ -1,0 +1,2299 @@
+LEGACY
+;----------------------------
+[Info]
+name = "LEGACY"          
+author = "NoZ"  
+mugenversion = 1.1 
+localcoord = 1280,720      
+;----------------------------
+[Files] 
+spr = system.sff            ;Filename of sprite data
+snd = system.snd            ;Filename of sound data
+logo.storyboard = INTRO.def ;Logo storyboard definition (optional)
+intro.storyboard =          ;Intro storyboard definition (optional)
+select = select.def         ;Character and stage selection list
+fight = fight.def           ;Fight definition filename                 
+font1 = font/MENU.def
+font2 = font/SYSTEM_FONT2.def
+font3 = font/SYSTEM_FONT.def
+font6 = font/MODES.def
+font7 = font/NAME_LIFEBAR.def
+font8 = font/STAGE.def
+;----------------------------
+[Music]
+title.bgm = data/MENU.OGG
+title.bgm.volume = 100    ;volume scaling factor in percent. 100 is default
+title.bgm.loop = 1        ;Set to 0 to prevent looping
+title.bgm.loopstart = 
+title.bgm.loopend = 
+  ;Music to play at char select screen.
+select.bgm = data/SELECT.OGG
+select.bgm.volume = 100
+select.bgm.loop = 1
+select.bgm.loopstart =
+select.bgm.loopend = 
+  ;Music to play at versus screen.
+vs.bgm = data/VERSUS.OGG
+vs.bgm.volume = 100
+vs.bgm.loop = 0
+vs.bgm.loopstart =
+vs.bgm.loopend = 
+  ;Music to play at victory screen.
+victory.bgm = data/WIN.ogg
+victory.bgm.volume = 100
+victory.bgm.loop = 0
+victory.bgm.loopstart =
+victory.bgm.loopend = 
+
+;-------------------------------------------------------------------
+;Title screen definition
+[Title Info]
+fadein.time = 10
+fadeout.time = 10
+menu.pos = 640,705
+menu.item.font = 1,0,0
+menu.item.active.font = 1,0,0
+menu.item.spacing = 0,720
+menu.itemname.arcade 		= "0"
+menu.itemname.versus 		= "1"
+menu.itemname.teamarcade 	= "2"
+menu.itemname.teamversus 	= "3"
+menu.itemname.teamcoop 		= "4"
+menu.itemname.survival 		= "5"
+menu.itemname.survivalcoop 	= "6"
+menu.itemname.training 		= "7"
+menu.itemname.watch 		= "8"
+menu.itemname.options 		= "9"
+menu.itemname.exit 		= "A"
+
+menu.window.margins.y = 84,10
+menu.window.visibleitems = 1
+menu.boxcursor.visible = 0     ;Set to 0 to disable default cursor display
+menu.boxcursor.coords = -100,-12,119,2
+; These are the sounds for cursor movement
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;----------------------------
+;Title background definition
+
+[TitleBGdef]
+
+[TitleBG] 
+type  = normal
+spriteno = 1,0
+start = -640,0
+layerno = 0
+mask = 1
+
+[TitleBG] 
+type  = normal
+spriteno = 1,1
+start = -640,0
+layerno = 1
+mask = 1
+
+[TitleBG ARTBOX1]
+type  = anim
+actionno = 100
+mask = 1
+start = -625,9
+layerno = 1
+
+[TitleBG ARTBOX2]
+type  = anim
+actionno = 200
+mask = 1
+start = -310,9
+layerno = 1
+
+[TitleBG ARTBOX3]
+type  = anim
+actionno = 300
+mask = 1
+start = 5,9
+layerno = 1
+
+[TitleBG ARTBOX4]
+type  = anim
+actionno = 400
+mask = 1
+start = 320,9
+layerno = 1
+
+[TitleBG] 
+type  = normal
+spriteno = 1,2
+start = -640,0
+mask = 1
+layerno = 1
+
+;-------------------------------------------------------------------
+;Character select definition
+[Select Info]
+fadein.time = 10
+fadeout.time = 10
+rows = 14
+columns = 23
+wrapping = 1              ;1 to let cursor wrap around
+pos = 30,3   ;Position to draw to
+showemptyboxes = 0        ;1 to show empty boxes
+moveoveremptyboxes = 0    ;1 to allow cursor to move over empty boxes
+cell.size = 50,50  ;x,y size of each cell (in pixels)
+cell.bg.scale = .250,.250
+cell.spacing = 1;Space between each cell
+cell.bg.spr =        ;Note: Don't use animation for cells
+cell.random.spr = 10,1  ;Icon for random select (don't use animation)
+cell.random.switchtime = 4;Time to wait before changing to another random portrait
+p1.cursor.startcell = 0,13
+p1.cursor.active.anim = 2
+p1.cursor.active.scale = 1,1
+p1.cursor.done.anim = 4
+p1.cursor.done.scale = 1,1
+p1.cursor.move.snd = 100,5
+p1.cursor.done.snd = 100,3
+p1.random.move.snd = 100,5
+p2.cursor.startcell = 13,9
+p2.cursor.active.anim = 3
+p2.cursor.active.scale = 1,1
+p2.cursor.done.anim = 4
+p2.cursor.done.scale = 1,1
+p2.cursor.blink = 1       ;1 to blink p2's cursor if overlapping p1's
+p2.cursor.move.snd = 100,0
+p2.cursor.done.snd = 100,3
+p2.random.move.snd = 100,0
+random.move.snd.cancel = 0;1 to have random move sound cancel itself when played repeatedly
+stage.move.snd = 100,0
+stage.done.snd = 100,4
+cancel.snd = 100,2
+portrait.offset = 0,1
+portrait.scale = .250,.250
+title.offset = 320,-100        ;Position of title (Arcade Mode, etc)
+title.font = 0,0,0, 0,0,0  ;Font of title (-1 for none)
+;Big portraits
+p1.face.offset = -710,0  ;Position to put big portrait
+p1.face.scale = .250,.250
+p1.face.facing = 1
+p2.face.offset = 570,10
+p2.face.scale = .250,.250
+p2.face.facing = 1
+;Name
+p1.name.offset =       ;Position to put name
+p1.name.font =         ;Set to -1 for no display
+p2.name.offset = 
+p2.name.font = 
+
+;Stage select Custom Font
+stage.pos = 330,358
+stage.active.font = 8
+stage.active2.font = 8
+stage.done.font = 8
+
+;Stage select Normal
+;stage.pos = 640,369
+;stage.active.font = 2,0,0,600,0,0
+;stage.active2.font = 2,0,0,0,0,600 ;Second font color for blinking
+;stage.done.font = 2,0,0
+
+;Team menu
+teammenu.move.wrapping = 1
+p1.teammenu.pos = 0,0
+;p1.teammenu.bg.spr = 
+p1.teammenu.selftitle.font = 0,0, 1
+p1.teammenu.selftitle.text = ""
+p1.teammenu.enemytitle.font = 0,0, 1
+p1.teammenu.enemytitle.text = ""
+p1.teammenu.move.snd = 100,0
+p1.teammenu.value.snd = 100,0
+p1.teammenu.done.snd = 100,1
+p1.teammenu.item.offset = -824,46
+p1.teammenu.item.spacing = 0,0
+p1.teammenu.item.font = 0,0, 1
+p1.teammenu.item.active.font = 6,0, 1
+p1.teammenu.item.active2.font = 6,0, 1
+p1.teammenu.item.cursor.offset = 0,0
+p1.teammenu.item.cursor.anim = 
+p1.teammenu.value.icon.offset = 910,39
+p1.teammenu.value.icon.spr = 20,0
+p1.teammenu.value.empty.icon.offset = 910,39
+p1.teammenu.value.empty.icon.spr = 20,2
+p1.teammenu.value.spacing = 28,0
+
+;p2 team
+p2.teammenu.pos = 0,0
+;p2.teammenu.bg.spr =
+p2.teammenu.selftitle.font = 0,0,1
+p2.teammenu.selftitle.text = ""
+p2.teammenu.enemytitle.font = 0,0,1
+p2.teammenu.enemytitle.text = ""
+p2.teammenu.move.snd = 100,0
+p2.teammenu.value.snd = 100,0
+p2.teammenu.done.snd = 100,1
+p2.teammenu.item.offset = 456,56
+p2.teammenu.item.spacing = 0,0
+p2.teammenu.item.font = 0,0,1
+p2.teammenu.item.active.font = 6,0,1
+p2.teammenu.item.active2.font = 6,0,1 
+p2.teammenu.item.cursor.offset = 0, 0
+p2.teammenu.item.cursor.anim = 
+p2.teammenu.value.icon.offset = 730,576
+p2.teammenu.value.icon.spr = 20,1
+p2.teammenu.value.empty.icon.offset = 730,576
+p2.teammenu.value.empty.icon.spr = 20,2
+p2.teammenu.value.spacing = -28,0
+;Sounds
+
+;-----------------------
+;Character select screen background
+[SelectBGdef]
+
+[SelectBG black]
+type = normal
+layerno = 0
+spriteno = 4,0
+start = -320,0
+
+[SelectBG bg]
+type  = anim
+actionno = 7
+start = -640,0
+
+[SelectBG BIG_ROSTER_FRAME] 
+type = normal
+layerno = 0
+spriteno = 4,13
+start = -640,0
+mask = 1
+
+;[SelectBG STAGE_SELECT]
+;type  = anim
+;actionno = 8
+;start = -640,0
+
+;[SelectBG SMALL_ROSTER_FRAME]
+;type = normal
+;layerno = 0
+;spriteno = 4,18
+;start = -640,0
+;mask = 1
+
+[SelectBG BOX_GLOW] 
+type = normal
+layerno = 0
+spriteno = 4,12
+start = -640,0
+mask = 1
+
+;-------------------------------------------------------------------
+[VS Screen]
+time = 320                ;Time to show screen
+fadein.time = 15
+fadeout.time = 15
+;Match text in arcade modes
+match.text = "Battle %i"   ;%i can be used for the match number
+match.offset = 575, 33
+match.font = 7,0,1
+p1.spr = 9000, 2
+p1.offset =  -640,0
+p1.facing = 1
+p1.scale = 0.250,0.250
+p1.window = 
+p2.spr = 9000, 2
+p2.offset = 640,0
+p2.facing = 1
+p2.scale = 0.250,0.250
+p2.window =
+;Names
+p1.name.pos  =  
+p1.name.font =   
+p2.name.pos  = 
+p2.name.font =   
+;-----------------------
+;VS Match up screen background
+[VersusBGdef] 
+
+[VersusBG]
+type = normal
+layerno = 0
+spriteno = 5,1
+start = -640,0
+
+[VersusBG FADE]
+type  = anim
+actionno = 9
+mask = 1
+start = -640,0
+layerno = 1
+
+[VersusBG VS]
+type  = anim
+actionno = 5
+mask = 1
+start = -640,0
+layerno = 1
+;-------------------------------------------------------------------
+;Demo mode definition
+[Demo Mode]
+enabled = 1               ;Set to 1 to enable demo mode, 0 to disable
+select.enabled = 1        ;Set to 1 to display select screen, 0 to disable
+vsscreen.enabled = 1      ;Set to 1 to display versus screen, 0 to disable
+title.waittime = 9405   ;Time to wait at title before starting demo mode
+fight.endtime = 2000      ;Time to display the fight before returning to title
+fight.playbgm = 1         ;Set to 1 to enable in-fight BGM, 0 to disable
+fight.bars.display = 0    ;Set to 1 to display lifebar, 0 to disable
+intro.waitcycles = 1      ;Cycles to wait before intro cutscene is played again
+debuginfo = 0             ;Set to 0 to hide debugging info (debug mode only)
+
+;-------------------------------------------------------------------
+;Continue screen definition
+[Continue Screen]
+enabled = 1               ;Set to 1 to show continue screen, 0 to disable
+pos = 640,320             ;Position
+;***Known issue*** The display elements below use the fight.def resources
+;instead of the ones defined in this file.
+continue.text = "Continue"
+continue.font = 6,0,0
+continue.offset = 0,-50
+;Inactive and active (selected) YES/NO text
+yes.text = "Yes"
+yes.font = 6,0,0, 100,100,100
+yes.offset = -80,0
+yes.active.text = "Yes"
+yes.active.font = 6,0,0, 500,0,0 
+yes.active.offset = -80,0
+no.text = "No"
+no.font = 6,0,0, 100,100,100
+no.offset = 80,0
+no.active.text = "No"
+no.active.font = 6,0,0, 500,0,0 
+no.active.offset = 80,0
+;-------------------------------------------------------------------
+;Game over screen definition
+[Game Over Screen]
+enabled = 1               ;Set to 1 to show game over screen, 0 to disable
+storyboard = GameOver.def ;Game over storyboard filename
+
+;-------------------------------------------------------------------
+
+;Victory screen definition
+;This is the screen that is shown when you win a match in arcade mode.
+;It will not be displayed on the last match of arcade mode.
+[Victory Screen]
+enabled = 1
+time = 700                ;Time to show screen
+fadein.time = 8
+fadeout.time = 15
+;Winner's portrait and name
+p1.offset = 0,-720
+p1.spr = 9000,2
+p1.facing = 1
+p1.scale = .250,.250
+;p1.window = 0,0, 640,480
+p1.name.offset = 30,380
+p1.name.font = 0
+;Win quote text
+winquote.text = "Winner!" ;Default win quote text to show
+winquote.offset = 100, 570
+winquote.font = 3,0,1
+winquote.window = 20,370, 1220,720
+winquote.textwrap = w     ;Word wrap
+
+;-----------------------
+;Victory screen background
+[VictoryBGdef] 
+
+[VictoryBG] 
+type = normal
+spriteno = 6,1
+start = -640,0
+
+[VictoryBG]   
+type  = anim
+actionno = 9
+mask = 1
+start = -640,0
+layerno = 1
+
+[VictoryBG]   
+type  = anim
+actionno = 10
+start = -640,0
+layerno = 0
+mask = 1
+
+[VictoryBG FRAME] 
+type = normal
+spriteno = 6,2
+layerno = 1
+start = -640,0
+mask = 1
+
+[VictoryBG WINNER]  
+type  = anim
+actionno = 6
+mask = 1
+start = -640,0
+layerno = 1
+
+;-------------------------------------------------------------------
+
+;Win screen definition
+;This is the screen that is shown when you win in arcade mode.
+;It will not be displayed if the winning character has an ending.
+[Win Screen]
+enabled = 1               ;Set to 1 to show win screen, 0 to disable
+wintext.text = you are the champion
+wintext.font = 7,0,0
+wintext.offset = 640,340
+wintext.displaytime = -1
+wintext.layerno = 0
+fadein.time = 32
+pose.time = 300
+fadeout.time = 64
+
+;-------------------------------------------------------------------
+;Game ending screen definition
+;This screen shows up after the Win Screen.
+;It will not be displayed if the winning character has an ending.
+[Default Ending]
+enabled = 1               ;Set to 1 to show default ending, 0 to disable
+storyboard =              ;Default ending storyboard filename
+
+;-------------------------------------------------------------------
+;Ending credits screen definition
+;This screen shows up after the Win Screen and Ending
+[End Credits]
+enabled = 1               ;Set to 1 to show credits, 0 to disable
+storyboard = ending.def          ;Credits storyboard filename
+
+;-------------------------------------------------------------------
+;Survival mode results screen definition
+;This is the screen that is shown when you win in survival mode.
+;It will not be displayed if the winning character has an ending.
+;Whole group is *2001.11.14 NEW*
+[Survival Results Screen]
+enabled = 1
+winstext.text = enemies defeated %i  ;Use %i for win counter
+winstext.font = 7,0,0
+winstext.offset = 640,200
+winstext.displaytime = -1
+winstext.layerno = 2
+fadein.time = 32
+show.time = 300
+fadeout.time = 64
+roundstowin = 5           ;Number of rounds to get win pose (lose pose otherwise)
+
+;-------------------------------------------------------------------
+;Options screen definition
+[Option Info]
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;-------------------
+;Options screen background
+[OptionBGdef] 
+
+[OptionBG EFFECT]
+type  = anim
+actionno = 12
+start = -640,0
+layerno = 0
+mask = 1
+
+[OptionBG EFFECT]
+type  = anim
+actionno = 11
+start = -640,0
+layerno = 0
+mask = 1
+
+------ANIMATIONS------
+;p1
+[begin action 2]
+1000,0,0,0,3,,
+1000,1,0,0,3,,
+1000,2,0,0,3,,
+1000,3,0,0,3,,
+
+;p2
+[begin action 3]
+2000,0,0,0,3,,
+2000,1,0,0,3,,
+2000,2,0,0,3,,
+2000,3,0,0,3,,
+
+;OK
+[begin action 4]
+3000,0,0,0,2,,
+3000,1,0,0,2,,
+3000,2,0,0,2,,
+3000,3,0,0,2,,
+
+;VS
+[Begin Action 5]
+-1,-1,0,0,50
+5,2,0,0,2,,
+5,3,0,0,2,,
+5,4,0,0,2,,
+5,5,0,0,2,,
+5,6,0,0,2,,
+5,7,0,0,2,,
+5,8,0,0,2,,
+5,9,0,0,2,,
+5,10,0,0,2,,
+5,11,0,0,2,,
+5,12,0,0,2,,
+5,13,0,0,2,,
+5,14,0,0,2,,
+5,15,0,0,2,,
+5,16,0,0,2,,
+5,17,0,0,2,,
+5,18,0,0,2,,
+5,19,0,0,2,,
+5,20,0,0,2,,
+5,21,0,0,2,,
+5,22,0,0,2,,
+5,23,0,0,2,,
+5,24,0,0,2,,
+5,25,0,0,2,,
+5,26,0,0,2,,
+5,27,0,0,2,,
+5,28,0,0,2,,
+5,29,0,0,2,,
+5,30,0,0,2,,
+5,31,0,0,2,,
+5,32,0,0,2,,
+5,33,0,0,2,,
+5,34,0,0,2,,
+5,35,0,0,2,,
+5,36,0,0,2,,
+5,37,0,0,2,,
+5,38,0,0,2,,
+5,39,0,0,2,,
+5,40,0,0,2,,
+5,41,0,0,2,,
+5,42,0,0,2,,
+5,43,0,0,2,,
+5,44,0,0,2,,
+5,45,0,0,2,,
+5,46,0,0,2,,
+5,47,0,0,2,,
+5,48,0,0,2,,
+5,49,0,0,2,,
+5,50,0,0,2,,
+5,51,0,0,2,,
+5,52,0,0,2,,
+5,53,0,0,2,,
+5,54,0,0,2,,
+5,55,0,0,2,,
+5,56,0,0,2,,
+5,57,0,0,2,,
+5,58,0,0,2,,
+5,59,0,0,2,,
+5,60,0,0,2,,
+5,61,0,0,2,,
+5,62,0,0,2,,
+5,63,0,0,2,,
+5,64,0,0,2,,
+5,65,0,0,2,,
+5,66,0,0,2,,
+5,67,0,0,2,,
+5,68,0,0,2,,
+5,69,0,0,2,,
+5,70,0,0,2,,
+5,71,0,0,2,,
+5,72,0,0,2,,
+5,73,0,0,2,,
+-1,-1,0,0,-1
+
+[Begin Action 6]
+6,3,0,0,3,,
+6,4,0,0,3,,
+6,5,0,0,3,,
+6,6,0,0,3,,
+
+
+[Begin Action 7]
+4,1,0,0,1,,
+4,2,0,0,1,,
+4,3,0,0,1,,
+4,4,0,0,1,,
+4,5,0,0,1,,
+4,6,0,0,1,,
+4,7,0,0,1,,
+4,9,0,0,1,,
+4,10,0,0,1,,
+
+[Begin Action 8]
+4,14,0,0,3,,
+4,15,0,0,3,,
+4,16,0,0,3,,
+4,17,0,0,3,,
+
+[Begin Action 9]
+5,0, 0,0, 15,
+5,0, 0,0, 5,,AS256D10
+5,0, 0,0, 5,,AS210D50
+5,0, 0,0, 5,,AS170D90
+5,0, 0,0, 5,,AS130D130
+5,0, 0,0, 5,,AS90D170
+5,0, 0,0, 5,,AS50D210
+5,0, 0,0, 5,,AS10D256
+-1,-1,0,0,-1
+
+[Begin Action 10]
+6,0, 0,0, 175,
+6,0, 0,0, 5,,AS256D10
+6,0, 0,0, 5,,AS210D50
+6,0, 0,0, 5,,AS170D90
+6,0, 0,0, 5,,AS130D130
+6,0, 0,0, 5,,AS90D170
+6,0, 0,0, 5,,AS50D210
+6,0, 0,0, 5,,AS10D256
+6,1, 0,0, 350,
+6,1, 0,0, 5,,AS256D10
+6,1, 0,0, 5,,AS210D50
+6,1, 0,0, 5,,AS170D90
+6,1, 0,0, 5,,AS130D130
+6,1, 0,0, 5,,AS90D170
+6,1, 0,0, 5,,AS50D210
+6,1, 0,0, 5,,AS10D256
+-1,-1,0,0,-1
+
+[Begin Action 11]
+4,19, 0,0, 100,
+4,19, 0,0, 5,,AS256D10
+4,19, 0,0, 5,,AS210D50
+4,19, 0,0, 5,,AS170D90
+4,19, 0,0, 5,,AS130D130
+4,19, 0,0, 5,,AS90D170
+4,19, 0,0, 5,,AS50D210
+4,19, 0,0, 5,,AS10D256
+4,20, 0,0, 100,
+4,20, 0,0, 5,,AS256D10
+4,20, 0,0, 5,,AS210D50
+4,20, 0,0, 5,,AS170D90
+4,20, 0,0, 5,,AS130D130
+4,20, 0,0, 5,,AS90D170
+4,20, 0,0, 5,,AS50D210
+4,20, 0,0, 5,,AS10D256
+
+[Begin Action 12]
+4,20, 0,0, 135,
+4,19, 0,0, 135,
+
+[Begin Action 100]
+0,0, 0,0, 15,
+0,1, 0,0, 5,,AS10D256
+0,1, 0,0, 5,,AS50D210
+0,1, 0,0, 5,,AS90D170
+0,1, 0,0, 5,,AS130D130
+0,1, 0,0, 5,,AS170D90
+0,1, 0,0, 5,,AS210D50
+0,1, 0,0, 5,,AS256D10
+0,1, 0,0, 100,
+0,1, 0,0, 5,,AS256D10
+0,1, 0,0, 5,,AS210D50
+0,1, 0,0, 5,,AS170D90
+0,1, 0,0, 5,,AS130D130
+0,1, 0,0, 5,,AS90D170
+0,1, 0,0, 5,,AS50D210
+0,1, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,2, 0,0, 5,,AS10D256
+0,2, 0,0, 5,,AS50D210
+0,2, 0,0, 5,,AS90D170
+0,2, 0,0, 5,,AS130D130
+0,2, 0,0, 5,,AS170D90
+0,2, 0,0, 5,,AS210D50
+0,2, 0,0, 5,,AS256D10
+0,2, 0,0, 100,
+0,2, 0,0, 5,,AS256D10
+0,2, 0,0, 5,,AS210D50
+0,2, 0,0, 5,,AS170D90
+0,2, 0,0, 5,,AS130D130
+0,2, 0,0, 5,,AS90D170
+0,2, 0,0, 5,,AS50D210
+0,2, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,3, 0,0, 5,,AS10D256
+0,3, 0,0, 5,,AS50D210
+0,3, 0,0, 5,,AS90D170
+0,3, 0,0, 5,,AS130D130
+0,3, 0,0, 5,,AS170D90
+0,3, 0,0, 5,,AS210D50
+0,3, 0,0, 5,,AS256D10
+0,3, 0,0, 100,
+0,3, 0,0, 5,,AS256D10
+0,3, 0,0, 5,,AS210D50
+0,3, 0,0, 5,,AS170D90
+0,3, 0,0, 5,,AS130D130
+0,3, 0,0, 5,,AS90D170
+0,3, 0,0, 5,,AS50D210
+0,3, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,4, 0,0, 5,,AS10D256
+0,4, 0,0, 5,,AS50D210
+0,4, 0,0, 5,,AS90D170
+0,4, 0,0, 5,,AS130D130
+0,4, 0,0, 5,,AS170D90
+0,4, 0,0, 5,,AS210D50
+0,4, 0,0, 5,,AS256D10
+0,4, 0,0, 100,
+0,4, 0,0, 5,,AS256D10
+0,4, 0,0, 5,,AS210D50
+0,4, 0,0, 5,,AS170D90
+0,4, 0,0, 5,,AS130D130
+0,4, 0,0, 5,,AS90D170
+0,4, 0,0, 5,,AS50D210
+0,4, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,5, 0,0, 5,,AS10D256
+0,5, 0,0, 5,,AS50D210
+0,5, 0,0, 5,,AS90D170
+0,5, 0,0, 5,,AS130D130
+0,5, 0,0, 5,,AS170D90
+0,5, 0,0, 5,,AS210D50
+0,5, 0,0, 5,,AS256D10
+0,5, 0,0, 100,
+0,5, 0,0, 5,,AS256D10
+0,5, 0,0, 5,,AS210D50
+0,5, 0,0, 5,,AS170D90
+0,5, 0,0, 5,,AS130D130
+0,5, 0,0, 5,,AS90D170
+0,5, 0,0, 5,,AS50D210
+0,5, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,6, 0,0, 5,,AS10D256
+0,6, 0,0, 5,,AS50D210
+0,6, 0,0, 5,,AS90D170
+0,6, 0,0, 5,,AS130D130
+0,6, 0,0, 5,,AS170D90
+0,6, 0,0, 5,,AS210D50
+0,6, 0,0, 5,,AS256D10
+0,6, 0,0, 100,
+0,6, 0,0, 5,,AS256D10
+0,6, 0,0, 5,,AS210D50
+0,6, 0,0, 5,,AS170D90
+0,6, 0,0, 5,,AS130D130
+0,6, 0,0, 5,,AS90D170
+0,6, 0,0, 5,,AS50D210
+0,6, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,7, 0,0, 5,,AS10D256
+0,7, 0,0, 5,,AS50D210
+0,7, 0,0, 5,,AS90D170
+0,7, 0,0, 5,,AS130D130
+0,7, 0,0, 5,,AS170D90
+0,7, 0,0, 5,,AS210D50
+0,7, 0,0, 5,,AS256D10
+0,7, 0,0, 100,
+0,7, 0,0, 5,,AS256D10
+0,7, 0,0, 5,,AS210D50
+0,7, 0,0, 5,,AS170D90
+0,7, 0,0, 5,,AS130D130
+0,7, 0,0, 5,,AS90D170
+0,7, 0,0, 5,,AS50D210
+0,7, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,8, 0,0, 5,,AS10D256
+0,8, 0,0, 5,,AS50D210
+0,8, 0,0, 5,,AS90D170
+0,8, 0,0, 5,,AS130D130
+0,8, 0,0, 5,,AS170D90
+0,8, 0,0, 5,,AS210D50
+0,8, 0,0, 5,,AS256D10
+0,8, 0,0, 100,
+0,8, 0,0, 5,,AS256D10
+0,8, 0,0, 5,,AS210D50
+0,8, 0,0, 5,,AS170D90
+0,8, 0,0, 5,,AS130D130
+0,8, 0,0, 5,,AS90D170
+0,8, 0,0, 5,,AS50D210
+0,8, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,9, 0,0, 5,,AS10D256
+0,9, 0,0, 5,,AS50D210
+0,9, 0,0, 5,,AS90D170
+0,9, 0,0, 5,,AS130D130
+0,9, 0,0, 5,,AS170D90
+0,9, 0,0, 5,,AS210D50
+0,9, 0,0, 5,,AS256D10
+0,9, 0,0, 100,
+0,9, 0,0, 5,,AS256D10
+0,9, 0,0, 5,,AS210D50
+0,9, 0,0, 5,,AS170D90
+0,9, 0,0, 5,,AS130D130
+0,9, 0,0, 5,,AS90D170
+0,9, 0,0, 5,,AS50D210
+0,9, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,10, 0,0, 5,,AS10D256
+0,10, 0,0, 5,,AS50D210
+0,10, 0,0, 5,,AS90D170
+0,10, 0,0, 5,,AS130D130
+0,10, 0,0, 5,,AS170D90
+0,10, 0,0, 5,,AS210D50
+0,10, 0,0, 5,,AS256D10
+0,10, 0,0, 100,
+0,10, 0,0, 5,,AS256D10
+0,10, 0,0, 5,,AS210D50
+0,10, 0,0, 5,,AS170D90
+0,10, 0,0, 5,,AS130D130
+0,10, 0,0, 5,,AS90D170
+0,10, 0,0, 5,,AS50D210
+0,10, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,11, 0,0, 5,,AS10D256
+0,11, 0,0, 5,,AS50D210
+0,11, 0,0, 5,,AS90D170
+0,11, 0,0, 5,,AS130D130
+0,11, 0,0, 5,,AS170D90
+0,11, 0,0, 5,,AS210D50
+0,11, 0,0, 5,,AS256D10
+0,11, 0,0, 100,
+0,11, 0,0, 5,,AS256D10
+0,11, 0,0, 5,,AS210D50
+0,11, 0,0, 5,,AS170D90
+0,11, 0,0, 5,,AS130D130
+0,11, 0,0, 5,,AS90D170
+0,11, 0,0, 5,,AS50D210
+0,11, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,12, 0,0, 5,,AS10D256
+0,12, 0,0, 5,,AS50D210
+0,12, 0,0, 5,,AS90D170
+0,12, 0,0, 5,,AS130D130
+0,12, 0,0, 5,,AS170D90
+0,12, 0,0, 5,,AS210D50
+0,12, 0,0, 5,,AS256D10
+0,12, 0,0, 100,
+0,12, 0,0, 5,,AS256D10
+0,12, 0,0, 5,,AS210D50
+0,12, 0,0, 5,,AS170D90
+0,12, 0,0, 5,,AS130D130
+0,12, 0,0, 5,,AS90D170
+0,12, 0,0, 5,,AS50D210
+0,12, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,13, 0,0, 5,,AS10D256
+0,13, 0,0, 5,,AS50D210
+0,13, 0,0, 5,,AS90D170
+0,13, 0,0, 5,,AS130D130
+0,13, 0,0, 5,,AS170D90
+0,13, 0,0, 5,,AS210D50
+0,13, 0,0, 5,,AS256D10
+0,13, 0,0, 100,
+0,13, 0,0, 5,,AS256D10
+0,13, 0,0, 5,,AS210D50
+0,13, 0,0, 5,,AS170D90
+0,13, 0,0, 5,,AS130D130
+0,13, 0,0, 5,,AS90D170
+0,13, 0,0, 5,,AS50D210
+0,13, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,14, 0,0, 5,,AS10D256
+0,14, 0,0, 5,,AS50D210
+0,14, 0,0, 5,,AS90D170
+0,14, 0,0, 5,,AS130D130
+0,14, 0,0, 5,,AS170D90
+0,14, 0,0, 5,,AS210D50
+0,14, 0,0, 5,,AS256D10
+0,14, 0,0, 100,
+0,14, 0,0, 5,,AS256D10
+0,14, 0,0, 5,,AS210D50
+0,14, 0,0, 5,,AS170D90
+0,14, 0,0, 5,,AS130D130
+0,14, 0,0, 5,,AS90D170
+0,14, 0,0, 5,,AS50D210
+0,14, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,15, 0,0, 5,,AS10D256
+0,15, 0,0, 5,,AS50D210
+0,15, 0,0, 5,,AS90D170
+0,15, 0,0, 5,,AS130D130
+0,15, 0,0, 5,,AS170D90
+0,15, 0,0, 5,,AS210D50
+0,15, 0,0, 5,,AS256D10
+0,15, 0,0, 100,
+0,15, 0,0, 5,,AS256D10
+0,15, 0,0, 5,,AS210D50
+0,15, 0,0, 5,,AS170D90
+0,15, 0,0, 5,,AS130D130
+0,15, 0,0, 5,,AS90D170
+0,15, 0,0, 5,,AS50D210
+0,15, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,16, 0,0, 5,,AS10D256
+0,16, 0,0, 5,,AS50D210
+0,16, 0,0, 5,,AS90D170
+0,16, 0,0, 5,,AS130D130
+0,16, 0,0, 5,,AS170D90
+0,16, 0,0, 5,,AS210D50
+0,16, 0,0, 5,,AS256D10
+0,16, 0,0, 100,
+0,16, 0,0, 5,,AS256D10
+0,16, 0,0, 5,,AS210D50
+0,16, 0,0, 5,,AS170D90
+0,16, 0,0, 5,,AS130D130
+0,16, 0,0, 5,,AS90D170
+0,16, 0,0, 5,,AS50D210
+0,16, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,17, 0,0, 5,,AS10D256
+0,17, 0,0, 5,,AS50D210
+0,17, 0,0, 5,,AS90D170
+0,17, 0,0, 5,,AS130D130
+0,17, 0,0, 5,,AS170D90
+0,17, 0,0, 5,,AS210D50
+0,17, 0,0, 5,,AS256D10
+0,17, 0,0, 100,
+0,17, 0,0, 5,,AS256D10
+0,17, 0,0, 5,,AS210D50
+0,17, 0,0, 5,,AS170D90
+0,17, 0,0, 5,,AS130D130
+0,17, 0,0, 5,,AS90D170
+0,17, 0,0, 5,,AS50D210
+0,17, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,18, 0,0, 5,,AS10D256
+0,18, 0,0, 5,,AS50D210
+0,18, 0,0, 5,,AS90D170
+0,18, 0,0, 5,,AS130D130
+0,18, 0,0, 5,,AS170D90
+0,18, 0,0, 5,,AS210D50
+0,18, 0,0, 5,,AS256D10
+0,18, 0,0, 100,
+0,18, 0,0, 5,,AS256D10
+0,18, 0,0, 5,,AS210D50
+0,18, 0,0, 5,,AS170D90
+0,18, 0,0, 5,,AS130D130
+0,18, 0,0, 5,,AS90D170
+0,18, 0,0, 5,,AS50D210
+0,18, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,19, 0,0, 5,,AS10D256
+0,19, 0,0, 5,,AS50D210
+0,19, 0,0, 5,,AS90D170
+0,19, 0,0, 5,,AS130D130
+0,19, 0,0, 5,,AS170D90
+0,19, 0,0, 5,,AS210D50
+0,19, 0,0, 5,,AS256D10
+0,19, 0,0, 100,
+0,19, 0,0, 5,,AS256D10
+0,19, 0,0, 5,,AS210D50
+0,19, 0,0, 5,,AS170D90
+0,19, 0,0, 5,,AS130D130
+0,19, 0,0, 5,,AS90D170
+0,19, 0,0, 5,,AS50D210
+0,19, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,20, 0,0, 5,,AS10D256
+0,20, 0,0, 5,,AS50D210
+0,20, 0,0, 5,,AS90D170
+0,20, 0,0, 5,,AS130D130
+0,20, 0,0, 5,,AS170D90
+0,20, 0,0, 5,,AS210D50
+0,20, 0,0, 5,,AS256D10
+0,20, 0,0, 100,
+0,20, 0,0, 5,,AS256D10
+0,20, 0,0, 5,,AS210D50
+0,20, 0,0, 5,,AS170D90
+0,20, 0,0, 5,,AS130D130
+0,20, 0,0, 5,,AS90D170
+0,20, 0,0, 5,,AS50D210
+0,20, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,21, 0,0, 5,,AS10D256
+0,21, 0,0, 5,,AS50D210
+0,21, 0,0, 5,,AS90D170
+0,21, 0,0, 5,,AS130D130
+0,21, 0,0, 5,,AS170D90
+0,21, 0,0, 5,,AS210D50
+0,21, 0,0, 5,,AS256D10
+0,21, 0,0, 100,
+0,21, 0,0, 5,,AS256D10
+0,21, 0,0, 5,,AS210D50
+0,21, 0,0, 5,,AS170D90
+0,21, 0,0, 5,,AS130D130
+0,21, 0,0, 5,,AS90D170
+0,21, 0,0, 5,,AS50D210
+0,21, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,22, 0,0, 5,,AS10D256
+0,22, 0,0, 5,,AS50D210
+0,22, 0,0, 5,,AS90D170
+0,22, 0,0, 5,,AS130D130
+0,22, 0,0, 5,,AS170D90
+0,22, 0,0, 5,,AS210D50
+0,22, 0,0, 5,,AS256D10
+0,22, 0,0, 100,
+0,22, 0,0, 5,,AS256D10
+0,22, 0,0, 5,,AS210D50
+0,22, 0,0, 5,,AS170D90
+0,22, 0,0, 5,,AS130D130
+0,22, 0,0, 5,,AS90D170
+0,22, 0,0, 5,,AS50D210
+0,22, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,23, 0,0, 5,,AS10D256
+0,23, 0,0, 5,,AS50D210
+0,23, 0,0, 5,,AS90D170
+0,23, 0,0, 5,,AS130D130
+0,23, 0,0, 5,,AS170D90
+0,23, 0,0, 5,,AS210D50
+0,23, 0,0, 5,,AS256D10
+0,23, 0,0, 100,
+0,23, 0,0, 5,,AS256D10
+0,23, 0,0, 5,,AS210D50
+0,23, 0,0, 5,,AS170D90
+0,23, 0,0, 5,,AS130D130
+0,23, 0,0, 5,,AS90D170
+0,23, 0,0, 5,,AS50D210
+0,23, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,24, 0,0, 5,,AS10D256
+0,24, 0,0, 5,,AS50D210
+0,24, 0,0, 5,,AS90D170
+0,24, 0,0, 5,,AS130D130
+0,24, 0,0, 5,,AS170D90
+0,24, 0,0, 5,,AS210D50
+0,24, 0,0, 5,,AS256D10
+0,24, 0,0, 100,
+0,24, 0,0, 5,,AS256D10
+0,24, 0,0, 5,,AS210D50
+0,24, 0,0, 5,,AS170D90
+0,24, 0,0, 5,,AS130D130
+0,24, 0,0, 5,,AS90D170
+0,24, 0,0, 5,,AS50D210
+0,24, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,25, 0,0, 5,,AS10D256
+0,25, 0,0, 5,,AS50D210
+0,25, 0,0, 5,,AS90D170
+0,25, 0,0, 5,,AS130D130
+0,25, 0,0, 5,,AS170D90
+0,25, 0,0, 5,,AS210D50
+0,25, 0,0, 5,,AS256D10
+0,25, 0,0, 100,
+0,25, 0,0, 5,,AS256D10
+0,25, 0,0, 5,,AS210D50
+0,25, 0,0, 5,,AS170D90
+0,25, 0,0, 5,,AS130D130
+0,25, 0,0, 5,,AS90D170
+0,25, 0,0, 5,,AS50D210
+0,25, 0,0, 5,,AS10D256
+
+[Begin Action 200]
+-1,-1,0,0,10
+loopstart
+0,0, 0,0, 15,
+0,26, 0,0, 5,,AS10D256
+0,26, 0,0, 5,,AS50D210
+0,26, 0,0, 5,,AS90D170
+0,26, 0,0, 5,,AS130D130
+0,26, 0,0, 5,,AS170D90
+0,26, 0,0, 5,,AS210D50
+0,26, 0,0, 5,,AS256D10
+0,26, 0,0, 100,
+0,26, 0,0, 5,,AS256D10
+0,26, 0,0, 5,,AS210D50
+0,26, 0,0, 5,,AS170D90
+0,26, 0,0, 5,,AS130D130
+0,26, 0,0, 5,,AS90D170
+0,26, 0,0, 5,,AS50D210
+0,26, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,27, 0,0, 5,,AS10D256
+0,27, 0,0, 5,,AS50D210
+0,27, 0,0, 5,,AS90D170
+0,27, 0,0, 5,,AS130D130
+0,27, 0,0, 5,,AS170D90
+0,27, 0,0, 5,,AS210D50
+0,27, 0,0, 5,,AS256D10
+0,27, 0,0, 100,
+0,27, 0,0, 5,,AS256D10
+0,27, 0,0, 5,,AS210D50
+0,27, 0,0, 5,,AS170D90
+0,27, 0,0, 5,,AS130D130
+0,27, 0,0, 5,,AS90D170
+0,27, 0,0, 5,,AS50D210
+0,27, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,28, 0,0, 5,,AS10D256
+0,28, 0,0, 5,,AS50D210
+0,28, 0,0, 5,,AS90D170
+0,28, 0,0, 5,,AS130D130
+0,28, 0,0, 5,,AS170D90
+0,28, 0,0, 5,,AS210D50
+0,28, 0,0, 5,,AS256D10
+0,28, 0,0, 100,
+0,28, 0,0, 5,,AS256D10
+0,28, 0,0, 5,,AS210D50
+0,28, 0,0, 5,,AS170D90
+0,28, 0,0, 5,,AS130D130
+0,28, 0,0, 5,,AS90D170
+0,28, 0,0, 5,,AS50D210
+0,28, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,29, 0,0, 5,,AS10D256
+0,29, 0,0, 5,,AS50D210
+0,29, 0,0, 5,,AS90D170
+0,29, 0,0, 5,,AS130D130
+0,29, 0,0, 5,,AS170D90
+0,29, 0,0, 5,,AS210D50
+0,29, 0,0, 5,,AS256D10
+0,29, 0,0, 100,
+0,29, 0,0, 5,,AS256D10
+0,29, 0,0, 5,,AS210D50
+0,29, 0,0, 5,,AS170D90
+0,29, 0,0, 5,,AS130D130
+0,29, 0,0, 5,,AS90D170
+0,29, 0,0, 5,,AS50D210
+0,29, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,30, 0,0, 5,,AS10D256
+0,30, 0,0, 5,,AS50D210
+0,30, 0,0, 5,,AS90D170
+0,30, 0,0, 5,,AS130D130
+0,30, 0,0, 5,,AS170D90
+0,30, 0,0, 5,,AS210D50
+0,30, 0,0, 5,,AS256D10
+0,30, 0,0, 100,
+0,30, 0,0, 5,,AS256D10
+0,30, 0,0, 5,,AS210D50
+0,30, 0,0, 5,,AS170D90
+0,30, 0,0, 5,,AS130D130
+0,30, 0,0, 5,,AS90D170
+0,30, 0,0, 5,,AS50D210
+0,30, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,31, 0,0, 5,,AS10D256
+0,31, 0,0, 5,,AS50D210
+0,31, 0,0, 5,,AS90D170
+0,31, 0,0, 5,,AS130D130
+0,31, 0,0, 5,,AS170D90
+0,31, 0,0, 5,,AS210D50
+0,31, 0,0, 5,,AS256D10
+0,31, 0,0, 100,
+0,31, 0,0, 5,,AS256D10
+0,31, 0,0, 5,,AS210D50
+0,31, 0,0, 5,,AS170D90
+0,31, 0,0, 5,,AS130D130
+0,31, 0,0, 5,,AS90D170
+0,31, 0,0, 5,,AS50D210
+0,31, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,32, 0,0, 5,,AS10D256
+0,32, 0,0, 5,,AS50D210
+0,32, 0,0, 5,,AS90D170
+0,32, 0,0, 5,,AS130D130
+0,32, 0,0, 5,,AS170D90
+0,32, 0,0, 5,,AS210D50
+0,32, 0,0, 5,,AS256D10
+0,32, 0,0, 100,
+0,32, 0,0, 5,,AS256D10
+0,32, 0,0, 5,,AS210D50
+0,32, 0,0, 5,,AS170D90
+0,32, 0,0, 5,,AS130D130
+0,32, 0,0, 5,,AS90D170
+0,32, 0,0, 5,,AS50D210
+0,32, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,33, 0,0, 5,,AS10D256
+0,33, 0,0, 5,,AS50D210
+0,33, 0,0, 5,,AS90D170
+0,33, 0,0, 5,,AS130D130
+0,33, 0,0, 5,,AS170D90
+0,33, 0,0, 5,,AS210D50
+0,33, 0,0, 5,,AS256D10
+0,33, 0,0, 100,
+0,33, 0,0, 5,,AS256D10
+0,33, 0,0, 5,,AS210D50
+0,33, 0,0, 5,,AS170D90
+0,33, 0,0, 5,,AS130D130
+0,33, 0,0, 5,,AS90D170
+0,33, 0,0, 5,,AS50D210
+0,33, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,34, 0,0, 5,,AS10D256
+0,34, 0,0, 5,,AS50D210
+0,34, 0,0, 5,,AS90D170
+0,34, 0,0, 5,,AS130D130
+0,34, 0,0, 5,,AS170D90
+0,34, 0,0, 5,,AS210D50
+0,34, 0,0, 5,,AS256D10
+0,34, 0,0, 100,
+0,34, 0,0, 5,,AS256D10
+0,34, 0,0, 5,,AS210D50
+0,34, 0,0, 5,,AS170D90
+0,34, 0,0, 5,,AS130D130
+0,34, 0,0, 5,,AS90D170
+0,34, 0,0, 5,,AS50D210
+0,34, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,35, 0,0, 5,,AS10D256
+0,35, 0,0, 5,,AS50D210
+0,35, 0,0, 5,,AS90D170
+0,35, 0,0, 5,,AS130D130
+0,35, 0,0, 5,,AS170D90
+0,35, 0,0, 5,,AS210D50
+0,35, 0,0, 5,,AS256D10
+0,35, 0,0, 100,
+0,35, 0,0, 5,,AS256D10
+0,35, 0,0, 5,,AS210D50
+0,35, 0,0, 5,,AS170D90
+0,35, 0,0, 5,,AS130D130
+0,35, 0,0, 5,,AS90D170
+0,35, 0,0, 5,,AS50D210
+0,35, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,36, 0,0, 5,,AS10D256
+0,36, 0,0, 5,,AS50D210
+0,36, 0,0, 5,,AS90D170
+0,36, 0,0, 5,,AS130D130
+0,36, 0,0, 5,,AS170D90
+0,36, 0,0, 5,,AS210D50
+0,36, 0,0, 5,,AS256D10
+0,36, 0,0, 100,
+0,36, 0,0, 5,,AS256D10
+0,36, 0,0, 5,,AS210D50
+0,36, 0,0, 5,,AS170D90
+0,36, 0,0, 5,,AS130D130
+0,36, 0,0, 5,,AS90D170
+0,36, 0,0, 5,,AS50D210
+0,36, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,37, 0,0, 5,,AS10D256
+0,37, 0,0, 5,,AS50D210
+0,37, 0,0, 5,,AS90D170
+0,37, 0,0, 5,,AS130D130
+0,37, 0,0, 5,,AS170D90
+0,37, 0,0, 5,,AS210D50
+0,37, 0,0, 5,,AS256D10
+0,37, 0,0, 100,
+0,37, 0,0, 5,,AS256D10
+0,37, 0,0, 5,,AS210D50
+0,37, 0,0, 5,,AS170D90
+0,37, 0,0, 5,,AS130D130
+0,37, 0,0, 5,,AS90D170
+0,37, 0,0, 5,,AS50D210
+0,37, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,38, 0,0, 5,,AS10D256
+0,38, 0,0, 5,,AS50D210
+0,38, 0,0, 5,,AS90D170
+0,38, 0,0, 5,,AS130D130
+0,38, 0,0, 5,,AS170D90
+0,38, 0,0, 5,,AS210D50
+0,38, 0,0, 5,,AS256D10
+0,38, 0,0, 100,
+0,38, 0,0, 5,,AS256D10
+0,38, 0,0, 5,,AS210D50
+0,38, 0,0, 5,,AS170D90
+0,38, 0,0, 5,,AS130D130
+0,38, 0,0, 5,,AS90D170
+0,38, 0,0, 5,,AS50D210
+0,38, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,39, 0,0, 5,,AS10D256
+0,39, 0,0, 5,,AS50D210
+0,39, 0,0, 5,,AS90D170
+0,39, 0,0, 5,,AS130D130
+0,39, 0,0, 5,,AS170D90
+0,39, 0,0, 5,,AS210D50
+0,39, 0,0, 5,,AS256D10
+0,39, 0,0, 100,
+0,39, 0,0, 5,,AS256D10
+0,39, 0,0, 5,,AS210D50
+0,39, 0,0, 5,,AS170D90
+0,39, 0,0, 5,,AS130D130
+0,39, 0,0, 5,,AS90D170
+0,39, 0,0, 5,,AS50D210
+0,39, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,40, 0,0, 5,,AS10D256
+0,40, 0,0, 5,,AS50D210
+0,40, 0,0, 5,,AS90D170
+0,40, 0,0, 5,,AS130D130
+0,40, 0,0, 5,,AS170D90
+0,40, 0,0, 5,,AS210D50
+0,40, 0,0, 5,,AS256D10
+0,40, 0,0, 100,
+0,40, 0,0, 5,,AS256D10
+0,40, 0,0, 5,,AS210D50
+0,40, 0,0, 5,,AS170D90
+0,40, 0,0, 5,,AS130D130
+0,40, 0,0, 5,,AS90D170
+0,40, 0,0, 5,,AS50D210
+0,40, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,41, 0,0, 5,,AS10D256
+0,41, 0,0, 5,,AS50D210
+0,41, 0,0, 5,,AS90D170
+0,41, 0,0, 5,,AS130D130
+0,41, 0,0, 5,,AS170D90
+0,41, 0,0, 5,,AS210D50
+0,41, 0,0, 5,,AS256D10
+0,41, 0,0, 100,
+0,41, 0,0, 5,,AS256D10
+0,41, 0,0, 5,,AS210D50
+0,41, 0,0, 5,,AS170D90
+0,41, 0,0, 5,,AS130D130
+0,41, 0,0, 5,,AS90D170
+0,41, 0,0, 5,,AS50D210
+0,41, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,42, 0,0, 5,,AS10D256
+0,42, 0,0, 5,,AS50D210
+0,42, 0,0, 5,,AS90D170
+0,42, 0,0, 5,,AS130D130
+0,42, 0,0, 5,,AS170D90
+0,42, 0,0, 5,,AS210D50
+0,42, 0,0, 5,,AS256D10
+0,42, 0,0, 100,
+0,42, 0,0, 5,,AS256D10
+0,42, 0,0, 5,,AS210D50
+0,42, 0,0, 5,,AS170D90
+0,42, 0,0, 5,,AS130D130
+0,42, 0,0, 5,,AS90D170
+0,42, 0,0, 5,,AS50D210
+0,42, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,43, 0,0, 5,,AS10D256
+0,43, 0,0, 5,,AS50D210
+0,43, 0,0, 5,,AS90D170
+0,43, 0,0, 5,,AS130D130
+0,43, 0,0, 5,,AS170D90
+0,43, 0,0, 5,,AS210D50
+0,43, 0,0, 5,,AS256D10
+0,43, 0,0, 100,
+0,43, 0,0, 5,,AS256D10
+0,43, 0,0, 5,,AS210D50
+0,43, 0,0, 5,,AS170D90
+0,43, 0,0, 5,,AS130D130
+0,43, 0,0, 5,,AS90D170
+0,43, 0,0, 5,,AS50D210
+0,43, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,44, 0,0, 5,,AS10D256
+0,44, 0,0, 5,,AS50D210
+0,44, 0,0, 5,,AS90D170
+0,44, 0,0, 5,,AS130D130
+0,44, 0,0, 5,,AS170D90
+0,44, 0,0, 5,,AS210D50
+0,44, 0,0, 5,,AS256D10
+0,44, 0,0, 100,
+0,44, 0,0, 5,,AS256D10
+0,44, 0,0, 5,,AS210D50
+0,44, 0,0, 5,,AS170D90
+0,44, 0,0, 5,,AS130D130
+0,44, 0,0, 5,,AS90D170
+0,44, 0,0, 5,,AS50D210
+0,44, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,45, 0,0, 5,,AS10D256
+0,45, 0,0, 5,,AS50D210
+0,45, 0,0, 5,,AS90D170
+0,45, 0,0, 5,,AS130D130
+0,45, 0,0, 5,,AS170D90
+0,45, 0,0, 5,,AS210D50
+0,45, 0,0, 5,,AS256D10
+0,45, 0,0, 100,
+0,45, 0,0, 5,,AS256D10
+0,45, 0,0, 5,,AS210D50
+0,45, 0,0, 5,,AS170D90
+0,45, 0,0, 5,,AS130D130
+0,45, 0,0, 5,,AS90D170
+0,45, 0,0, 5,,AS50D210
+0,45, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,46, 0,0, 5,,AS10D256
+0,46, 0,0, 5,,AS50D210
+0,46, 0,0, 5,,AS90D170
+0,46, 0,0, 5,,AS130D130
+0,46, 0,0, 5,,AS170D90
+0,46, 0,0, 5,,AS210D50
+0,46, 0,0, 5,,AS256D10
+0,46, 0,0, 100,
+0,46, 0,0, 5,,AS256D10
+0,46, 0,0, 5,,AS210D50
+0,46, 0,0, 5,,AS170D90
+0,46, 0,0, 5,,AS130D130
+0,46, 0,0, 5,,AS90D170
+0,46, 0,0, 5,,AS50D210
+0,46, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,47, 0,0, 5,,AS10D256
+0,47, 0,0, 5,,AS50D210
+0,47, 0,0, 5,,AS90D170
+0,47, 0,0, 5,,AS130D130
+0,47, 0,0, 5,,AS170D90
+0,47, 0,0, 5,,AS210D50
+0,47, 0,0, 5,,AS256D10
+0,47, 0,0, 100,
+0,47, 0,0, 5,,AS256D10
+0,47, 0,0, 5,,AS210D50
+0,47, 0,0, 5,,AS170D90
+0,47, 0,0, 5,,AS130D130
+0,47, 0,0, 5,,AS90D170
+0,47, 0,0, 5,,AS50D210
+0,47, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,48, 0,0, 5,,AS10D256
+0,48, 0,0, 5,,AS50D210
+0,48, 0,0, 5,,AS90D170
+0,48, 0,0, 5,,AS130D130
+0,48, 0,0, 5,,AS170D90
+0,48, 0,0, 5,,AS210D50
+0,48, 0,0, 5,,AS256D10
+0,48, 0,0, 100,
+0,48, 0,0, 5,,AS256D10
+0,48, 0,0, 5,,AS210D50
+0,48, 0,0, 5,,AS170D90
+0,48, 0,0, 5,,AS130D130
+0,48, 0,0, 5,,AS90D170
+0,48, 0,0, 5,,AS50D210
+0,48, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,49, 0,0, 5,,AS10D256
+0,49, 0,0, 5,,AS50D210
+0,49, 0,0, 5,,AS90D170
+0,49, 0,0, 5,,AS130D130
+0,49, 0,0, 5,,AS170D90
+0,49, 0,0, 5,,AS210D50
+0,49, 0,0, 5,,AS256D10
+0,49, 0,0, 100,
+0,49, 0,0, 5,,AS256D10
+0,49, 0,0, 5,,AS210D50
+0,49, 0,0, 5,,AS170D90
+0,49, 0,0, 5,,AS130D130
+0,49, 0,0, 5,,AS90D170
+0,49, 0,0, 5,,AS50D210
+0,49, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,50, 0,0, 5,,AS10D256
+0,50, 0,0, 5,,AS50D210
+0,50, 0,0, 5,,AS90D170
+0,50, 0,0, 5,,AS130D130
+0,50, 0,0, 5,,AS170D90
+0,50, 0,0, 5,,AS210D50
+0,50, 0,0, 5,,AS256D10
+0,50, 0,0, 100,
+0,50, 0,0, 5,,AS256D10
+0,50, 0,0, 5,,AS210D50
+0,50, 0,0, 5,,AS170D90
+0,50, 0,0, 5,,AS130D130
+0,50, 0,0, 5,,AS90D170
+0,50, 0,0, 5,,AS50D210
+0,50, 0,0, 5,,AS10D256
+
+[Begin Action 300]
+-1,-1,0,0,15
+loopstart
+0,0, 0,0, 15,
+0,51, 0,0, 5,,AS10D256
+0,51, 0,0, 5,,AS50D210
+0,51, 0,0, 5,,AS90D170
+0,51, 0,0, 5,,AS130D130
+0,51, 0,0, 5,,AS170D90
+0,51, 0,0, 5,,AS210D50
+0,51, 0,0, 5,,AS256D10
+0,51, 0,0, 100,
+0,51, 0,0, 5,,AS256D10
+0,51, 0,0, 5,,AS210D50
+0,51, 0,0, 5,,AS170D90
+0,51, 0,0, 5,,AS130D130
+0,51, 0,0, 5,,AS90D170
+0,51, 0,0, 5,,AS50D210
+0,51, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,52, 0,0, 5,,AS10D256
+0,52, 0,0, 5,,AS50D210
+0,52, 0,0, 5,,AS90D170
+0,52, 0,0, 5,,AS130D130
+0,52, 0,0, 5,,AS170D90
+0,52, 0,0, 5,,AS210D50
+0,52, 0,0, 5,,AS256D10
+0,52, 0,0, 100,
+0,52, 0,0, 5,,AS256D10
+0,52, 0,0, 5,,AS210D50
+0,52, 0,0, 5,,AS170D90
+0,52, 0,0, 5,,AS130D130
+0,52, 0,0, 5,,AS90D170
+0,52, 0,0, 5,,AS50D210
+0,52, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,53, 0,0, 5,,AS10D256
+0,53, 0,0, 5,,AS50D210
+0,53, 0,0, 5,,AS90D170
+0,53, 0,0, 5,,AS130D130
+0,53, 0,0, 5,,AS170D90
+0,53, 0,0, 5,,AS210D50
+0,53, 0,0, 5,,AS256D10
+0,53, 0,0, 100,
+0,53, 0,0, 5,,AS256D10
+0,53, 0,0, 5,,AS210D50
+0,53, 0,0, 5,,AS170D90
+0,53, 0,0, 5,,AS130D130
+0,53, 0,0, 5,,AS90D170
+0,53, 0,0, 5,,AS50D210
+0,53, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,54, 0,0, 5,,AS10D256
+0,54, 0,0, 5,,AS50D210
+0,54, 0,0, 5,,AS90D170
+0,54, 0,0, 5,,AS130D130
+0,54, 0,0, 5,,AS170D90
+0,54, 0,0, 5,,AS210D50
+0,54, 0,0, 5,,AS256D10
+0,54, 0,0, 100,
+0,54, 0,0, 5,,AS256D10
+0,54, 0,0, 5,,AS210D50
+0,54, 0,0, 5,,AS170D90
+0,54, 0,0, 5,,AS130D130
+0,54, 0,0, 5,,AS90D170
+0,54, 0,0, 5,,AS50D210
+0,54, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,55, 0,0, 5,,AS10D256
+0,55, 0,0, 5,,AS50D210
+0,55, 0,0, 5,,AS90D170
+0,55, 0,0, 5,,AS130D130
+0,55, 0,0, 5,,AS170D90
+0,55, 0,0, 5,,AS210D50
+0,55, 0,0, 5,,AS256D10
+0,55, 0,0, 100,
+0,55, 0,0, 5,,AS256D10
+0,55, 0,0, 5,,AS210D50
+0,55, 0,0, 5,,AS170D90
+0,55, 0,0, 5,,AS130D130
+0,55, 0,0, 5,,AS90D170
+0,55, 0,0, 5,,AS50D210
+0,55, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,56, 0,0, 5,,AS10D256
+0,56, 0,0, 5,,AS50D210
+0,56, 0,0, 5,,AS90D170
+0,56, 0,0, 5,,AS130D130
+0,56, 0,0, 5,,AS170D90
+0,56, 0,0, 5,,AS210D50
+0,56, 0,0, 5,,AS256D10
+0,56, 0,0, 100,
+0,56, 0,0, 5,,AS256D10
+0,56, 0,0, 5,,AS210D50
+0,56, 0,0, 5,,AS170D90
+0,56, 0,0, 5,,AS130D130
+0,56, 0,0, 5,,AS90D170
+0,56, 0,0, 5,,AS50D210
+0,56, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,57, 0,0, 5,,AS10D256
+0,57, 0,0, 5,,AS50D210
+0,57, 0,0, 5,,AS90D170
+0,57, 0,0, 5,,AS130D130
+0,57, 0,0, 5,,AS170D90
+0,57, 0,0, 5,,AS210D50
+0,57, 0,0, 5,,AS256D10
+0,57, 0,0, 100,
+0,57, 0,0, 5,,AS256D10
+0,57, 0,0, 5,,AS210D50
+0,57, 0,0, 5,,AS170D90
+0,57, 0,0, 5,,AS130D130
+0,57, 0,0, 5,,AS90D170
+0,57, 0,0, 5,,AS50D210
+0,57, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,58, 0,0, 5,,AS10D256
+0,58, 0,0, 5,,AS50D210
+0,58, 0,0, 5,,AS90D170
+0,58, 0,0, 5,,AS130D130
+0,58, 0,0, 5,,AS170D90
+0,58, 0,0, 5,,AS210D50
+0,58, 0,0, 5,,AS256D10
+0,58, 0,0, 100,
+0,58, 0,0, 5,,AS256D10
+0,58, 0,0, 5,,AS210D50
+0,58, 0,0, 5,,AS170D90
+0,58, 0,0, 5,,AS130D130
+0,58, 0,0, 5,,AS90D170
+0,58, 0,0, 5,,AS50D210
+0,58, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,59, 0,0, 5,,AS10D256
+0,59, 0,0, 5,,AS50D210
+0,59, 0,0, 5,,AS90D170
+0,59, 0,0, 5,,AS130D130
+0,59, 0,0, 5,,AS170D90
+0,59, 0,0, 5,,AS210D50
+0,59, 0,0, 5,,AS256D10
+0,59, 0,0, 100,
+0,59, 0,0, 5,,AS256D10
+0,59, 0,0, 5,,AS210D50
+0,59, 0,0, 5,,AS170D90
+0,59, 0,0, 5,,AS130D130
+0,59, 0,0, 5,,AS90D170
+0,59, 0,0, 5,,AS50D210
+0,59, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,60, 0,0, 5,,AS10D256
+0,60, 0,0, 5,,AS50D210
+0,60, 0,0, 5,,AS90D170
+0,60, 0,0, 5,,AS130D130
+0,60, 0,0, 5,,AS170D90
+0,60, 0,0, 5,,AS210D50
+0,60, 0,0, 5,,AS256D10
+0,60, 0,0, 100,
+0,60, 0,0, 5,,AS256D10
+0,60, 0,0, 5,,AS210D50
+0,60, 0,0, 5,,AS170D90
+0,60, 0,0, 5,,AS130D130
+0,60, 0,0, 5,,AS90D170
+0,60, 0,0, 5,,AS50D210
+0,60, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,61, 0,0, 5,,AS10D256
+0,61, 0,0, 5,,AS50D210
+0,61, 0,0, 5,,AS90D170
+0,61, 0,0, 5,,AS130D130
+0,61, 0,0, 5,,AS170D90
+0,61, 0,0, 5,,AS210D50
+0,61, 0,0, 5,,AS256D10
+0,61, 0,0, 100,
+0,61, 0,0, 5,,AS256D10
+0,61, 0,0, 5,,AS210D50
+0,61, 0,0, 5,,AS170D90
+0,61, 0,0, 5,,AS130D130
+0,61, 0,0, 5,,AS90D170
+0,61, 0,0, 5,,AS50D210
+0,61, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,62, 0,0, 5,,AS10D256
+0,62, 0,0, 5,,AS50D210
+0,62, 0,0, 5,,AS90D170
+0,62, 0,0, 5,,AS130D130
+0,62, 0,0, 5,,AS170D90
+0,62, 0,0, 5,,AS210D50
+0,62, 0,0, 5,,AS256D10
+0,62, 0,0, 100,
+0,62, 0,0, 5,,AS256D10
+0,62, 0,0, 5,,AS210D50
+0,62, 0,0, 5,,AS170D90
+0,62, 0,0, 5,,AS130D130
+0,62, 0,0, 5,,AS90D170
+0,62, 0,0, 5,,AS50D210
+0,62, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,63, 0,0, 5,,AS10D256
+0,63, 0,0, 5,,AS50D210
+0,63, 0,0, 5,,AS90D170
+0,63, 0,0, 5,,AS130D130
+0,63, 0,0, 5,,AS170D90
+0,63, 0,0, 5,,AS210D50
+0,63, 0,0, 5,,AS256D10
+0,63, 0,0, 100,
+0,63, 0,0, 5,,AS256D10
+0,63, 0,0, 5,,AS210D50
+0,63, 0,0, 5,,AS170D90
+0,63, 0,0, 5,,AS130D130
+0,63, 0,0, 5,,AS90D170
+0,63, 0,0, 5,,AS50D210
+0,63, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,64, 0,0, 5,,AS10D256
+0,64, 0,0, 5,,AS50D210
+0,64, 0,0, 5,,AS90D170
+0,64, 0,0, 5,,AS130D130
+0,64, 0,0, 5,,AS170D90
+0,64, 0,0, 5,,AS210D50
+0,64, 0,0, 5,,AS256D10
+0,64, 0,0, 100,
+0,64, 0,0, 5,,AS256D10
+0,64, 0,0, 5,,AS210D50
+0,64, 0,0, 5,,AS170D90
+0,64, 0,0, 5,,AS130D130
+0,64, 0,0, 5,,AS90D170
+0,64, 0,0, 5,,AS50D210
+0,64, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,65, 0,0, 5,,AS10D256
+0,65, 0,0, 5,,AS50D210
+0,65, 0,0, 5,,AS90D170
+0,65, 0,0, 5,,AS130D130
+0,65, 0,0, 5,,AS170D90
+0,65, 0,0, 5,,AS210D50
+0,65, 0,0, 5,,AS256D10
+0,65, 0,0, 100,
+0,65, 0,0, 5,,AS256D10
+0,65, 0,0, 5,,AS210D50
+0,65, 0,0, 5,,AS170D90
+0,65, 0,0, 5,,AS130D130
+0,65, 0,0, 5,,AS90D170
+0,65, 0,0, 5,,AS50D210
+0,65, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,66, 0,0, 5,,AS10D256
+0,66, 0,0, 5,,AS50D210
+0,66, 0,0, 5,,AS90D170
+0,66, 0,0, 5,,AS130D130
+0,66, 0,0, 5,,AS170D90
+0,66, 0,0, 5,,AS210D50
+0,66, 0,0, 5,,AS256D10
+0,66, 0,0, 100,
+0,66, 0,0, 5,,AS256D10
+0,66, 0,0, 5,,AS210D50
+0,66, 0,0, 5,,AS170D90
+0,66, 0,0, 5,,AS130D130
+0,66, 0,0, 5,,AS90D170
+0,66, 0,0, 5,,AS50D210
+0,66, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,67, 0,0, 5,,AS10D256
+0,67, 0,0, 5,,AS50D210
+0,67, 0,0, 5,,AS90D170
+0,67, 0,0, 5,,AS130D130
+0,67, 0,0, 5,,AS170D90
+0,67, 0,0, 5,,AS210D50
+0,67, 0,0, 5,,AS256D10
+0,67, 0,0, 100,
+0,67, 0,0, 5,,AS256D10
+0,67, 0,0, 5,,AS210D50
+0,67, 0,0, 5,,AS170D90
+0,67, 0,0, 5,,AS130D130
+0,67, 0,0, 5,,AS90D170
+0,67, 0,0, 5,,AS50D210
+0,67, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,68, 0,0, 5,,AS10D256
+0,68, 0,0, 5,,AS50D210
+0,68, 0,0, 5,,AS90D170
+0,68, 0,0, 5,,AS130D130
+0,68, 0,0, 5,,AS170D90
+0,68, 0,0, 5,,AS210D50
+0,68, 0,0, 5,,AS256D10
+0,68, 0,0, 100,
+0,68, 0,0, 5,,AS256D10
+0,68, 0,0, 5,,AS210D50
+0,68, 0,0, 5,,AS170D90
+0,68, 0,0, 5,,AS130D130
+0,68, 0,0, 5,,AS90D170
+0,68, 0,0, 5,,AS50D210
+0,68, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,69, 0,0, 5,,AS10D256
+0,69, 0,0, 5,,AS50D210
+0,69, 0,0, 5,,AS90D170
+0,69, 0,0, 5,,AS130D130
+0,69, 0,0, 5,,AS170D90
+0,69, 0,0, 5,,AS210D50
+0,69, 0,0, 5,,AS256D10
+0,69, 0,0, 100,
+0,69, 0,0, 5,,AS256D10
+0,69, 0,0, 5,,AS210D50
+0,69, 0,0, 5,,AS170D90
+0,69, 0,0, 5,,AS130D130
+0,69, 0,0, 5,,AS90D170
+0,69, 0,0, 5,,AS50D210
+0,69, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,70, 0,0, 5,,AS10D256
+0,70, 0,0, 5,,AS50D210
+0,70,0,0, 5,,AS90D170
+0,70, 0,0, 5,,AS130D130
+0,70, 0,0, 5,,AS170D90
+0,70, 0,0, 5,,AS210D50
+0,70, 0,0, 5,,AS256D10
+0,70, 0,0, 100,
+0,70, 0,0, 5,,AS256D10
+0,70, 0,0, 5,,AS210D50
+0,70, 0,0, 5,,AS170D90
+0,70, 0,0, 5,,AS130D130
+0,70, 0,0, 5,,AS90D170
+0,70, 0,0, 5,,AS50D210
+0,70, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,71, 0,0, 5,,AS10D256
+0,71, 0,0, 5,,AS50D210
+0,71, 0,0, 5,,AS90D170
+0,71, 0,0, 5,,AS130D130
+0,71, 0,0, 5,,AS170D90
+0,71, 0,0, 5,,AS210D50
+0,71, 0,0, 5,,AS256D10
+0,71, 0,0, 100,
+0,71, 0,0, 5,,AS256D10
+0,71, 0,0, 5,,AS210D50
+0,71, 0,0, 5,,AS170D90
+0,71, 0,0, 5,,AS130D130
+0,71, 0,0, 5,,AS90D170
+0,71, 0,0, 5,,AS50D210
+0,71, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,72, 0,0, 5,,AS10D256
+0,72, 0,0, 5,,AS50D210
+0,72, 0,0, 5,,AS90D170
+0,72, 0,0, 5,,AS130D130
+0,72, 0,0, 5,,AS170D90
+0,72, 0,0, 5,,AS210D50
+0,72, 0,0, 5,,AS256D10
+0,72, 0,0, 100,
+0,72, 0,0, 5,,AS256D10
+0,72, 0,0, 5,,AS210D50
+0,72, 0,0, 5,,AS170D90
+0,72, 0,0, 5,,AS130D130
+0,72, 0,0, 5,,AS90D170
+0,72, 0,0, 5,,AS50D210
+0,72, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,73, 0,0, 5,,AS10D256
+0,73, 0,0, 5,,AS50D210
+0,73, 0,0, 5,,AS90D170
+0,73, 0,0, 5,,AS130D130
+0,73, 0,0, 5,,AS170D90
+0,73, 0,0, 5,,AS210D50
+0,73, 0,0, 5,,AS256D10
+0,73, 0,0, 100,
+0,73, 0,0, 5,,AS256D10
+0,73, 0,0, 5,,AS210D50
+0,73, 0,0, 5,,AS170D90
+0,73, 0,0, 5,,AS130D130
+0,73, 0,0, 5,,AS90D170
+0,73, 0,0, 5,,AS50D210
+0,73, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,74, 0,0, 5,,AS10D256
+0,74, 0,0, 5,,AS50D210
+0,74, 0,0, 5,,AS90D170
+0,74, 0,0, 5,,AS130D130
+0,74, 0,0, 5,,AS170D90
+0,74, 0,0, 5,,AS210D50
+0,74, 0,0, 5,,AS256D10
+0,74, 0,0, 100,
+0,74, 0,0, 5,,AS256D10
+0,74, 0,0, 5,,AS210D50
+0,74, 0,0, 5,,AS170D90
+0,74, 0,0, 5,,AS130D130
+0,74, 0,0, 5,,AS90D170
+0,74, 0,0, 5,,AS50D210
+0,74, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,75, 0,0, 5,,AS10D256
+0,75, 0,0, 5,,AS50D210
+0,75, 0,0, 5,,AS90D170
+0,75, 0,0, 5,,AS130D130
+0,75, 0,0, 5,,AS170D90
+0,75, 0,0, 5,,AS210D50
+0,75, 0,0, 5,,AS256D10
+0,75, 0,0, 100,
+0,75, 0,0, 5,,AS256D10
+0,75, 0,0, 5,,AS210D50
+0,75, 0,0, 5,,AS170D90
+0,75, 0,0, 5,,AS130D130
+0,75, 0,0, 5,,AS90D170
+0,75, 0,0, 5,,AS50D210
+0,75, 0,0, 5,,AS10D256
+
+[Begin Action 400]
+-1,-1,0,0,20
+loopstart
+0,0, 0,0, 15,
+0,76, 0,0, 5,,AS10D256
+0,76, 0,0, 5,,AS50D210
+0,76, 0,0, 5,,AS90D170
+0,76, 0,0, 5,,AS130D130
+0,76, 0,0, 5,,AS170D90
+0,76, 0,0, 5,,AS210D50
+0,76, 0,0, 5,,AS256D10
+0,76, 0,0, 100,
+0,76, 0,0, 5,,AS256D10
+0,76, 0,0, 5,,AS210D50
+0,76, 0,0, 5,,AS170D90
+0,76, 0,0, 5,,AS130D130
+0,76, 0,0, 5,,AS90D170
+0,76, 0,0, 5,,AS50D210
+0,76, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,77, 0,0, 5,,AS10D256
+0,77, 0,0, 5,,AS50D210
+0,77, 0,0, 5,,AS90D170
+0,77, 0,0, 5,,AS130D130
+0,77, 0,0, 5,,AS170D90
+0,77, 0,0, 5,,AS210D50
+0,77, 0,0, 5,,AS256D10
+0,77, 0,0, 100,
+0,77, 0,0, 5,,AS256D10
+0,77, 0,0, 5,,AS210D50
+0,77, 0,0, 5,,AS170D90
+0,77, 0,0, 5,,AS130D130
+0,77, 0,0, 5,,AS90D170
+0,77, 0,0, 5,,AS50D210
+0,77, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,78, 0,0, 5,,AS10D256
+0,78, 0,0, 5,,AS50D210
+0,78, 0,0, 5,,AS90D170
+0,78, 0,0, 5,,AS130D130
+0,78, 0,0, 5,,AS170D90
+0,78, 0,0, 5,,AS210D50
+0,78, 0,0, 5,,AS256D10
+0,78, 0,0, 100,
+0,78, 0,0, 5,,AS256D10
+0,78, 0,0, 5,,AS210D50
+0,78, 0,0, 5,,AS170D90
+0,78, 0,0, 5,,AS130D130
+0,78, 0,0, 5,,AS90D170
+0,78, 0,0, 5,,AS50D210
+0,78, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,79, 0,0, 5,,AS10D256
+0,79, 0,0, 5,,AS50D210
+0,79, 0,0, 5,,AS90D170
+0,79, 0,0, 5,,AS130D130
+0,79, 0,0, 5,,AS170D90
+0,79, 0,0, 5,,AS210D50
+0,79, 0,0, 5,,AS256D10
+0,79, 0,0, 100,
+0,79, 0,0, 5,,AS256D10
+0,79, 0,0, 5,,AS210D50
+0,79, 0,0, 5,,AS170D90
+0,79, 0,0, 5,,AS130D130
+0,79, 0,0, 5,,AS90D170
+0,79, 0,0, 5,,AS50D210
+0,79, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,80, 0,0, 5,,AS10D256
+0,80, 0,0, 5,,AS50D210
+0,80,0,0, 5,,AS90D170
+0,80, 0,0, 5,,AS130D130
+0,80, 0,0, 5,,AS170D90
+0,80, 0,0, 5,,AS210D50
+0,80, 0,0, 5,,AS256D10
+0,80, 0,0, 100,
+0,80, 0,0, 5,,AS256D10
+0,80, 0,0, 5,,AS210D50
+0,80, 0,0, 5,,AS170D90
+0,80, 0,0, 5,,AS130D130
+0,80, 0,0, 5,,AS90D170
+0,80, 0,0, 5,,AS50D210
+0,80, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,81, 0,0, 5,,AS10D256
+0,81, 0,0, 5,,AS50D210
+0,81, 0,0, 5,,AS90D170
+0,81, 0,0, 5,,AS130D130
+0,81, 0,0, 5,,AS170D90
+0,81, 0,0, 5,,AS210D50
+0,81, 0,0, 5,,AS256D10
+0,81, 0,0, 100,
+0,81, 0,0, 5,,AS256D10
+0,81, 0,0, 5,,AS210D50
+0,81, 0,0, 5,,AS170D90
+0,81, 0,0, 5,,AS130D130
+0,81, 0,0, 5,,AS90D170
+0,81, 0,0, 5,,AS50D210
+0,81, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,82, 0,0, 5,,AS10D256
+0,82, 0,0, 5,,AS50D210
+0,82, 0,0, 5,,AS90D170
+0,82, 0,0, 5,,AS130D130
+0,82, 0,0, 5,,AS170D90
+0,82, 0,0, 5,,AS210D50
+0,82, 0,0, 5,,AS256D10
+0,82, 0,0, 100,
+0,82, 0,0, 5,,AS256D10
+0,82, 0,0, 5,,AS210D50
+0,82, 0,0, 5,,AS170D90
+0,82, 0,0, 5,,AS130D130
+0,82, 0,0, 5,,AS90D170
+0,82, 0,0, 5,,AS50D210
+0,82, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,83, 0,0, 5,,AS10D256
+0,83, 0,0, 5,,AS50D210
+0,83, 0,0, 5,,AS90D170
+0,83, 0,0, 5,,AS130D130
+0,83, 0,0, 5,,AS170D90
+0,83, 0,0, 5,,AS210D50
+0,83, 0,0, 5,,AS256D10
+0,83, 0,0, 100,
+0,83, 0,0, 5,,AS256D10
+0,83, 0,0, 5,,AS210D50
+0,83, 0,0, 5,,AS170D90
+0,83, 0,0, 5,,AS130D130
+0,83, 0,0, 5,,AS90D170
+0,83, 0,0, 5,,AS50D210
+0,83, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,84, 0,0, 5,,AS10D256
+0,84, 0,0, 5,,AS50D210
+0,84, 0,0, 5,,AS90D170
+0,84, 0,0, 5,,AS130D130
+0,84, 0,0, 5,,AS170D90
+0,84, 0,0, 5,,AS210D50
+0,84, 0,0, 5,,AS256D10
+0,84, 0,0, 100,
+0,84, 0,0, 5,,AS256D10
+0,84, 0,0, 5,,AS210D50
+0,84, 0,0, 5,,AS170D90
+0,84, 0,0, 5,,AS130D130
+0,84, 0,0, 5,,AS90D170
+0,84, 0,0, 5,,AS50D210
+0,84, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,85, 0,0, 5,,AS10D256
+0,85, 0,0, 5,,AS50D210
+0,85, 0,0, 5,,AS90D170
+0,85, 0,0, 5,,AS130D130
+0,85, 0,0, 5,,AS170D90
+0,85, 0,0, 5,,AS210D50
+0,85, 0,0, 5,,AS256D10
+0,85, 0,0, 100,
+0,85, 0,0, 5,,AS256D10
+0,85, 0,0, 5,,AS210D50
+0,85, 0,0, 5,,AS170D90
+0,85, 0,0, 5,,AS130D130
+0,85, 0,0, 5,,AS90D170
+0,85, 0,0, 5,,AS50D210
+0,85, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,86, 0,0, 5,,AS10D256
+0,86, 0,0, 5,,AS50D210
+0,86, 0,0, 5,,AS90D170
+0,86, 0,0, 5,,AS130D130
+0,86, 0,0, 5,,AS170D90
+0,86, 0,0, 5,,AS210D50
+0,86, 0,0, 5,,AS256D10
+0,86, 0,0, 100,
+0,86, 0,0, 5,,AS256D10
+0,86, 0,0, 5,,AS210D50
+0,86, 0,0, 5,,AS170D90
+0,86, 0,0, 5,,AS130D130
+0,86, 0,0, 5,,AS90D170
+0,86, 0,0, 5,,AS50D210
+0,86, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,87, 0,0, 5,,AS10D256
+0,87, 0,0, 5,,AS50D210
+0,87, 0,0, 5,,AS90D170
+0,87, 0,0, 5,,AS130D130
+0,87, 0,0, 5,,AS170D90
+0,87, 0,0, 5,,AS210D50
+0,87, 0,0, 5,,AS256D10
+0,87, 0,0, 100,
+0,87, 0,0, 5,,AS256D10
+0,87, 0,0, 5,,AS210D50
+0,87, 0,0, 5,,AS170D90
+0,87, 0,0, 5,,AS130D130
+0,87, 0,0, 5,,AS90D170
+0,87, 0,0, 5,,AS50D210
+0,87, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,88, 0,0, 5,,AS10D256
+0,88, 0,0, 5,,AS50D210
+0,88, 0,0, 5,,AS90D170
+0,88, 0,0, 5,,AS130D130
+0,88, 0,0, 5,,AS170D90
+0,88, 0,0, 5,,AS210D50
+0,88, 0,0, 5,,AS256D10
+0,88, 0,0, 100,
+0,88, 0,0, 5,,AS256D10
+0,88, 0,0, 5,,AS210D50
+0,88, 0,0, 5,,AS170D90
+0,88, 0,0, 5,,AS130D130
+0,88, 0,0, 5,,AS90D170
+0,88, 0,0, 5,,AS50D210
+0,88, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,89, 0,0, 5,,AS10D256
+0,89, 0,0, 5,,AS50D210
+0,89, 0,0, 5,,AS90D170
+0,89, 0,0, 5,,AS130D130
+0,89, 0,0, 5,,AS170D90
+0,89, 0,0, 5,,AS210D50
+0,89, 0,0, 5,,AS256D10
+0,89, 0,0, 100,
+0,89, 0,0, 5,,AS256D10
+0,89, 0,0, 5,,AS210D50
+0,89, 0,0, 5,,AS170D90
+0,89, 0,0, 5,,AS130D130
+0,89, 0,0, 5,,AS90D170
+0,89, 0,0, 5,,AS50D210
+0,89, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,90, 0,0, 5,,AS10D256
+0,90, 0,0, 5,,AS50D210
+0,90,0,0, 5,,AS90D170
+0,90, 0,0, 5,,AS130D130
+0,90, 0,0, 5,,AS170D90
+0,90, 0,0, 5,,AS210D50
+0,90, 0,0, 5,,AS256D10
+0,90, 0,0, 100,
+0,90, 0,0, 5,,AS256D10
+0,90, 0,0, 5,,AS210D50
+0,90, 0,0, 5,,AS170D90
+0,90, 0,0, 5,,AS130D130
+0,90, 0,0, 5,,AS90D170
+0,90, 0,0, 5,,AS50D210
+0,90, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,91, 0,0, 5,,AS10D256
+0,91, 0,0, 5,,AS50D210
+0,91, 0,0, 5,,AS90D170
+0,91, 0,0, 5,,AS130D130
+0,91, 0,0, 5,,AS170D90
+0,91, 0,0, 5,,AS210D50
+0,91, 0,0, 5,,AS256D10
+0,91, 0,0, 100,
+0,91, 0,0, 5,,AS256D10
+0,91, 0,0, 5,,AS210D50
+0,91, 0,0, 5,,AS170D90
+0,91, 0,0, 5,,AS130D130
+0,91, 0,0, 5,,AS90D170
+0,91, 0,0, 5,,AS50D210
+0,91, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,92, 0,0, 5,,AS10D256
+0,92, 0,0, 5,,AS50D210
+0,92, 0,0, 5,,AS90D170
+0,92, 0,0, 5,,AS130D130
+0,92, 0,0, 5,,AS170D90
+0,92, 0,0, 5,,AS210D50
+0,92, 0,0, 5,,AS256D10
+0,92, 0,0, 100,
+0,92, 0,0, 5,,AS256D10
+0,92, 0,0, 5,,AS210D50
+0,92, 0,0, 5,,AS170D90
+0,92, 0,0, 5,,AS130D130
+0,92, 0,0, 5,,AS90D170
+0,92, 0,0, 5,,AS50D210
+0,92, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,93, 0,0, 5,,AS10D256
+0,93, 0,0, 5,,AS50D210
+0,93, 0,0, 5,,AS90D170
+0,93, 0,0, 5,,AS130D130
+0,93, 0,0, 5,,AS170D90
+0,93, 0,0, 5,,AS210D50
+0,93, 0,0, 5,,AS256D10
+0,93, 0,0, 100,
+0,93, 0,0, 5,,AS256D10
+0,93, 0,0, 5,,AS210D50
+0,93, 0,0, 5,,AS170D90
+0,93, 0,0, 5,,AS130D130
+0,93, 0,0, 5,,AS90D170
+0,93, 0,0, 5,,AS50D210
+0,93, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,94, 0,0, 5,,AS10D256
+0,94, 0,0, 5,,AS50D210
+0,94, 0,0, 5,,AS90D170
+0,94, 0,0, 5,,AS130D130
+0,94, 0,0, 5,,AS170D90
+0,94, 0,0, 5,,AS210D50
+0,94, 0,0, 5,,AS256D10
+0,94, 0,0, 100,
+0,94, 0,0, 5,,AS256D10
+0,94, 0,0, 5,,AS210D50
+0,94, 0,0, 5,,AS170D90
+0,94, 0,0, 5,,AS130D130
+0,94, 0,0, 5,,AS90D170
+0,94, 0,0, 5,,AS50D210
+0,94, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,95, 0,0, 5,,AS10D256
+0,95, 0,0, 5,,AS50D210
+0,95, 0,0, 5,,AS90D170
+0,95, 0,0, 5,,AS130D130
+0,95, 0,0, 5,,AS170D90
+0,95, 0,0, 5,,AS210D50
+0,95, 0,0, 5,,AS256D10
+0,95, 0,0, 100,
+0,95, 0,0, 5,,AS256D10
+0,95, 0,0, 5,,AS210D50
+0,95, 0,0, 5,,AS170D90
+0,95, 0,0, 5,,AS130D130
+0,95, 0,0, 5,,AS90D170
+0,95, 0,0, 5,,AS50D210
+0,95, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,96, 0,0, 5,,AS10D256
+0,96, 0,0, 5,,AS50D210
+0,96, 0,0, 5,,AS90D170
+0,96, 0,0, 5,,AS130D130
+0,96, 0,0, 5,,AS170D90
+0,96, 0,0, 5,,AS210D50
+0,96, 0,0, 5,,AS256D10
+0,96, 0,0, 100,
+0,96, 0,0, 5,,AS256D10
+0,96, 0,0, 5,,AS210D50
+0,96, 0,0, 5,,AS170D90
+0,96, 0,0, 5,,AS130D130
+0,96, 0,0, 5,,AS90D170
+0,96, 0,0, 5,,AS50D210
+0,96, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,97, 0,0, 5,,AS10D256
+0,97, 0,0, 5,,AS50D210
+0,97, 0,0, 5,,AS90D170
+0,97, 0,0, 5,,AS130D130
+0,97, 0,0, 5,,AS170D90
+0,97, 0,0, 5,,AS210D50
+0,97, 0,0, 5,,AS256D10
+0,97, 0,0, 100,
+0,97, 0,0, 5,,AS256D10
+0,97, 0,0, 5,,AS210D50
+0,97, 0,0, 5,,AS170D90
+0,97, 0,0, 5,,AS130D130
+0,97, 0,0, 5,,AS90D170
+0,97, 0,0, 5,,AS50D210
+0,97, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,98, 0,0, 5,,AS10D256
+0,98, 0,0, 5,,AS50D210
+0,98, 0,0, 5,,AS90D170
+0,98, 0,0, 5,,AS130D130
+0,98, 0,0, 5,,AS170D90
+0,98, 0,0, 5,,AS210D50
+0,98, 0,0, 5,,AS256D10
+0,98, 0,0, 100,
+0,98, 0,0, 5,,AS256D10
+0,98, 0,0, 5,,AS210D50
+0,98, 0,0, 5,,AS170D90
+0,98, 0,0, 5,,AS130D130
+0,98, 0,0, 5,,AS90D170
+0,98, 0,0, 5,,AS50D210
+0,98, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,99, 0,0, 5,,AS10D256
+0,99, 0,0, 5,,AS50D210
+0,99, 0,0, 5,,AS90D170
+0,99, 0,0, 5,,AS130D130
+0,99, 0,0, 5,,AS170D90
+0,99, 0,0, 5,,AS210D50
+0,99, 0,0, 5,,AS256D10
+0,99, 0,0, 100,
+0,99, 0,0, 5,,AS256D10
+0,99, 0,0, 5,,AS210D50
+0,99, 0,0, 5,,AS170D90
+0,99, 0,0, 5,,AS130D130
+0,99, 0,0, 5,,AS90D170
+0,99, 0,0, 5,,AS50D210
+0,99, 0,0, 5,,AS10D256
+0,0, 0,0, 15,
+0,100, 0,0, 5,,AS10D256
+0,100, 0,0, 5,,AS50D210
+0,100,0,0, 5,,AS90D170
+0,100, 0,0, 5,,AS130D130
+0,100, 0,0, 5,,AS170D90
+0,100, 0,0, 5,,AS210D50
+0,100, 0,0, 5,,AS256D10
+0,100, 0,0, 100,
+0,100, 0,0, 5,,AS256D10
+0,100, 0,0, 5,,AS210D50
+0,100, 0,0, 5,,AS170D90
+0,100, 0,0, 5,,AS130D130
+0,100, 0,0, 5,,AS90D170
+0,100, 0,0, 5,,AS50D210
+0,100, 0,0, 5,,AS10D256
